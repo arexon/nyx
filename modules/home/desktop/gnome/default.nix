@@ -56,6 +56,7 @@ in {
         "org.gnome.Weather.desktop"
       ];
 
+      "org/gnome/desktop/wm/preferences".button-layout = [];
       "org/gnome/desktop/wm/keybindings" = {
         move-to-monitor-down = [];
         move-to-monitor-left = [];

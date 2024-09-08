@@ -195,6 +195,7 @@ in {
         startup-status = 0;
         clock-menu-position = 1;
         clock-menu-position-offset = 10;
+        panel-size = 30;
       };
 
       "org/gnome/shell/extensions/unite" = {

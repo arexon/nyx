@@ -16,6 +16,7 @@
     };
     services = {
       ssh.enable = true;
+      flatpak.enable = true;
     };
     desktop = {
       gnome.enable = true;

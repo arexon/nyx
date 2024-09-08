@@ -13,6 +13,9 @@
       alacritty.enable = true;
       firefox.enable = true;
     };
+    games = {
+      mcpelauncher.enable = true;
+    };
     cli-apps = {
       btop.enable = true;
       fzf.enable = true;

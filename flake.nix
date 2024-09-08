@@ -9,6 +9,8 @@
     };
 
     nix-colors.url = "github:misterio77/nix-colors";
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   outputs = inputs @ {

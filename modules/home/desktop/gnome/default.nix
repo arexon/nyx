@@ -56,7 +56,10 @@ in {
         "org.gnome.Weather.desktop"
       ];
 
-      "org/gnome/desktop/wm/preferences".button-layout = [];
+      "org/gnome/desktop/wm/preferences" = {
+        button-layout = [];
+        num-workspaces = 6;
+      };
       "org/gnome/desktop/wm/keybindings" = {
         move-to-monitor-down = [];
         move-to-monitor-left = [];
@@ -120,7 +123,6 @@ in {
         switch-to-application-10 = [];
       };
 
-      "org/gnome/mutter".dynamic-workspaces = true;
       "org/gnome/mutter/wayland/keybindings".restore-shortcut = [];
       "org/gnome/mutter/keybindings" = {
         toggle-tiled-left = ["<Super>h"];

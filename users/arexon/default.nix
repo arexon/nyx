@@ -11,6 +11,7 @@
     };
     apps = {
       alacritty.enable = true;
+      discord.enable = true;
       firefox.enable = true;
     };
     games = {

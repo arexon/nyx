@@ -15,6 +15,7 @@ with lib; let
     just-perfection
     unite
     hibernate-status-button
+    dash-to-dock
   ];
 
   customKeybinds = "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings";
@@ -214,6 +215,13 @@ in {
       "org/gnome/shell/extensions/hibernate-status-button" = {
         show-hybrid-sleep = false;
         show-suspend-then-hibernate = false;
+      };
+
+      "org/gnome/shell/extensions/dash-to-dock" = {
+        hot-keys = false;
+        show-trash = false;
+        apply-custom-theme = true;
+        scroll-action = "switch-workspace";
       };
     };
   };

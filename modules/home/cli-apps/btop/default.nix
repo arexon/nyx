@@ -26,7 +26,7 @@ in {
         vim_keys = true;
         rounded_corners = false;
         proc_gradient = false;
-        shown_boxes = "proc cpu mem net gpu0";
+        shown_boxes = "proc cpu mem gpu0";
         base_10_sizes = true;
       };
     };

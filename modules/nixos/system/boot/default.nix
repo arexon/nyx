@@ -11,9 +11,15 @@ in {
   };
 
   config = mkIf cfg.enable {
-    boot.initrd.systemd.enable = true;
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.systemd-boot.configurationLimit = 16;
-    boot.loader.efi.canTouchEfiVariables = true;
+    boot = {
+      initrd.systemd.enable = true;
+      loader = {
+        systemd-boot = {
+          enable = true;
+          configurationLimit = 16;
+        };
+        efi.canTouchEfiVariables = true;
+      };
+    };
   };
 }

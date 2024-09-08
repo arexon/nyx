@@ -29,7 +29,7 @@
       starship.enable = true;
       tmux.enable = true;
       yazi.enable = true;
-      extraPackages = with pkgs; [wget hyperfine serpl];
+      extraPackages = with pkgs; [wget hyperfine serpl diskonaut];
     };
     tools = {
       direnv.enable = true;

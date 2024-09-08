@@ -24,7 +24,6 @@ in {
         vim_keys = true;
         rounded_corners = false;
         proc_gradient = false;
-        proc_tree = true;
         base_10_sizes = true;
       };
     };

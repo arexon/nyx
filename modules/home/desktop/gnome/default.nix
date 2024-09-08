@@ -17,6 +17,8 @@ with lib; let
     # TODO: Look into this.
     rounded-corners
   ];
+
+  customKeybinds = "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings";
 in {
   options.nyx.desktop.gnome = {
     enable = mkBoolOpt false "Whether to configure GNOME.";
@@ -102,7 +104,7 @@ in {
       "org/gnome/shell/keybindings" = {
         show-screen-recording-ui = [];
         screenshot = ["<Super>Print"];
-        show-screenshot--ui = ["<Shift><Super>s"];
+        show-screenshot-ui = ["<Shift><Super>s"];
         screenshot-window = ["<Shift><Control><Super>s"];
         focus-active-notification = ["<Super>w"];
         switch-to-application-1 = [];
@@ -144,12 +146,28 @@ in {
         volume-down = ["<Alt><Super>j"];
         volume-mute = ["<Alt><Super>u"];
         logout = ["<Super>Escape"];
-        custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/open-nautilus/"];
+        custom-keybindings = with lib.lists; let
+          inherit (config.nyx) apps;
+        in
+          builtins.map (bind: "/${customKeybinds}/${bind}/")
+          (["open-nautilus"]
+            ++ (optionals apps.firefox.enable ["open-firefox"])
+            ++ (optionals apps.alacritty.enable ["open-alacritty"]));
       };
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/open-nautilus" = {
+      "${customKeybinds}/open-nautilus" = {
         name = "Open Nautilus";
         command = "nautilus";
         binding = "<Super>e";
+      };
+      "${customKeybinds}/open-firefox" = {
+        name = "Open Firefox";
+        command = "firefox";
+        binding = "<Super>b";
+      };
+      "${customKeybinds}/open-alacritty" = {
+        name = "Open Alacritty";
+        command = "alacritty";
+        binding = "<Super>Return";
       };
 
       "org/gnome/nautilus/list-view".default-zoom-level = "small";

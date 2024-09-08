@@ -14,8 +14,7 @@ with lib; let
     custom-accent-colors
     just-perfection
     unite
-    # TODO: Look into this.
-    rounded-corners
+    hibernate-status-button
   ];
 
   customKeybinds = "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings";
@@ -210,6 +209,11 @@ in {
       };
 
       "org/gnome/shell/extensions/user-theme".name = "Custom-Accent-Colors";
+
+      "org/gnome/shell/extensions/hibernate-status-button" = {
+        show-hybrid-sleep = false;
+        show-suspend-then-hibernate = false;
+      };
     };
   };
 }

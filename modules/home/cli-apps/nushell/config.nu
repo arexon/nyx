@@ -35,6 +35,8 @@ alias nd = ^nix develop --command nu
 alias nos = ^nh os switch
 alias nob = ^nh os boot
 
+alias lg = ^lazygit
+
 $env.PROMPT_INDICATOR_VI_INSERT = ''
 $env.PROMPT_INDICATOR_VI_NORMAL = '' 
 

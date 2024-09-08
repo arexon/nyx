@@ -24,6 +24,7 @@
       fzf.enable = true;
       git.enable = true;
       helix.enable = true;
+      lazygit.enable = true;
       nushell.enable = true;
       starship.enable = true;
       tmux.enable = true;

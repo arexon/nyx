@@ -16,7 +16,7 @@ in {
   config = mkIf cfg.enable {
     services.flatpak.packages = ["io.mrarm.mcpelauncher"];
 
-    xdg.desktopEntries.mcbe = {
+    xdg.desktopEntries.minecraft = {
       name = "Minecraft";
       exec = ''
         flatpak run --command=mcpelauncher-ui-qt io.mrarm.mcpelauncher -p

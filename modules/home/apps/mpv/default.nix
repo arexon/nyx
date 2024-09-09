@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   lib,
   ...
 }:
@@ -14,5 +15,8 @@ in {
     programs.mpv = {
       enable = true;
     };
+
+    # Apparently video thumbnails require this..
+    home.packages = with pkgs; [totem];
   };
 }

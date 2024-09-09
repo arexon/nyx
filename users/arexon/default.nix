@@ -14,6 +14,7 @@
       blockbench.enable = true;
       discord.enable = true;
       firefox.enable = true;
+      obs.enable = true;
       spotify.enable = true;
     };
     games = {

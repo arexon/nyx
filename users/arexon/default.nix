@@ -16,6 +16,7 @@
       firefox.enable = true;
       obs.enable = true;
       spotify.enable = true;
+      mpv.enable = true;
     };
     games = {
       mcpelauncher.enable = true;

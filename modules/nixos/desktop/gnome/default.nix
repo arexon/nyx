@@ -30,7 +30,6 @@ in {
         loupe
         nautilus
         papers
-        totem
         gnome-text-editor
         gnome-weather
       ];

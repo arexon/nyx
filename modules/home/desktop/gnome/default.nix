@@ -149,13 +149,11 @@ in {
         volume-down = ["<Alt><Super>j"];
         volume-mute = ["<Alt><Super>u"];
         logout = ["<Super>Escape"];
-        custom-keybindings = with lib.lists; let
-          inherit (config.nyx) apps;
-        in
+        custom-keybindings = with lib.lists;
           builtins.map (bind: "/${customKeybinds}/${bind}/")
           (["open-nautilus"]
-            ++ (optionals apps.firefox.enable ["open-firefox"])
-            ++ (optionals apps.alacritty.enable ["open-alacritty"]));
+            ++ (optionals config.nyx.apps.firefox.enable ["open-firefox"])
+            ++ (optionals config.nyx.apps.alacritty.enable ["open-alacritty"]));
       };
       "${customKeybinds}/open-nautilus" = {
         name = "Open Nautilus";

@@ -82,6 +82,10 @@ in {
             auto-format = true;
             language-servers = ["vscode-json-language-server" "harper"];
           }
+          {
+            name = "toml";
+            auto-format = true;
+          }
         ];
       };
       settings = {

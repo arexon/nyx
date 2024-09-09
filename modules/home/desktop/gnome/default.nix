@@ -173,7 +173,6 @@ in {
 
       "org/gnome/nautilus/list-view".default-zoom-level = "small";
       "org/gnome/nautilus/icon-view".default-zoom-level = "large";
-      "org/gnome/nautilus/preferences".click-policy = "single";
 
       "org/gtk/gtk4/settings/file-chooser" = {
         show-hidden = true;

@@ -56,7 +56,7 @@ in {
             };
             formatter.command = "alejandra";
             auto-format = true;
-            language-servers = ["nil" "harper"];
+            language-servers = ["nixd"];
           }
           {
             name = "markdown";

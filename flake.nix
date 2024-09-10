@@ -15,11 +15,7 @@
     nixcord.url = "github:kaylorben/nixcord";
   };
 
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    ...
-  }: let
+  outputs = inputs @ {nixpkgs, ...}: let
     system = "x86_64-linux";
 
     lib = nixpkgs.lib;
@@ -30,7 +26,7 @@
     formatter.${system} = pkgs.alejandra;
 
     devShells.${system}.default = pkgs.mkShell {
-      nativeBuildInputs = with pkgs; [nil alejandra];
+      nativeBuildInputs = with pkgs; [nixd alejandra];
     };
 
     nixosConfigurations = {

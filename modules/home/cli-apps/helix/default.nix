@@ -50,10 +50,6 @@ in {
           }
           {
             name = "nix";
-            indent = {
-              tab-width = 2;
-              unit = " ";
-            };
             formatter.command = "alejandra";
             auto-format = true;
             language-servers = ["nixd"];

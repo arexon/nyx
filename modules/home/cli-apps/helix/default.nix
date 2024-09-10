@@ -51,7 +51,10 @@ in {
           }
           {
             name = "nix";
-            formatter.command = "alejandra";
+            formatter = {
+              command = "nix";
+              args = ["fmt" "--" "-"];
+            };
             auto-format = true;
             language-servers = ["nixd"];
           }

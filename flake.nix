@@ -26,7 +26,7 @@
     formatter.${system} = pkgs.alejandra;
 
     devShells.${system}.default = pkgs.mkShell {
-      nativeBuildInputs = with pkgs; [nixd alejandra];
+      nativeBuildInputs = with pkgs; [nixd];
     };
 
     nixosConfigurations = {

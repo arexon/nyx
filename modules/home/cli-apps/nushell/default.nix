@@ -24,7 +24,7 @@ in {
             config.home.sessionVariables)
           // {
             # Because Nushell is being a PITA
-            FLAKE = "'${config.home.homeDirectory}/nyx'";
+            FLAKE = "'${config.home.homeDirectory}/projects/nyx'";
           };
       };
       carapace = {

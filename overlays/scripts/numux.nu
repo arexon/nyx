@@ -40,15 +40,13 @@ def fuzzy-find [header: string]: nothing -> record<name: string, path: string> {
 def workspaces []: nothing -> table {
     let search_paths = [
         $env.HOME
-        ($env.HOME + "/nyx")
-        (ls ~/projects | get name)
+        (ls ~/projects/**/.envrc | get name | each {path dirname})
     ] | flatten
 
     $search_paths
     | par-each {|path|
-        let name = $path
-            | path basename
-            | if $in == $env.USER { "main" } else { $in }
+        mut name = $path | str replace $"($env.HOME)/projects/" ""
+        if $path == $env.HOME { $name = "home" }
 
         let workspace = {
             name: $name

@@ -36,6 +36,7 @@ in {
       defaultEditor = true;
       languages = {
         language-server = {
+          nixd.command = "nixd";
           marksman.command = marksman;
           harper = {
             command = harper;

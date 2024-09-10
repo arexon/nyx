@@ -15,7 +15,6 @@
       luks.devices.enyc.device = "/dev/disk/by-uuid/82154409-92bb-4da5-b9d3-c50aeb520f5c";
     };
     kernelModules = ["kvm-intel"];
-    resumeDevice = (builtins.elemAt config.swapDevices 0).device;
   };
 
   fileSystems = {

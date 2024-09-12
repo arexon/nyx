@@ -26,9 +26,16 @@ let external_completer = {|spans: list<string>|
     } | do $in $spans
 }
 
-alias l = ls --all
-alias ll = ls --long
-alias lla = ls --long --all
+# `ls` doesn't group directories first <https://github.com/nushell/nushell/issues/7881>
+def l []: nothing -> table {
+    ls --all | sort-by type
+}
+def ll []: nothing -> table {
+    ls --long | sort-by type
+}
+def lla []: nothing -> table {
+    ls --long --all | sort-by type
+}
 
 alias nd = ^nix develop --command nu
 

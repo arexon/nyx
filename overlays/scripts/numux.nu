@@ -19,6 +19,14 @@ def "main delete-workspace" []: nothing -> nothing {
     delete-session $session.name
 }
 
+def "main switch-to-home" []: nothing -> nothing {   
+    let session = {
+        name: "home"
+        path: $env.HOME
+    }
+    switch-to-or-create-session $session
+}
+
 def sessions []: nothing -> table {
     ^tmux list-sessions
     | lines

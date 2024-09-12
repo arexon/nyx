@@ -59,9 +59,11 @@ in {
 
         bind-key M-w display-popup -EB "${fzfDefaultOpts} ${numux} switch-workspace"
         bind-key M-d display-popup -EB "${fzfDefaultOpts} ${numux} delete-workspace"
+        bind-key M-h run-shell -b "${numux} switch-to-home"
+        bind-key M-f switch-client -l
+        bind-key M-r run-shell -b "tmux source ~/.config/tmux/tmux.conf"
 
         bind-key d detach
-        bind-key f switch-client -l
 
         bind-key w new-window
         bind-key n next-window

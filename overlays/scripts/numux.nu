@@ -40,7 +40,7 @@ def fuzzy-find [header: string]: nothing -> record<name: string, path: string> {
 def workspaces []: nothing -> table {
     let search_paths = [
         $env.HOME
-        (ls ~/projects/**/.envrc | get name | each {path dirname})
+        (ls ~/projects/**/*/.git | get name | each {path dirname})
     ] | flatten
 
     $search_paths

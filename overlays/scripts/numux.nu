@@ -2,7 +2,7 @@ const SEP = "\t"
 
 def main []: nothing -> nothing {
     let session = {
-        name: main
+        name: "home"
         path: $env.HOME
     }
     create-session-if-not-exists $session

@@ -18,5 +18,9 @@ in {
 
     # Apparently video thumbnails require this..
     home.packages = with pkgs; [totem];
+    xdg.desktopEntries."org.gnome.Totem" = {
+      name = "";
+      noDisplay = true;
+    };
   };
 }

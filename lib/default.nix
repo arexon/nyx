@@ -17,7 +17,7 @@
           else getModulePaths dirPath;
       in
         result;
-      result = lib.lists.flatten (builtins.map (entry: processEntry entry) entries);
+      result = lib.lists.flatten (builtins.map processEntry entries);
     in
       result;
   in
@@ -29,7 +29,7 @@
           {
             nixpkgs = {
               config.allowUnfree = true;
-              overlays = builtins.map (path: import path) (getModulePaths ../overlays);
+              overlays = builtins.map import (getModulePaths ../overlays);
             };
           }
           inputs.home-manager.nixosModules.home-manager

@@ -18,7 +18,7 @@
   outputs = inputs @ {nixpkgs, ...}: let
     system = "x86_64-linux";
 
-    lib = nixpkgs.lib;
+    inherit (nixpkgs) lib;
     inherit (import ./lib) mkSystem;
 
     pkgs = import nixpkgs {inherit system;};

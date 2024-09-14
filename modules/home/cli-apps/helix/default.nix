@@ -20,6 +20,8 @@ with lib; let
 
   harper = "${pkgs.harper}/bin/harper-ls";
   marksman = "${pkgs.marksman}/bin/marksman";
+  nixd = "${pkgs.nixd}/bin/nixd";
+  alejandra = "${pkgs.alejandra}/bin/alejandra";
 in {
   options.nyx.cli-apps.helix = {
     enable = mkBoolOpt false "Whether to enable Helix editor.";
@@ -36,7 +38,7 @@ in {
       defaultEditor = true;
       languages = {
         language-server = {
-          nixd.command = "nixd";
+          nixd.command = nixd;
           marksman.command = marksman;
           harper = {
             command = harper;
@@ -47,11 +49,11 @@ in {
         language = [
           {
             name = "rust";
-            language-servers = ["rust-analyzer" "harper"];
+            language-servers = ["rust-analyzer"];
           }
           {
             name = "nix";
-            formatter.command = "alejandra";
+            formatter.command = alejandra;
             auto-format = true;
             language-servers = ["nixd"];
           }

@@ -15,9 +15,10 @@ with lib; let
     just-perfection
     unite
     hibernate-status-button
+    paperwm
   ];
 
-  customKeybinds = "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings";
+  purpleColor = "rgb(149,127,184)";
 in {
   options.nyx.desktop.gnome = {
     enable = mkBoolOpt false "Whether to configure GNOME.";
@@ -57,7 +58,7 @@ in {
 
       "org/gnome/desktop/wm/preferences" = {
         button-layout = [];
-        num-workspaces = 6;
+        num-workspaces = 4;
       };
       "org/gnome/desktop/wm/keybindings" = {
         move-to-monitor-down = [];
@@ -79,8 +80,6 @@ in {
         switch-to-workspace-2 = ["<Super>2"];
         switch-to-workspace-3 = ["<Super>3"];
         switch-to-workspace-4 = ["<Super>4"];
-        switch-to-workspace-5 = ["<Super>5"];
-        switch-to-workspace-6 = ["<Super>6"];
         switch-to-workspace-left = [];
         switch-to-workspace-right = [];
         switch-windows = ["<Super>Tab"];
@@ -101,7 +100,6 @@ in {
         unmaximize = [];
         begin-move = [];
         begin-resize = [];
-        toggle-maximized = ["<Super>f"];
       };
 
       "org/gnome/shell/keybindings" = {
@@ -109,7 +107,7 @@ in {
         screenshot = ["<Super>Print"];
         show-screenshot-ui = ["<Shift><Super>s"];
         screenshot-window = ["<Shift><Control><Super>s"];
-        focus-active-notification = ["<Super>w"];
+        focus-active-notification = [];
         switch-to-application-1 = [];
         switch-to-application-2 = [];
         switch-to-application-3 = [];
@@ -123,10 +121,7 @@ in {
       };
 
       "org/gnome/mutter/wayland/keybindings".restore-shortcut = [];
-      "org/gnome/mutter/keybindings" = {
-        toggle-tiled-left = ["<Super>h"];
-        toggle-tiled-right = ["<Super>l"];
-      };
+      "org/gnome/mutter".center-new-windows = true;
 
       "org/gnome/settings-daemon/plugins/power" = {
         sleep-inactive-ac-type = "suspend";
@@ -148,26 +143,12 @@ in {
         volume-down = ["<Alt><Super>j"];
         volume-mute = ["<Alt><Super>u"];
         logout = ["<Super>Escape"];
-        custom-keybindings = with lib.lists;
-          builtins.map (bind: "/${customKeybinds}/${bind}/")
-          (["open-nautilus"]
-            ++ (optionals config.nyx.apps.firefox.enable ["open-firefox"])
-            ++ (optionals config.nyx.apps.alacritty.enable ["open-alacritty"]));
+        custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/open-nautilus/"];
       };
-      "${customKeybinds}/open-nautilus" = {
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/open-nautilus" = {
         name = "Open Nautilus";
         command = "nautilus";
         binding = "<Super>e";
-      };
-      "${customKeybinds}/open-firefox" = {
-        name = "Open Firefox";
-        command = "firefox";
-        binding = "<Super>b";
-      };
-      "${customKeybinds}/open-alacritty" = {
-        name = "Open Alacritty";
-        command = "alacritty";
-        binding = "<Super>Return";
       };
 
       "org/gnome/nautilus/list-view".default-zoom-level = "small";
@@ -212,6 +193,82 @@ in {
       "org/gnome/shell/extensions/hibernate-status-button" = {
         show-hybrid-sleep = false;
         show-suspend-then-hibernate = false;
+      };
+
+      "org/gnome/shell/extensions/paperwm" = {
+        show-workspace-indicator = false;
+        gesture-enabled = false;
+        selection-border-size = 0;
+        selection-border-radius = 0;
+        window-gap = 8;
+        horizontal-margin = 8;
+        vertical-margin = 8;
+        vertical-margin-bottom = 8;
+        winprops = mkIf config.nyx.games.mcpelauncher.enable (map builtins.toJSON [
+          {
+            wm_class = "Minecraft";
+            scratch_layer = true;
+          }
+        ]);
+      };
+      "org/gnome/shell/extensions/paperwm/keybindings" = {
+        new-window = ["<Super>n"];
+        close-window = [];
+        switch-next = ["<Super>l"];
+        switch-previous = ["<Super>h"];
+        switch-left = [];
+        switch-right = [];
+        switch-up = [];
+        switch-down = [];
+        switch-first = [];
+        switch-last = [];
+        live-alt-tab = [];
+        live-alt-tab-backward = [];
+        live-alt-tab-scratch = [];
+        live-alt-tab-scratch-backward = [];
+        switch-focus-mode = [];
+        switch-open-window-position = ["<Super>w"];
+        move-left = ["<Shift><Super>h"];
+        move-right = ["<Shift><Super>l"];
+        move-up = ["<Shift><Super>k"];
+        move-down = ["<Shift><Super>j"];
+        slurp-in = [];
+        barf-out = [];
+        barf-out-active = [];
+        cycle-width = [];
+        cycle-width-backwards = [];
+        cycle-height = [];
+        cycle-height-backwards = [];
+        take-window = [];
+        previous-workspace = [];
+        previous-workspace-backward = [];
+        move-previous-workspace = [];
+        move-previous-workspace-backward = [];
+        switch-up-workspace = ["<Super>k"];
+        switch-down-workspace = ["<Super>j"];
+        move-up-workspace = ["<Control><Super>k"];
+        move-down-workspace = ["<Control><Super>j"];
+        toggle-scratch-layer = ["<Super>z"];
+        toggle-scratch = ["<Shift><Super>z"];
+        toggle-scratch-window = [];
+        open-window-position-option-down = false;
+      };
+      "org/gnome/shell/extensions/paperwm/workspaces".list = ["one" "two" "three" "four"];
+      "org/gnome/shell/extensions/paperwm/workspaces/one" = {
+        index = 0;
+        color = purpleColor;
+      };
+      "org/gnome/shell/extensions/paperwm/workspaces/two" = {
+        index = 1;
+        color = purpleColor;
+      };
+      "org/gnome/shell/extensions/paperwm/workspaces/three" = {
+        index = 2;
+        color = purpleColor;
+      };
+      "org/gnome/shell/extensions/paperwm/workspaces/four" = {
+        index = 3;
+        color = purpleColor;
       };
     };
   };

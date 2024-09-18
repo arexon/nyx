@@ -24,6 +24,7 @@
     cli-apps = {
       btop.enable = true;
       fzf.enable = true;
+      gadacz.enable = true;
       git.enable = true;
       helix.enable = true;
       lazygit.enable = true;

@@ -13,6 +13,9 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     nixcord.url = "github:kaylorben/nixcord";
+
+    # My own private fork of https://github.com/rareitems/gadacz with support for Nix.
+    gadacz.url = "git+ssh://git@github.com/arexon/gadacz";
   };
 
   outputs = inputs @ {nixpkgs, ...}: let

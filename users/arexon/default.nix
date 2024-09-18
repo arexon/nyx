@@ -39,6 +39,9 @@
       direnv.enable = true;
       keychain.enable = true;
     };
+    services = {
+      ss-to-r2.enable = true;
+    };
   };
 
   home.stateVersion = "24.05";

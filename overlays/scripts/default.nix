@@ -13,23 +13,25 @@ _: prev: let
       destination = "/bin/${name}";
       executable = true;
       text =
-        ''
-          #!${pkgs.nushell}/bin/nu
-
-          ${builtins.readFile ./${name}.nu}
-        ''
+        "#!${pkgs.nushell}/bin/nu\n"
         + (
-          if (builtins.length deps != 0)
+          if (builtins.length deps > 0)
           then ''
             use std "path add"
             path add ${formattedDeps}
           ''
           else ""
-        );
+        )
+        + (builtins.readFile ./${name}.nu);
     };
 in {
   numux = writeNushellScript {
     name = "numux";
     pkgs = prev;
+  };
+  ss-to-r2 = writeNushellScript {
+    name = "ss-to-r2";
+    pkgs = prev;
+    deps = with prev; [s3cmd xclip];
   };
 }

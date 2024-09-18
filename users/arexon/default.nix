@@ -14,9 +14,10 @@
       blockbench.enable = true;
       discord.enable = true;
       firefox.enable = true;
+      mpv.enable = true;
       obs.enable = true;
       spotify.enable = true;
-      mpv.enable = true;
+      vscode.enable = true;
     };
     games = {
       mcpelauncher.enable = true;

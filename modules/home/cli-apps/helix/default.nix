@@ -131,6 +131,7 @@ in {
           };
           select = {
             x = "extend_line";
+            ";" = ["collapse_selection" "normal_mode"];
           };
         };
       };

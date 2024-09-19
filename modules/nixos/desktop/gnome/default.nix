@@ -23,17 +23,7 @@ in {
       gnome.core-utilities.enable = false;
     };
 
-    environment = {
-      gnome.excludePackages = [pkgs.gnome-tour];
-      systemPackages = with pkgs; [
-        file-roller
-        loupe
-        nautilus
-        papers
-        gnome-text-editor
-        gnome-weather
-      ];
-    };
+    environment.gnome.excludePackages = [pkgs.gnome-tour];
 
     programs.dconf.enable = true;
   };

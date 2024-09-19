@@ -25,7 +25,16 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.packages = extensions;
+    home.packages =
+      (with pkgs; [
+        file-roller
+        loupe
+        nautilus
+        papers
+        gnome-text-editor
+        gnome-weather
+      ])
+      ++ extensions;
 
     xdg.userDirs = {
       enable = true;

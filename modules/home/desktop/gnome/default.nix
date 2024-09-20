@@ -55,9 +55,9 @@ in {
 
       "org/gnome/desktop/sound".event-sounds = false;
 
-      "org/gnome/desktop/background".picture-uri-dark = config.nyx.desktop.wallpapers.list.bridge;
+      "org/gnome/desktop/background".picture-uri-dark = config.nyx.desktop.wallpapers.list.samurai;
 
-      "org/gnome/desktop/screensaver".picture-uri-dark = config.nyx.desktop.wallpapers.list.bridge;
+      "org/gnome/desktop/screensaver".picture-uri-dark = config.nyx.desktop.wallpapers.list.samurai;
 
       "org/gnome/desktop/search-providers".disabled = [
         "com.github.FontManager.FontManager.desktop"

@@ -45,11 +45,17 @@ in {
             args = ["--stdio"];
           };
         };
-
         language = [
           {
             name = "rust";
             language-servers = ["rust-analyzer"];
+            auto-pairs = {
+              "(" = ")";
+              "{" = "}";
+              "[" = "]";
+              "\"" = "\"";
+              "<" = ">";
+            };
           }
           {
             name = "nix";
@@ -89,7 +95,6 @@ in {
       };
       settings = {
         inherit theme;
-
         editor = {
           line-number = "relative";
           bufferline = "always";
@@ -117,7 +122,6 @@ in {
           };
           lsp.display-messages = true;
         };
-
         keys = {
           normal = {
             x = "extend_line";

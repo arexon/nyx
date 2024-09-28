@@ -98,3 +98,10 @@
     --green-to-accent-3-filter: none; /* add friend page explore icon */
     --blurple-to-accent-3-filter: none; /* add friend page school icon */
 }
+
+.popoverReactionHoverBar_e986d9 > :nth-child(1),
+.popoverReactionHoverBar_e986d9 > :nth-child(2),
+.popoverReactionHoverBar_e986d9 > :nth-child(3),
+.popoverReactionHoverBar_e986d9 > :nth-child(4) {
+    display: none !important;
+}

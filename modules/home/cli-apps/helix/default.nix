@@ -73,19 +73,19 @@ in {
             name = "typescript";
             formatter = dprintFormatter "ts";
             auto-format = true;
-            language-servers = ["typescript-language-server" "harper"];
+            language-servers = ["typescript-language-server"];
           }
           {
             name = "javascript";
             formatter = dprintFormatter "js";
             auto-format = true;
-            language-servers = ["typescript-language-server" "harper"];
+            language-servers = ["typescript-language-server"];
           }
           {
             name = "json";
             formatter = dprintFormatter "json";
             auto-format = true;
-            language-servers = ["vscode-json-language-server" "harper"];
+            language-servers = ["vscode-json-language-server"];
           }
           {
             name = "toml";

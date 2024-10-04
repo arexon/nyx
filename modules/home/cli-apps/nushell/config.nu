@@ -71,6 +71,9 @@ $env.config = {
             completer: $external_completer
         }
     }
+    display_errors: {
+        exit_code: false
+    }
     keybindings: [
         {
             name: clear_screen

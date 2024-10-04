@@ -44,6 +44,18 @@ in {
             command = harper;
             args = ["--stdio"];
           };
+          deno-lsp = {
+            command = "deno";
+            args = ["lsp"];
+            config.deno.inlayHints = {
+              enumMemberValues.enabled = true;
+              functionLikeReturnTypes.enabled = true;
+              parameterNames.enabled = "all";
+              parameterTypes.enabled = true;
+              propertyDeclarationTypes.enabled = true;
+              variableTypes.enabled = true;
+            };
+          };
         };
         language = [
           {
@@ -71,15 +83,19 @@ in {
           }
           {
             name = "typescript";
-            formatter = dprintFormatter "ts";
+            formatter = {
+              command = "deno";
+              args = ["fmt" "-"];
+            };
             auto-format = true;
-            language-servers = ["typescript-language-server"];
+            roots = ["deno.json" "deno.jsonc" "package.json"];
+            language-servers = ["typescript-language-server" "deno-lsp"];
           }
           {
             name = "javascript";
             formatter = dprintFormatter "js";
             auto-format = true;
-            language-servers = ["typescript-language-server"];
+            language-servers = ["typescript-language-server" "deno-lsp"];
           }
           {
             name = "json";
@@ -108,12 +124,19 @@ in {
             select = "underline";
           };
           statusline = {
-            left = ["mode" "spacer" "file-name" "spacer" "version-control"];
+            left = [
+              "file-name"
+              "read-only-indicator"
+              "spacer"
+              "version-control"
+            ];
             right = [
+              "spinner"
               "spacer"
               "diagnostics"
+              "workspace-diagnostics"
               "spacer"
-              "spinner"
+              "primary-selection-length"
               "spacer"
               "position"
               "position-percentage"

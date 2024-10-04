@@ -105,3 +105,7 @@
 .popoverReactionHoverBar_e986d9 > :nth-child(4) {
     display: none !important;
 }
+
+.channelAppLauncher_df39bd {
+    display: none !important;
+}

@@ -20,11 +20,11 @@ in {
         '';
         environmentVariables =
           (builtins.mapAttrs
-            (name: value: ''"${builtins.toString value}"'')
+            (name: value: ''${builtins.toString value}'')
             config.home.sessionVariables)
           // {
             # Because Nushell is being a PITA
-            FLAKE = "'${config.home.homeDirectory}/projects/nyx'";
+            FLAKE = "${config.home.homeDirectory}/projects/nyx";
           };
       };
       carapace = {

@@ -16,7 +16,6 @@ in {
       config = {
         whitelist = {
           prefix = ["~/projects"];
-          exact = ["~/nyx"];
         };
         global = {
           hide_env_diff = true;

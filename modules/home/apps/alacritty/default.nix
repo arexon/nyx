@@ -21,7 +21,7 @@ in {
     programs.alacritty = {
       enable = true;
       settings = {
-        shell.program = numux;
+        terminal.shell.program = numux;
         mouse.hide_when_typing = true;
         window.decorations = "None";
         font = {

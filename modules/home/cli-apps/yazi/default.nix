@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   lib,
   ...
 }:
@@ -18,6 +19,8 @@ in {
         noDisplay = true;
       };
     };
+
+    home.packages = with pkgs; [ueberzugpp];
 
     programs.yazi = {
       enable = true;

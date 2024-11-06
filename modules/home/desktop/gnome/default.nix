@@ -11,7 +11,6 @@ with lib; let
     appindicator
     clipboard-history
     blur-my-shell
-    custom-accent-colors
     just-perfection
     unite
     hibernate-status-button
@@ -50,6 +49,7 @@ in {
 
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
+        accent-color = "pink";
         enable-hot-corners = false;
       };
 
@@ -190,14 +190,6 @@ in {
         hide-window-titlebars = "always";
         show-window-buttons = "never";
       };
-
-      "org/gnome/shell/extensions/custom-accent-color" = {
-        accent-color = "pink";
-        theme-gtk = true;
-        theme-shell = true;
-      };
-
-      "org/gnome/shell/extensions/user-theme".name = "Custom-Accent-Colors";
 
       "org/gnome/shell/extensions/hibernate-status-button" = {
         show-hybrid-sleep = false;

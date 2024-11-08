@@ -2,6 +2,8 @@
   config,
   pkgs,
   lib,
+  inputs,
+  system,
   ...
 }:
 with lib; let
@@ -35,6 +37,7 @@ in {
 
     programs.helix = {
       enable = true;
+      package = inputs.helix-editor.packages.${system}.default;
       defaultEditor = true;
       languages = {
         language-server = {
@@ -116,6 +119,11 @@ in {
           true-color = true;
           auto-info = false;
           auto-format = true;
+          end-of-line-diagnostics = "error";
+          inline-diagnostics = {
+            cursor-line = "info";
+            other-lines = "disable";
+          };
           completion-trigger-len = 1;
           indent-guides.render = true;
           cursor-shape = {

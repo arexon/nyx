@@ -184,6 +184,7 @@ in {
         clock-menu-position = 1;
         clock-menu-position-offset = 10;
         panel-size = 30;
+        notification-banner-position = 5;
       };
 
       "org/gnome/shell/extensions/unite" = {

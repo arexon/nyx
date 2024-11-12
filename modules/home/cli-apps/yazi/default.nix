@@ -45,6 +45,13 @@ in {
           border_symbol = " ";
         };
       };
+      keymap.manager.append_keymap = [
+        {
+          on = ["g" "m"];
+          run = "cd ~/com.mojang";
+          desc = "Go to com.mojang directory";
+        }
+      ];
     };
   };
 }

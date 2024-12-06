@@ -55,6 +55,7 @@ in {
           relationshipNotifier.enable = true;
           showHiddenThings.enable = true;
           showTimeoutDuration.enable = true;
+          noTypingAnimation.enable = true;
         };
       };
     };

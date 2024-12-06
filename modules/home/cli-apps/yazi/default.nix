@@ -26,6 +26,20 @@ in {
       enable = true;
       enableNushellIntegration = true;
       settings = {
+        plugin = {
+          prepend_fetchers = [
+            {
+              id = "git";
+              name = "*";
+              run = "git";
+            }
+            {
+              id = "git";
+              name = "*/";
+              run = "git";
+            }
+          ];
+        };
         manager = {
           ratio = [0 4 8];
           sort_by = "natural";

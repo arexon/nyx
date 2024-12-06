@@ -41,6 +41,10 @@ in {
       defaultEditor = true;
       languages = {
         language-server = {
+          rust-analyzer.config = {
+            check.command = "clippy";
+            cargo.features = "all";
+          };
           nixd.command = nixd;
           marksman.command = marksman;
           harper = {

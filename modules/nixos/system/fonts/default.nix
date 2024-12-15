@@ -19,7 +19,7 @@ in {
         noto-fonts-cjk-sans
         noto-fonts-cjk-serif
         noto-fonts-emoji
-        (nerdfonts.override {fonts = ["Iosevka"];})
+        nerd-fonts.iosevka
       ]
       ++ cfg.fonts;
   };

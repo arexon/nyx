@@ -56,6 +56,10 @@ in {
           showHiddenThings.enable = true;
           showTimeoutDuration.enable = true;
           noTypingAnimation.enable = true;
+          spotifyCrack = {
+            enable = true;
+            keepSpotifyActivityOnIdle = true;
+          };
         };
       };
     };

@@ -24,7 +24,6 @@
     };
     services = {
       ssh.enable = true;
-      flatpak.enable = true;
       syncthing.enable = true;
     };
     desktop = {

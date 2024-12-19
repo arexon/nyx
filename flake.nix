@@ -10,8 +10,6 @@
 
     nix-colors.url = "github:misterio77/nix-colors";
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
-
     nixcord.url = "github:kaylorben/nixcord";
 
     # My own private fork of https://github.com/rareitems/gadacz with support for Nix.

@@ -10,7 +10,7 @@
       gtk.enable = true;
     };
     apps = {
-      alacritty.enable = true;
+      ghostty.enable = true;
       blockbench.enable = true;
       discord.enable = true;
       firefox.enable = true;

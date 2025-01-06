@@ -29,6 +29,7 @@ in {
         copy-on-select = "false";
         theme = "Kanagawa Wave";
         font-family = "Iosevka NF";
+        font-feature = ["-calt" "-liga" "-dlig"];
       };
     };
   };

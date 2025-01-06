@@ -163,6 +163,7 @@ in {
             "C-u" = ["half_page_up" "align_view_center"];
             "C-d" = ["half_page_down" "align_view_center"];
             space.l = ":toggle lsp.display-inlay-hints";
+            g.w = ["save_selection" "goto_word"];
           };
           insert = {
             "C-[" = ["normal_mode"];

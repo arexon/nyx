@@ -24,6 +24,7 @@ with lib; let
   marksman = "${pkgs.marksman}/bin/marksman";
   nixd = "${pkgs.nixd}/bin/nixd";
   alejandra = "${pkgs.alejandra}/bin/alejandra";
+  harpoon = "${pkgs.harpoon}/bin/harpoon";
 in {
   options.nyx.cli-apps.helix = {
     enable = mkBoolOpt false "Whether to enable Helix editor.";
@@ -136,6 +137,7 @@ in {
           };
           statusline = {
             left = [
+              "mode"
               "file-name"
               "read-only-indicator"
               "spacer"
@@ -162,8 +164,27 @@ in {
             esc = ["collapse_selection" "keep_primary_selection"];
             "C-u" = ["half_page_up" "align_view_center"];
             "C-d" = ["half_page_down" "align_view_center"];
+            "A-x" = [":reset-diff-change"];
             space.l = ":toggle lsp.display-inlay-hints";
-            g.w = ["save_selection" "goto_word"];
+            "1" = [":pipe-to ${harpoon} update" ":pipe-to ${harpoon} switch 1"];
+            "2" = [":pipe-to ${harpoon} update" ":pipe-to ${harpoon} switch 2"];
+            "3" = [":pipe-to ${harpoon} update" ":pipe-to ${harpoon} switch 3"];
+            "4" = [":pipe-to ${harpoon} update" ":pipe-to ${harpoon} switch 4"];
+            "C-s" = {
+              "1" = ":pipe-to ${harpoon} set 1";
+              "2" = ":pipe-to ${harpoon} set 2";
+              "3" = ":pipe-to ${harpoon} set 3";
+              "4" = ":pipe-to ${harpoon} set 4";
+              l = ":sh ${harpoon} list";
+            };
+            g = {
+              w = ["save_selection" "goto_word"];
+              n = [":pipe-to ${harpoon} update" "goto_next_buffer"];
+              p = [":pipe-to ${harpoon} update" "goto_previous_buffer"];
+              d = [":pipe-to ${harpoon} update" "goto_definition"];
+              y = [":pipe-to ${harpoon} update" "goto_type_definition"];
+              r = [":pipe-to ${harpoon} update" "goto_reference"];
+            };
           };
           insert = {
             "C-[" = ["normal_mode"];

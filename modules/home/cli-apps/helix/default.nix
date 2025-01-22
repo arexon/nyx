@@ -119,7 +119,7 @@ in {
         inherit theme;
         editor = {
           line-number = "relative";
-          bufferline = "always";
+          bufferline = "never";
           true-color = true;
           auto-info = false;
           auto-format = true;

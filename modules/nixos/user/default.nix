@@ -15,7 +15,7 @@ in {
     users.users.${cfg.name} = {
       isNormalUser = true;
       shell = pkgs.nushell;
-      extraGroups = ["wheel"];
+      extraGroups = ["wheel" "uinput"];
     };
   };
 }

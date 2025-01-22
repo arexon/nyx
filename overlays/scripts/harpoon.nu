@@ -14,7 +14,7 @@ def 'main switch' [n: number, --update]: nothing -> nothing {
     let file = get-history | get ($n - 1)
     if $file == '0' { return }
 
-    ^tmux send-keys $':o ($file)' C-m
+    ^tmux send-keys $':harpoon-open ($file)' C-m
 }
 
 def 'main set' [n: number]: nothing -> nothing {

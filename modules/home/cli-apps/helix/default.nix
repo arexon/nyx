@@ -38,7 +38,13 @@ in {
 
     programs.helix = {
       enable = true;
-      package = inputs.helix-editor.packages.${system}.default;
+      package = let
+        helix-pkgs = inputs.helix-editor.packages.${system};
+        helix-patched = helix-pkgs.helix-unwrapped.overrideAttrs (prev: {
+          patches = (prev.patches or []) ++ [./helix-harpoon-open.patch];
+        });
+      in
+        helix-pkgs.helix.passthru.wrapper helix-patched;
       defaultEditor = true;
       languages = {
         language-server = {

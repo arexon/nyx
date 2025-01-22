@@ -91,12 +91,12 @@ in {
           {
             name = "typescript";
             formatter = {
-              command = "deno";
-              args = ["fmt" "-"];
+              command = "prettier";
+              args = ["--parser" "typescript"];
             };
             auto-format = true;
             roots = ["deno.json" "deno.jsonc" "package.json"];
-            language-servers = ["typescript-language-server" "deno-lsp"];
+            language-servers = ["typescript-language-server"];
           }
           {
             name = "javascript";
@@ -166,10 +166,10 @@ in {
             "C-d" = ["half_page_down" "align_view_center"];
             "A-x" = [":reset-diff-change"];
             space.l = ":toggle lsp.display-inlay-hints";
-            "1" = [":pipe-to ${harpoon} update" ":pipe-to ${harpoon} switch 1"];
-            "2" = [":pipe-to ${harpoon} update" ":pipe-to ${harpoon} switch 2"];
-            "3" = [":pipe-to ${harpoon} update" ":pipe-to ${harpoon} switch 3"];
-            "4" = [":pipe-to ${harpoon} update" ":pipe-to ${harpoon} switch 4"];
+            "1" = [":pipe-to ${harpoon} switch 1 --update"];
+            "2" = [":pipe-to ${harpoon} switch 2 --update"];
+            "3" = [":pipe-to ${harpoon} switch 3 --update"];
+            "4" = [":pipe-to ${harpoon} switch 4 --update"];
             "C-s" = {
               "1" = ":pipe-to ${harpoon} set 1";
               "2" = ":pipe-to ${harpoon} set 2";

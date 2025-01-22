@@ -145,6 +145,7 @@ in {
             left = [
               "mode"
               "file-name"
+              "file-modification-indicator"
               "read-only-indicator"
               "spacer"
               "version-control"

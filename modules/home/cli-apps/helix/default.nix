@@ -24,7 +24,6 @@ with lib; let
   marksman = "${pkgs.marksman}/bin/marksman";
   nixd = "${pkgs.nixd}/bin/nixd";
   alejandra = "${pkgs.alejandra}/bin/alejandra";
-  harpoon = "${pkgs.harpoon}/bin/harpoon";
 in {
   options.nyx.cli-apps.helix = {
     enable = mkBoolOpt false "Whether to enable Helix editor.";
@@ -38,13 +37,7 @@ in {
 
     programs.helix = {
       enable = true;
-      package = let
-        helix-pkgs = inputs.helix-editor.packages.${system};
-        helix-patched = helix-pkgs.helix-unwrapped.overrideAttrs (prev: {
-          patches = (prev.patches or []) ++ [./helix-harpoon-open.patch];
-        });
-      in
-        helix-pkgs.helix.passthru.wrapper helix-patched;
+      package = inputs.helix-editor.packages.${system}.default;
       defaultEditor = true;
       languages = {
         language-server = {
@@ -173,24 +166,24 @@ in {
             "C-d" = ["half_page_down" "align_view_center"];
             "A-x" = [":reset-diff-change"];
             space.l = ":toggle lsp.display-inlay-hints";
-            "1" = [":pipe-to ${harpoon} switch 1 --update"];
-            "2" = [":pipe-to ${harpoon} switch 2 --update"];
-            "3" = [":pipe-to ${harpoon} switch 3 --update"];
-            "4" = [":pipe-to ${harpoon} switch 4 --update"];
+            "1" = [":harpoon_update" ":harpoon_get 1"];
+            "2" = [":harpoon_update" ":harpoon_get 2"];
+            "3" = [":harpoon_update" ":harpoon_get 3"];
+            "4" = [":harpoon_update" ":harpoon_get 4"];
             "C-s" = {
-              "1" = ":pipe-to ${harpoon} set 1";
-              "2" = ":pipe-to ${harpoon} set 2";
-              "3" = ":pipe-to ${harpoon} set 3";
-              "4" = ":pipe-to ${harpoon} set 4";
-              l = ":sh ${harpoon} list";
+              "1" = ":harpoon_set 1";
+              "2" = ":harpoon_set 2";
+              "3" = ":harpoon_set 3";
+              "4" = ":harpoon_set 4";
+              l = ":harpoon_list";
             };
             g = {
               w = ["save_selection" "goto_word"];
-              n = [":pipe-to ${harpoon} update" "goto_next_buffer"];
-              p = [":pipe-to ${harpoon} update" "goto_previous_buffer"];
-              d = [":pipe-to ${harpoon} update" "goto_definition"];
-              y = [":pipe-to ${harpoon} update" "goto_type_definition"];
-              r = [":pipe-to ${harpoon} update" "goto_reference"];
+              n = [":harpoon_update" "goto_next_buffer"];
+              p = [":harpoon_update" "goto_previous_buffer"];
+              d = [":harpoon_update" "goto_definition"];
+              y = [":harpoon_update" "goto_type_definition"];
+              r = [":harpoon_update" "goto_reference"];
             };
           };
           insert = {

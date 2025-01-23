@@ -29,11 +29,6 @@ in {
     name = "numux";
     pkgs = prev;
   };
-  harpoon = writeNushellScript {
-    name = "harpoon";
-    pkgs = prev;
-    deps = with prev; [ripgrep];
-  };
   ss-to-r2 = writeNushellScript {
     name = "ss-to-r2";
     pkgs = prev;

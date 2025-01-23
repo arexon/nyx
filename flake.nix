@@ -15,7 +15,7 @@
     # My own private fork of https://github.com/rareitems/gadacz with support for Nix.
     gadacz.url = "git+ssh://git@github.com/arexon/gadacz";
 
-    helix-editor.url = "github:helix-editor/helix";
+    helix-editor.url = "github:arexon/helix";
   };
 
   outputs = inputs @ {nixpkgs, ...}: let

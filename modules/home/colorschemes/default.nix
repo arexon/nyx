@@ -7,7 +7,7 @@
     slug = "kanagawa";
     palette = {
       base00 = "#1F1F28";
-      base01 = "#181820";
+      base01 = "#16161D";
       base02 = "#2A2A37";
       base03 = "#363646";
       base04 = "#54546D";

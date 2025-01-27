@@ -19,18 +19,23 @@ in {
   };
 
   config = mkIf cfg.enable {
-    systemd.user.services.tmux-server = {
+    systemd.user.services.tmux-server = let
+      systemdTarget = "graphical-session.target";
+    in {
       Unit = {
-        Description = "Tmux server";
+        Description = "tmux server";
+        PartOf = systemdTarget;
+        After = systemdTarget;
       };
       Service = {
         Type = "forking";
         ExecStart = "${tmux} start-server";
         ExecStop = "${tmux} kill-server";
-        PassEnvironment = ["PATH"];
+
+        PassEnvironment = ["*"];
       };
       Install = {
-        WantedBy = ["default.target"];
+        WantedBy = [systemdTarget];
       };
     };
 

@@ -30,6 +30,7 @@ in {
         theme = "Kanagawa Wave";
         font-family = "Iosevka NF";
         font-feature = ["-calt" "-liga" "-dlig"];
+        resize-overlay = "never";
       };
     };
   };

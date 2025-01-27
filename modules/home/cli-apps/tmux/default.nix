@@ -45,6 +45,7 @@ in {
       baseIndex = 1;
       disableConfirmationPrompt = true;
       mouse = true;
+      secureSocket = false;
 
       extraConfig = ''
         set-option -gas terminal-overrides '*:Tc'

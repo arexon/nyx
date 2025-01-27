@@ -18,6 +18,7 @@ with lib; let
   ];
 
   purpleColor = "rgb(149,127,184)";
+  customKeybinds = "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings";
 in {
   options.nyx.desktop.gnome = {
     enable = mkBoolOpt false "Whether to configure GNOME.";
@@ -152,12 +153,26 @@ in {
         volume-down = ["<Alt><Super>j"];
         volume-mute = ["<Alt><Super>u"];
         logout = ["<Super>Escape"];
-        custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/open-nautilus/"];
+        custom-keybindings = [
+          "/${customKeybinds}/open-nautilus/"
+          "/${customKeybinds}/open-firefox/"
+          "/${customKeybinds}/open-ghostty/"
+        ];
       };
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/open-nautilus" = {
+      "${customKeybinds}/open-nautilus" = {
         name = "Open Nautilus";
         command = "nautilus";
         binding = "<Super>e";
+      };
+      "${customKeybinds}/open-firefox" = {
+        name = "Open Firefox";
+        command = "firefox";
+        binding = "<Super>w";
+      };
+      "${customKeybinds}/open-ghostty" = {
+        name = "Open Ghostty";
+        command = "ghostty";
+        binding = "<Super>Return";
       };
 
       "org/gnome/nautilus/list-view".default-zoom-level = "small";
@@ -183,7 +198,7 @@ in {
         startup-status = 0;
         clock-menu-position = 1;
         clock-menu-position-offset = 10;
-        panel-size = 30;
+        panel-size = 40;
         notification-banner-position = 5;
       };
 
@@ -202,10 +217,10 @@ in {
         gesture-enabled = false;
         selection-border-size = 0;
         selection-border-radius = 0;
-        window-gap = 8;
-        horizontal-margin = 8;
-        vertical-margin = 8;
-        vertical-margin-bottom = 8;
+        window-gap = 0;
+        horizontal-margin = 0;
+        vertical-margin = 0;
+        vertical-margin-bottom = 0;
         winprops = mkIf config.nyx.games.mcpelauncher.enable (map builtins.toJSON [
           {
             wm_class = "Minecraft";
@@ -229,7 +244,7 @@ in {
         live-alt-tab-scratch = [];
         live-alt-tab-scratch-backward = [];
         switch-focus-mode = [];
-        switch-open-window-position = ["<Super>w"];
+        switch-open-window-position = [];
         move-left = ["<Shift><Super>h"];
         move-right = ["<Shift><Super>l"];
         move-up = ["<Shift><Super>k"];

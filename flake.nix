@@ -16,6 +16,11 @@
     gadacz.url = "git+ssh://git@github.com/arexon/gadacz";
 
     helix-editor.url = "github:arexon/helix";
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {nixpkgs, ...}: let

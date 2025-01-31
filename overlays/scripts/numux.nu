@@ -39,7 +39,7 @@ def sessions []: nothing -> table {
 def fuzzy-find [header: string]: nothing -> record<name: string, path: string> {
     workspaces
     | serialize-workspaces
-    | ^fzf --header $" ($header)" --delimiter $SEP --with-nth 3
+    | ^fzf --header $header --delimiter $SEP --with-nth 3
     | if ($in | is-empty) { exit } else { $in }
     | split row $SEP
     | { name: $in.0, path: $in.1 }

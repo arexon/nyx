@@ -22,6 +22,11 @@ in {
         name = "Bibata-Modern-Ice";
         package = pkgs.bibata-cursors;
       };
+      gtk4.extraCss = ''
+        window {
+          border-radius: 0;
+        }
+      '';
     };
   };
 }

@@ -31,7 +31,6 @@ in {
         loupe
         nautilus
         papers
-        gnome-text-editor
         gnome-weather
       ])
       ++ extensions;

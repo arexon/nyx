@@ -204,6 +204,7 @@ in {
 
       "org/gnome/shell/extensions/unite" = {
         hide-window-titlebars = "always";
+        show-window-title = "always";
         show-window-buttons = "never";
       };
 

@@ -46,7 +46,7 @@ in {
     };
 
     dconf.settings = {
-      "org/gnome/shell".enabled-extensions = builtins.map (ext: ext.extensionUuid) extensions ++ ["user-theme@gnome-shell-extensions.gcampax.github.com"];
+      "org/gnome/shell".enabled-extensions = builtins.map (ext: ext.extensionUuid) extensions;
 
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";

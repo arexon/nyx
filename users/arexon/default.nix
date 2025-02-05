@@ -35,8 +35,13 @@
       starship.enable = true;
       tmux.enable = true;
       yazi.enable = true;
-      # TODO: Organize these better.
-      extraPackages = with pkgs; [wget hyperfine serpl diskonaut p7zip rar];
+      extraPackages = with pkgs; [
+        wget
+        p7zip
+        rar
+        tldr
+        repgrep
+      ];
     };
     tools = {
       direnv.enable = true;

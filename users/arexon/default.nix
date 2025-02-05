@@ -18,6 +18,7 @@
       obs.enable = true;
       spotify.enable = true;
       vscode.enable = true;
+      obsidian.enable = true;
     };
     games = {
       mcpelauncher.enable = true;

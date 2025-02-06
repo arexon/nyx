@@ -12,10 +12,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      mcpelauncher-ui-qt
-      mcpelauncher-client
-    ];
+    home.packages = with pkgs; [mcpelauncher-ui-qt];
 
     xdg.desktopEntries.minecraft = {
       name = "Minecraft";

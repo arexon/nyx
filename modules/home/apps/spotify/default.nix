@@ -26,8 +26,6 @@ in {
         keyboardShortcut
         betterGenres
       ];
-      theme = spicePkgs.themes.text;
-      colorScheme = "kanagawa";
     };
   };
 }

@@ -34,6 +34,27 @@ in {
       extraConfig = {
         init.defaultBranch = "main";
         core.excludesFile = "${config.xdg.configHome}/${gitignore}";
+        column.ui = "auto";
+        branch.sort = "-committerdate";
+        pull.rebase = true;
+        diff = {
+          colorMoved = "plain";
+          mnemonicPrefix = true;
+          renames = true;
+          algorithm = "histogram";
+        };
+        fetch = {
+          prune = true;
+          all = true;
+        };
+        rebase = {
+          autoStash = true;
+          updateRefs = true;
+        };
+        rerere = {
+          enabled = true;
+          autoupdate = true;
+        };
       };
     };
   };

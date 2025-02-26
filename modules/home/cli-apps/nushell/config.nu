@@ -62,7 +62,7 @@ $env.config = {
     show_banner: false
     edit_mode: vi
     filesize: {
-        metric: true
+        unit: "metric"
     }
     completions: {
         algorithm: "prefix"

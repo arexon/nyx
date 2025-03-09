@@ -44,6 +44,7 @@ in {
           rust-analyzer.config = {
             check.command = "clippy";
             cargo.features = "all";
+            diagnostics.disabled = ["macro-error"];
           };
           nixd.command = nixd;
           marksman.command = marksman;

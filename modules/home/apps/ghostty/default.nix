@@ -31,6 +31,9 @@ in {
         font-family = "Iosevka NF";
         font-feature = ["-calt" "-liga" "-dlig"];
         resize-overlay = "never";
+        keybind = [
+          "ctrl+enter=unbind"
+        ];
       };
     };
   };

@@ -170,6 +170,7 @@ in {
             "2" = [":harpoon_update" ":harpoon_get 2"];
             "3" = [":harpoon_update" ":harpoon_get 3"];
             "4" = [":harpoon_update" ":harpoon_get 4"];
+            "Y" = [":yank-join"];
             "C-s" = {
               "1" = ":harpoon_set 1";
               "2" = ":harpoon_set 2";

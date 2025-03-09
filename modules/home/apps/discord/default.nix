@@ -36,7 +36,6 @@ in {
           betterUploadButton.enable = true;
           biggerStreamPreview.enable = true;
           favoriteGifSearch.enable = true;
-          imageZoom.enable = true;
           messageLogger = {
             enable = true;
             ignoreSelf = true;

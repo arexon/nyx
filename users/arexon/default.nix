@@ -38,9 +38,12 @@
       extraPackages = with pkgs; [
         wget
         p7zip
+        _7zz
         rar
         tldr
+        ripgrep
         repgrep
+        cloc
       ];
     };
     tools = {

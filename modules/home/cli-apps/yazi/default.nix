@@ -45,6 +45,7 @@ in {
           linemode = "size";
           show_hidden = true;
         };
+        tasks.suppress_preload = true;
       };
       theme = {
         manager = {

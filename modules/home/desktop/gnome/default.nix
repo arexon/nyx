@@ -130,7 +130,10 @@ in {
       };
 
       "org/gnome/mutter/wayland/keybindings".restore-shortcut = [];
-      "org/gnome/mutter".center-new-windows = true;
+      "org/gnome/mutter" = {
+        center-new-windows = true;
+        dynamic-workspace = false;
+      };
 
       "org/gnome/settings-daemon/plugins/power" = {
         sleep-inactive-ac-type = "suspend";

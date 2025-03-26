@@ -53,7 +53,7 @@
       keychain.enable = true;
     };
     services = {
-      ss-to-r2.enable = true;
+      ss-to-r2.enable = false;
     };
   };
 

@@ -40,5 +40,11 @@
         username = "arexon";
       };
     };
+
+    devShells.${system}.default = pkgs.mkShell {
+      packages = with pkgs; [
+        vscode-langservers-extracted
+      ];
+    };
   };
 }

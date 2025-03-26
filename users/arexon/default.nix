@@ -44,6 +44,8 @@
         ripgrep
         repgrep
         cloc
+        ast-grep
+        hyperfine
       ];
     };
     tools = {

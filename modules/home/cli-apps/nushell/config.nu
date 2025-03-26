@@ -43,6 +43,7 @@ alias nos = ^nh os switch
 alias nob = ^nh os boot
 
 alias lg = ^lazygit
+alias sg = ^ast-grep
 
 $env.PROMPT_INDICATOR_VI_INSERT = ''
 $env.PROMPT_INDICATOR_VI_NORMAL = '' 

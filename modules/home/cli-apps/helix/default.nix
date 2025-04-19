@@ -172,13 +172,13 @@ in {
             "3" = [":harpoon_update" ":harpoon_get 3"];
             "4" = [":harpoon_update" ":harpoon_get 4"];
             "Y" = [":yank-join"];
-            "C-s" = {
-              "1" = ":harpoon_set 1";
-              "2" = ":harpoon_set 2";
-              "3" = ":harpoon_set 3";
-              "4" = ":harpoon_set 4";
-              l = ":harpoon_list";
-            };
+            # "C-s" = {
+            #   "1" = ":harpoon_set 1";
+            #   "2" = ":harpoon_set 2";
+            #   "3" = ":harpoon_set 3";
+            #   "4" = ":harpoon_set 4";
+            #   l = ":harpoon_list";
+            # };
             g = {
               w = ["save_selection" "goto_word"];
               n = [":harpoon_update" "goto_next_buffer"];
@@ -196,9 +196,12 @@ in {
               ":open %sh{cat ${tmpPath}}"
               ":redraw"
             ];
+            "C-s" = ":write";
+            "C-S-s" = ":write!";
+            "C-q" = ":quit-all!";
           };
           insert = {
-            "C-[" = ["normal_mode"];
+            "C-[" = "normal_mode";
           };
           select = {
             x = "extend_line";

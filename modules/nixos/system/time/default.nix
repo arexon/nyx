@@ -12,5 +12,8 @@ in {
 
   config = mkIf cfg.enable {
     time.timeZone = "Africa/Cairo";
+    i18n.extraLocaleSettings = {
+      LC_TIME = "en_IE.UTF-8";
+    };
   };
 }

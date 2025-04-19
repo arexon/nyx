@@ -187,6 +187,15 @@ in {
               y = [":harpoon_update" "goto_type_definition"];
               r = [":harpoon_update" "goto_reference"];
             };
+            "S-f" = let
+              tmpPath = "/tmp/yazi-helix.txt";
+            in [
+              ":sh rm -f ${tmpPath}"
+              ":insert-output yazi --chooser-file=${tmpPath}"
+              '':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty''
+              ":open %sh{cat ${tmpPath}}"
+              ":redraw"
+            ];
           };
           insert = {
             "C-[" = ["normal_mode"];

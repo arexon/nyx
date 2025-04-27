@@ -7,7 +7,7 @@
 with lib; let
   cfg = config.nyx.apps.discord;
 in {
-  imports = [inputs.nixcord.homeManagerModules.nixcord];
+  imports = [inputs.nixcord.homeModules.nixcord];
 
   options.nyx.apps.discord = {
     enable = mkBoolOpt false "Whether to enable Discord.";

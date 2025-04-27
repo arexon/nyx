@@ -46,6 +46,9 @@
         cloc
         ast-grep
         hyperfine
+        ffmpeg
+        pcsx2
+        prismlauncher
       ];
     };
     tools = {

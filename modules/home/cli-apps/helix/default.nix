@@ -30,14 +30,15 @@ in {
   };
 
   config = mkIf cfg.enable {
-    xdg.desktopEntries.Helix = {
-      name = "";
-      noDisplay = true;
-    };
-
     programs.helix = {
       enable = true;
-      package = inputs.helix-editor.packages.${system}.default;
+      package = let
+        helixPkg = inputs.helix-editor.packages.${system}.default;
+      in
+        helixPkg.overrideAttrs (_: {
+          # This is required for removing the Desktop icon.
+          postInstall = "";
+        });
       defaultEditor = true;
       languages = {
         language-server = {

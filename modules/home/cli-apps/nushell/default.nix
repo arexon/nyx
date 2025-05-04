@@ -19,13 +19,9 @@ in {
           printf '\e[H\ec\e[100B'
         '';
         environmentVariables =
-          (builtins.mapAttrs
-            (name: value: ''${builtins.toString value}'')
-            config.home.sessionVariables)
-          // {
-            # Because Nushell is being a PITA
-            FLAKE = "${config.home.homeDirectory}/projects/nyx";
-          };
+          builtins.mapAttrs
+          (name: value: ''${builtins.toString value}'')
+          config.home.sessionVariables;
       };
       carapace = {
         enable = true;

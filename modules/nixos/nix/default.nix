@@ -28,7 +28,7 @@ in {
 
     programs.nh = {
       enable = true;
-      flake = "/home/${config.nyx.user.name}/nyx";
+      flake = "/home/${config.nyx.user.name}/projects/nyx";
     };
 
     environment.systemPackages = with pkgs; [

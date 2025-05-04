@@ -19,10 +19,10 @@
       spotify.enable = true;
       vscode.enable = true;
       obsidian.enable = true;
-      lutris.enable = true;
     };
     games = {
       mcpelauncher.enable = true;
+      lutris.enable = true;
     };
     cli-apps = {
       btop.enable = true;

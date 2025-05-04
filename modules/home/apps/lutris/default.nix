@@ -5,9 +5,9 @@
   ...
 }:
 with lib; let
-  cfg = config.nyx.apps.lutris;
+  cfg = config.nyx.games.lutris;
 in {
-  options.nyx.apps.lutris = {
+  options.nyx.games.lutris = {
     enable = mkBoolOpt false "Whether to enable Lutris.";
   };
 

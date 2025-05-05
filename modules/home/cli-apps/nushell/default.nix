@@ -18,6 +18,10 @@ in {
         extraLogin = ''
           printf '\e[H\ec\e[100B'
         '';
+        environmentVariables =
+          builtins.mapAttrs
+          (name: value: ''${builtins.toString value}'')
+          config.home.sessionVariables;
       };
       carapace = {
         enable = true;

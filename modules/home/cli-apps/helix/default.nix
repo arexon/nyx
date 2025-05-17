@@ -207,8 +207,8 @@ in {
               ":redraw"
             ];
             "C-s" = ":write";
-            "C-S-s" = ":write!";
-            "C-q" = ":quit-all!";
+            "C-q" = ":buffer-close";
+            "C-r" = ":reload-all";
           };
           insert = {
             "C-[" = "normal_mode";

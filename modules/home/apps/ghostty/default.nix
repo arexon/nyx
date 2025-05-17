@@ -33,6 +33,7 @@ in {
         resize-overlay = "never";
         keybind = [
           "ctrl+enter=unbind"
+          "ctrl+shift+q=unbind"
         ];
       };
     };

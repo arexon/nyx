@@ -106,10 +106,19 @@ in {
             language-servers = ["typescript-language-server" "deno-lsp"];
           }
           {
-            name = "json";
-            formatter = dprintFormatter "json";
-            auto-format = true;
-            language-servers = ["vscode-json-language-server"];
+            name = "jsonc";
+            formatter = {
+              command = "prettier";
+              args = ["--parser" "json"];
+            };
+            file-types = [
+              "jsonc"
+              "json"
+              "templ"
+              {glob = "tsconfig.json";}
+              {glob = "bun.lock";}
+              {glob = "flake.lock";}
+            ];
           }
           {
             name = "toml";

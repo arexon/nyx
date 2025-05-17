@@ -177,18 +177,18 @@ in {
             "C-d" = ["half_page_down" "align_view_center"];
             "A-x" = [":reset-diff-change"];
             space.l = ":toggle lsp.display-inlay-hints";
+            Y = [":yank-join"];
             "1" = [":harpoon_update" ":harpoon_get 1"];
             "2" = [":harpoon_update" ":harpoon_get 2"];
             "3" = [":harpoon_update" ":harpoon_get 3"];
             "4" = [":harpoon_update" ":harpoon_get 4"];
-            "Y" = [":yank-join"];
-            # "C-s" = {
-            #   "1" = ":harpoon_set 1";
-            #   "2" = ":harpoon_set 2";
-            #   "3" = ":harpoon_set 3";
-            #   "4" = ":harpoon_set 4";
-            #   l = ":harpoon_list";
-            # };
+            "A-h" = {
+              "1" = ":harpoon_set 1";
+              "2" = ":harpoon_set 2";
+              "3" = ":harpoon_set 3";
+              "4" = ":harpoon_set 4";
+              l = ":harpoon_list";
+            };
             g = {
               w = ["save_selection" "goto_word"];
               n = [":harpoon_update" "goto_next_buffer"];

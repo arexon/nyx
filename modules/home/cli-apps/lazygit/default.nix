@@ -13,6 +13,12 @@ in {
   config = mkIf cfg.enable {
     programs.lazygit = {
       enable = true;
+      settings = {
+        gui = {
+          skipDiscardChangeWarning = true;
+          showCommandLog = false;
+        };
+      };
     };
   };
 }

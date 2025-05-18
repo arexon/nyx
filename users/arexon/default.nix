@@ -23,6 +23,7 @@
     games = {
       mcpelauncher.enable = true;
       lutris.enable = true;
+      prismlauncher.enable = true;
     };
     cli-apps = {
       btop.enable = true;
@@ -48,7 +49,6 @@
         hyperfine
         ffmpeg
         pcsx2
-        prismlauncher
       ];
     };
     tools = {

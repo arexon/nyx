@@ -48,7 +48,6 @@
         ast-grep
         hyperfine
         ffmpeg
-        pcsx2
       ];
     };
     tools = {

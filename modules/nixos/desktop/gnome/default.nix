@@ -21,6 +21,7 @@ in {
       };
       # No bloat :3
       gnome.core-utilities.enable = false;
+      power-profiles-daemon.enable = false;
     };
 
     environment.gnome.excludePackages = [pkgs.gnome-tour];

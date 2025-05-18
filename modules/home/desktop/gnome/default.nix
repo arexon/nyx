@@ -32,6 +32,7 @@ in {
         nautilus
         papers
         gnome-weather
+        video-trimmer
       ])
       ++ extensions;
 

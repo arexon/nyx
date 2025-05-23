@@ -36,6 +36,7 @@
       starship.enable = true;
       tmux.enable = true;
       yazi.enable = true;
+      bat.enable = true;
       extraPackages = with pkgs; [
         wget
         p7zip

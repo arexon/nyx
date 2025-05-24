@@ -49,6 +49,7 @@
         ast-grep
         hyperfine
         ffmpeg
+        dust
       ];
     };
     tools = {

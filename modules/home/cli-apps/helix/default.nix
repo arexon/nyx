@@ -11,13 +11,9 @@ with lib; let
 
   theme = config.colorscheme.slug;
 
-  dprintFormatter = lang: {
-    command = "dprint";
-    args = [
-      "fmt"
-      "--stdin"
-      lang
-    ];
+  denoFormatter = ext: {
+    command = "deno";
+    args = ["fmt" "-" "--ext" ext];
   };
 
   harper = "${pkgs.harper}/bin/harper-ls";
@@ -91,17 +87,14 @@ in {
           }
           {
             name = "typescript";
-            formatter = {
-              command = "prettier";
-              args = ["--parser" "typescript"];
-            };
+            formatter = denoFormatter "ts";
             auto-format = true;
             roots = ["deno.json" "deno.jsonc" "package.json"];
             language-servers = ["typescript-language-server" "deno-lsp"];
           }
           {
             name = "javascript";
-            formatter = dprintFormatter "js";
+            formatter = denoFormatter "js";
             auto-format = true;
             language-servers = ["typescript-language-server" "deno-lsp"];
           }

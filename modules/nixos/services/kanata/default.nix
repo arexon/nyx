@@ -14,9 +14,9 @@ in {
     services.kanata = {
       enable = true;
       keyboards."default".config = ''
-        (defsrc ralt h j k l)
-        (defalias ralt (tap-hold 200 200 ralt (layer-while-held arrows)))
-        (deflayer base   @ralt   h    j    k    l)
+        (defsrc rctrl h j k l)
+        (defalias rctrl (tap-hold 200 200 rctrl (layer-while-held arrows)))
+        (deflayer base   @rctrl   h    j    k    l)
         (deflayer arrows _    left   down up right)
       '';
     };

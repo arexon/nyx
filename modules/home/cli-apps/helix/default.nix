@@ -89,7 +89,6 @@ in {
             name = "typescript";
             formatter = denoFormatter "ts";
             auto-format = true;
-            roots = ["deno.json" "deno.jsonc" "package.json"];
             language-servers = ["typescript-language-server" "deno-lsp"];
           }
           {

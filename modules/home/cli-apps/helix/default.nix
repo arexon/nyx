@@ -191,7 +191,8 @@ in {
             };
             "C-s" = ":write";
             "C-q" = ":buffer-close";
-            "C-r" = ":reload-all";
+            "C-S-r" = ":reload-all";
+            "C-r" = ":reload";
           };
           insert = {
             "C-[" = "normal_mode";

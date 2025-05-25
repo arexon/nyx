@@ -81,7 +81,6 @@ in {
           }
           {
             name = "markdown";
-            formatter = dprintFormatter "md";
             auto-format = true;
             language-servers = ["marksman" "harper"];
           }

@@ -15,12 +15,12 @@ in {
     services = {
       xserver = {
         enable = true;
-        displayManager.gdm.enable = true;
-        desktopManager.gnome.enable = true;
         excludePackages = [pkgs.xterm];
       };
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
       # No bloat :3
-      gnome.core-utilities.enable = false;
+      gnome.core-apps.enable = false;
       power-profiles-daemon.enable = false;
     };
 

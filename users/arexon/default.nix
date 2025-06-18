@@ -24,6 +24,7 @@
       mcpelauncher.enable = true;
       lutris.enable = true;
       prismlauncher.enable = true;
+      mangohud.enable = true;
     };
     cli-apps = {
       btop.enable = true;

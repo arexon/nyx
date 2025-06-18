@@ -12,7 +12,6 @@ in {
 
   config = mkIf cfg.enable {
     xdg = {
-      configFile."yazi/init.lua".text = builtins.readFile ./init.lua;
       desktopEntries.yazi = {
         name = "";
         noDisplay = true;

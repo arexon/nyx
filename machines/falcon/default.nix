@@ -16,6 +16,8 @@
     };
     services = {
       ssh.enable = true;
+      syncthing.enable = true;
+      kanata.enable = true;
     };
     desktop = {
       gnome.enable = true;

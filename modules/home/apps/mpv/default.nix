@@ -14,6 +14,9 @@ in {
   config = mkIf cfg.enable {
     programs.mpv = {
       enable = true;
+      config = {
+        gpu-api = "opengl";
+      };
     };
 
     # Apparently video thumbnails require this..

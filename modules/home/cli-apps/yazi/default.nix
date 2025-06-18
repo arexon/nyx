@@ -37,7 +37,7 @@ in {
             }
           ];
         };
-        manager = {
+        mgr = {
           ratio = [0 4 8];
           sort_by = "natural";
           sort_reverse = false;
@@ -48,7 +48,7 @@ in {
         tasks.suppress_preload = true;
       };
       theme = {
-        manager = {
+        mgr = {
           preview_hovered.underline = false;
 
           folder_offset = [2 2 2 2];
@@ -57,7 +57,7 @@ in {
           border_symbol = " ";
         };
       };
-      keymap.manager.append_keymap = [
+      keymap.mgr.append_keymap = [
         {
           on = ["g" "m"];
           run = "cd ~/com.mojang";

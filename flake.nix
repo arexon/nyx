@@ -39,6 +39,11 @@
         hostname = "leviathan";
         username = "arexon";
       };
+      falcon = mkSystem {
+        inherit system inputs lib;
+        hostname = "falcon";
+        username = "arexon";
+      };
     };
 
     devShells.${system}.default = pkgs.mkShell {

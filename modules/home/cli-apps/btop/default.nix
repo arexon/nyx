@@ -19,7 +19,10 @@ in {
 
     programs.btop = {
       enable = true;
-      package = pkgs.btop.override {cudaSupport = true;};
+      package = pkgs.btop.override {
+        cudaSupport = true;
+        rocmSupport = true;
+      };
       settings = {
         color_theme = "TTY";
         theme_background = false;

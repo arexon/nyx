@@ -114,7 +114,7 @@ in {
 
       "org/gnome/shell/keybindings" = {
         show-screen-recording-ui = [];
-        screenshot = ["<Super>Print"];
+        screenshot = ["<Super>F12"];
         show-screenshot-ui = ["<Shift><Super>s"];
         screenshot-window = ["<Shift><Control><Super>s"];
         focus-active-notification = [];

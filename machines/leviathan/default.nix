@@ -20,6 +20,7 @@
     hardware = {
       audio.enable = true;
       graphics.enable = true;
+      graphics.nvidia.enable = true;
       storage.enable = true;
     };
     services = {

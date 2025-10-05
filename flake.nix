@@ -12,44 +12,62 @@
 
     nixcord.url = "github:kaylorben/nixcord";
 
-    # My own private fork of https://github.com/rareitems/gadacz with support for Nix.
-    gadacz.url = "git+ssh://git@github.com/arexon/gadacz";
-
     helix-editor.url = "github:arexon/helix";
 
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+    niri = {
+      url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs @ {nixpkgs, ...}: let
-    system = "x86_64-linux";
-
+  outputs = inputs @ {
+    nixpkgs,
+    home-manager,
+    niri,
+    ...
+  }: let
     inherit (nixpkgs) lib;
-    inherit (import ./lib) mkSystem;
+
+    system = "x86_64-linux";
+    user = "arexon";
+    host = "falcon";
+    email = "arexonreal@gmail.com";
 
     pkgs = import nixpkgs {inherit system;};
   in {
     formatter.${system} = pkgs.alejandra;
 
-    nixosConfigurations = {
-      leviathan = mkSystem {
-        inherit system inputs lib;
-        hostname = "leviathan";
-        username = "arexon";
-      };
-      falcon = mkSystem {
-        inherit system inputs lib;
-        hostname = "falcon";
-        username = "arexon";
-      };
-    };
+    overlays = import ./overlays {inherit inputs;};
 
-    devShells.${system}.default = pkgs.mkShell {
-      packages = with pkgs; [
-        vscode-langservers-extracted
-      ];
+    nixosConfigurations = {
+      falcon = lib.nixosSystem {
+        inherit system;
+        specialArgs = {inherit inputs user host;};
+        modules = [
+          home-manager.nixosModules.home-manager
+          niri.nixosModules.niri
+          {
+            nixpkgs = {
+              config.allowUnfree = true;
+              overlays = [
+                (import ./overlays)
+                niri.overlays.niri
+              ];
+            };
+          }
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = {inherit system inputs user email;};
+              users.${user}.imports = [./home];
+            };
+          }
+          ./nixos
+        ];
+      };
     };
   };
 }

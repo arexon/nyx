@@ -10,4 +10,9 @@
       base_10_sizes = true;
     };
   };
+
+  xdg.desktopEntries.btop = {
+    name = "";
+    noDisplay = true;
+  };
 }

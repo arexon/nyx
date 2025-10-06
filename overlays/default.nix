@@ -14,7 +14,7 @@ with super; {
   obs-studio-plugins =
     obs-studio-plugins
     // {
-      input-overlay = obs-studio-plugins.input-overlay.overrideAttrs (prev: rec {
+      input-overlay = obs-studio-plugins.input-overlay.overrideAttrs (old: rec {
         version = "5.1.0";
         src = fetchFromGitHub {
           owner = "univrsal";
@@ -24,7 +24,7 @@ with super; {
           fetchSubmodules = true;
         };
         postFixup =
-          (prev.postFixup or "")
+          (old.postFixup or "")
           + ''
             substituteInPlace $out/lib/pkgconfig/uiohook.pc \
               --replace '//nix' '/nix'

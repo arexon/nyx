@@ -90,9 +90,12 @@ in {
       }
     ];
 
-    input.keyboard = {
-      repeat-rate = 40;
-      repeat-delay = 500;
+    input = {
+      keyboard = {
+        repeat-rate = 40;
+        repeat-delay = 500;
+      };
+      mouse.accel-speed = 0.05;
     };
 
     animations.workspace-switch.enable = false;

@@ -133,6 +133,7 @@
       gcr-ssh-agent.enable = false;
     };
     power-profiles-daemon.enable = false;
+    noctalia-shell.enable = true;
   };
 
   networking = {

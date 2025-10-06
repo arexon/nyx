@@ -20,12 +20,23 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    quickshell = {
+      url = "github:outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.quickshell.follows = "quickshell";
+    };
   };
 
   outputs = inputs @ {
     nixpkgs,
     home-manager,
     niri,
+    noctalia,
     ...
   }: let
     inherit (nixpkgs) lib;
@@ -48,6 +59,7 @@
         modules = [
           home-manager.nixosModules.home-manager
           niri.nixosModules.niri
+          noctalia.nixosModules.default
           {
             nixpkgs = {
               config.allowUnfree = true;

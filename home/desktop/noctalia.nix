@@ -16,7 +16,10 @@
   programs.noctalia-shell = {
     enable = true;
     settings = {
-      general.avatarImage = "/home/${user}/.pfp.png";
+      general = {
+        avatarImage = "/home/${user}/.pfp.png";
+        showScreenCorners = true;
+      };
       colorSchemes.predefinedScheme = "Kanagawa";
       bar = {
         density = "comfortable";

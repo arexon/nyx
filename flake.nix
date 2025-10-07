@@ -37,6 +37,8 @@
     home-manager,
     niri,
     noctalia,
+    nixcord,
+    nix-flatpak,
     ...
   }: let
     inherit (nixpkgs) lib;
@@ -74,7 +76,12 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = {inherit system inputs user email;};
-              users.${user}.imports = [./home];
+              users.${user}.imports = [
+                noctalia.homeModules.default
+                nixcord.homeModules.nixcord
+                nix-flatpak.homeManagerModules.nix-flatpak
+                ./home
+              ];
             };
           }
           ./nixos

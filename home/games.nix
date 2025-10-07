@@ -1,10 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
-  imports = [inputs.nix-flatpak.homeManagerModules.nix-flatpak];
-
+{pkgs, ...}: {
   home.packages = with pkgs; [
     prismlauncher
     mangohud

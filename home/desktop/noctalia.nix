@@ -7,10 +7,6 @@
 }: let
   inherit (config.colorscheme) palette;
 in {
-  imports = [
-    inputs.noctalia.homeModules.default
-  ];
-
   home.packages = [
     inputs.noctalia.packages.${system}.default
   ];

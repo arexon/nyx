@@ -1,10 +1,5 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
-    inputs.nixcord.homeModules.nixcord
     ./discord.nix
     ./mpv.nix
     ./obs.nix

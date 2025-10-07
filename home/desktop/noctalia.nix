@@ -36,17 +36,29 @@
         density = "comfortable";
         widgets = {
           left = [
-            {id = "ScreenRecorder";}
+            {
+              id = "Workspace";
+              labelMode = "none";
+            }
             {id = "ActiveWindow";}
-            {id = "MediaMini";}
+            {
+              id = "MediaMini";
+              showAlbumArt = true;
+            }
+          ];
+          center = [
+            {id = "Clock";}
           ];
           right = [
             {id = "Tray";}
+            {id = "ScreenRecorder";}
             {id = "Bluetooth";}
             {id = "Volume";}
             {id = "NotificationHistory";}
-            {id = "Clock";}
-            {id = "ControlCenter";}
+            {
+              id = "ControlCenter";
+              useDistroLogo = true;
+            }
           ];
         };
       };

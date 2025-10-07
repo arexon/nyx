@@ -31,6 +31,7 @@
       general = {
         avatarImage = "/home/${user}/.pfp.png";
         showScreenCorners = true;
+        dimDesktop = false;
       };
       bar = {
         density = "comfortable";

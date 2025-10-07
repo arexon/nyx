@@ -4,7 +4,9 @@
   system,
   user,
   ...
-}: {
+}: let
+  inherit (config.colorscheme) palette;
+in {
   imports = [
     inputs.noctalia.homeModules.default
   ];
@@ -15,12 +17,27 @@
 
   programs.noctalia-shell = {
     enable = true;
+    colors = {
+      mError = "#${palette.base08}";
+      mOnError = "#${palette.base00}";
+      mOnPrimary = "#${palette.base00}";
+      mOnSecondary = "#${palette.base00}";
+      mOnSurface = "#${palette.base06}";
+      mOnSurfaceVariant = "#${palette.base05}";
+      mOnTertiary = "#${palette.base00}";
+      mOutline = "#${palette.base03}";
+      mPrimary = "#${palette.base0E}";
+      mSecondary = "#${palette.base0A}";
+      mShadow = "#${palette.base00}";
+      mSurface = "#${palette.base00}";
+      mSurfaceVariant = "#${palette.base02}";
+      mTertiary = "#${palette.base0D}";
+    };
     settings = {
       general = {
         avatarImage = "/home/${user}/.pfp.png";
         showScreenCorners = true;
       };
-      colorSchemes.predefinedScheme = "Kanagawa";
       bar = {
         density = "comfortable";
         widgets = {

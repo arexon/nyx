@@ -31,4 +31,18 @@ with super; {
           '';
       });
     };
+
+  color-lsp = rustPlatform.buildRustPackage rec {
+    pname = "color-lsp";
+    version = "0.2.0";
+
+    src = fetchFromGitHub {
+      owner = "huacnlee";
+      repo = "color-lsp";
+      tag = "v${version}";
+      hash = "sha256-m26eIA+K5ERmmlDaX6gJp+ABL4bLnsQF/R8A+tzmpZw=";
+    };
+
+    cargoHash = "sha256-RUQmjM/DLBrsvn9/1BnP0V7VduP4UHrmnPiqUhzFimo=";
+  };
 }

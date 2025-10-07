@@ -1,12 +1,10 @@
 {
   config,
   pkgs,
-  lib,
   inputs,
   system,
   ...
-}:
-with lib; let
+}: let
   theme = config.colorscheme.slug;
 
   denoFormatter = ext: {
@@ -20,6 +18,7 @@ with lib; let
   alejandra = "${pkgs.alejandra}/bin/alejandra";
   luals = "${pkgs.lua-language-server}/bin/lua-language-server";
   stylua = "${pkgs.stylua}/bin/stylua";
+  color-lsp = "${pkgs.color-lsp}/bin/color-lsp";
 
   wezterm-types = pkgs.stdenv.mkDerivation rec {
     pname = "wezterm-types";
@@ -78,6 +77,7 @@ in {
             variableTypes.enabled = true;
           };
         };
+        color-lsp.command = color-lsp;
       };
       language = [
         {
@@ -94,7 +94,7 @@ in {
           name = "nix";
           formatter.command = alejandra;
           auto-format = true;
-          language-servers = ["nixd"];
+          language-servers = ["nixd" "color-lsp"];
         }
         {
           name = "markdown";
@@ -105,13 +105,13 @@ in {
           name = "typescript";
           formatter = denoFormatter "ts";
           auto-format = true;
-          language-servers = ["typescript-language-server" "deno-lsp"];
+          language-servers = ["typescript-language-server" "deno-lsp" "color-lsp"];
         }
         {
           name = "javascript";
           formatter = denoFormatter "js";
           auto-format = true;
-          language-servers = ["typescript-language-server" "deno-lsp"];
+          language-servers = ["typescript-language-server" "deno-lsp" "color-lsp"];
         }
         {
           name = "jsonc";
@@ -127,6 +127,7 @@ in {
             {glob = "bun.lock";}
             {glob = "flake.lock";}
           ];
+          language-servers = ["vscode-json-language-server" "color-lsp"];
         }
         {
           name = "toml";

@@ -6,7 +6,6 @@
   ];
 
   home.packages = with pkgs; [
-    totem # Apparently video thumbnails require this..
     spotify
     blockbench
     obsidian
@@ -17,6 +16,11 @@
     firefox
     wezterm
     vscode
+    totem # Apparently video thumbnails require this..
+    file-roller
+    loupe
+    nautilus
+    papers
   ];
 
   xdg.desktopEntries."org.gnome.Totem" = {

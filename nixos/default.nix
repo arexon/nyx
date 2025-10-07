@@ -80,13 +80,16 @@
     nerd-fonts.iosevka
   ];
 
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      # Needed for OCCT.
-      ocl-icd
-      mesa.opencl
-    ];
+  hardware = {
+    bluetooth.enable = true;
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [
+        # Needed for OCCT.
+        ocl-icd
+        mesa.opencl
+      ];
+    };
   };
 
   security.rtkit.enable = true;
@@ -127,11 +130,6 @@
         animation = "colormix";
       };
     };
-    desktopManager.gnome.enable = true;
-    gnome = {
-      core-apps.enable = false;
-      gcr-ssh-agent.enable = false;
-    };
     power-profiles-daemon.enable = false;
     noctalia-shell.enable = true;
   };
@@ -158,8 +156,6 @@
       enable = true;
       flake = "/home/${user}/projects/nyx";
     };
-    ssh.startAgent = true;
-    dconf.enable = true;
     steam.enable = true;
     niri = {
       enable = true;
@@ -170,7 +166,6 @@
   systemd.services.lactd.wantedBy = ["multi-user.target"];
 
   environment = {
-    gnome.excludePackages = [pkgs.gnome-tour];
     systemPackages = with pkgs; [
       nix-output-monitor
       lact

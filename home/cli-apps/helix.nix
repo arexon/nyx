@@ -100,6 +100,7 @@ in {
         {
           name = "toml";
           auto-format = true;
+          language-servers = ["taplo" "color-lsp"];
         }
         {
           name = "lua";

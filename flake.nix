@@ -86,7 +86,7 @@
             nixpkgs = {
               config.allowUnfree = true;
               overlays = [
-                (import ./overlays)
+                (import ./overlays {inherit inputs system;})
                 niri.overlays.niri
               ];
             };

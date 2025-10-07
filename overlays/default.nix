@@ -1,4 +1,8 @@
-self: super:
+{
+  inputs,
+  system,
+  ...
+}: self: super:
 with super; {
   spotify = spotify.overrideAttrs {
     postFixup = ''
@@ -45,4 +49,6 @@ with super; {
 
     cargoHash = "sha256-RUQmjM/DLBrsvn9/1BnP0V7VduP4UHrmnPiqUhzFimo=";
   };
+
+  helix = inputs.helix-editor.packages.${system}.default;
 }

@@ -1,9 +1,4 @@
-{
-  pkgs,
-  inputs,
-  system,
-  ...
-}: let
+{pkgs, ...}: let
   denoFormatter = ext: {
     command = "deno";
     args = ["fmt" "-" "--ext" ext];
@@ -16,15 +11,14 @@
   color-lsp = "${pkgs.color-lsp}/bin/color-lsp";
 in {
   stylix.targets.helix.enable = false;
+
+  xdg.desktopEntries.Helix = {
+    name = "";
+    noDisplay = true;
+  };
+
   programs.helix = {
     enable = true;
-    package = let
-      helixPkg = inputs.helix-editor.packages.${system}.default;
-    in
-      helixPkg.overrideAttrs (_: {
-        # This is required for removing the Desktop icon.
-        postInstall = "";
-      });
     defaultEditor = true;
     languages = {
       language-server = {

@@ -66,6 +66,13 @@
 
     overlays = import ./overlays {inherit inputs;};
 
+    devShells.${system}.default = pkgs.mkShell {
+      packages = with pkgs; [
+        stylua
+        lua-language-server
+      ];
+    };
+
     nixosConfigurations = {
       falcon = lib.nixosSystem {
         inherit system;

@@ -13,24 +13,7 @@
   marksman = "${pkgs.marksman}/bin/marksman";
   nixd = "${pkgs.nixd}/bin/nixd";
   alejandra = "${pkgs.alejandra}/bin/alejandra";
-  luals = "${pkgs.lua-language-server}/bin/lua-language-server";
-  stylua = "${pkgs.stylua}/bin/stylua";
   color-lsp = "${pkgs.color-lsp}/bin/color-lsp";
-
-  wezterm-types = pkgs.stdenv.mkDerivation rec {
-    pname = "wezterm-types";
-    version = "1.0.0";
-    src = pkgs.fetchFromGitHub {
-      owner = "justinsgithub";
-      repo = pname;
-      rev = "d275d9f1811a259788468a5550ff6daf25f956bf";
-      sha256 = "sha256-nQuYeXB5bfHiYbJI/eGwKUiwBOc8GK3q2FDcOgB3Pcc=";
-    };
-    installPhase = ''
-      mkdir -p $out
-      cp -r $src/* $out
-    '';
-  };
 in {
   stylix.targets.helix.enable = false;
   programs.helix = {
@@ -52,13 +35,6 @@ in {
         };
         nixd.command = nixd;
         marksman.command = marksman;
-        lua-language-server = {
-          command = luals;
-          config.Lua = {
-            runtime.version = "LuaJIT";
-            workspace.library = [wezterm-types];
-          };
-        };
         harper = {
           command = harper;
           args = ["--stdio"];
@@ -141,7 +117,7 @@ in {
             }
           ];
           formatter = {
-            command = stylua;
+            command = "stylua";
             args = ["-"];
           };
         }

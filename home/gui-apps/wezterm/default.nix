@@ -1,7 +1,29 @@
-{config, ...}: {
-  xdg.configFile = {
-    "wezterm/wezterm.lua".source = ./config.lua;
-    "wezterm/workspace.lua".source = ./workspace.lua;
+{
+  pkgs,
+  config,
+  ...
+}: let
+  weztermTypes = pkgs.stdenv.mkDerivation rec {
+    pname = "wezterm-types";
+    version = "1.0.0";
+    src = pkgs.fetchFromGitHub {
+      owner = "justinsgithub";
+      repo = pname;
+      rev = "d275d9f1811a259788468a5550ff6daf25f956bf";
+      sha256 = "sha256-nQuYeXB5bfHiYbJI/eGwKUiwBOc8GK3q2FDcOgB3Pcc=";
+    };
+    installPhase = ''
+      mkdir -p $out
+      cp -r $src/* $out
+    '';
+  };
+in {
+  xdg = {
+    configFile = {
+      "wezterm/wezterm.lua".source = ./config.lua;
+      "wezterm/workspace.lua".source = ./workspace.lua;
+    };
+    dataFile."wezterm-types".source = weztermTypes;
   };
 
   stylix.targets.wezterm.enable = false;

@@ -1,0 +1,3 @@
+[language-server.lua-language-server.config.Lua]
+runtime = { version = "LuaJIT" }
+workspace = { library = ["$XDG_DATA_HOME/wezterm-types"] }

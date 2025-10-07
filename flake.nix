@@ -34,6 +34,11 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    spicetify = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -44,6 +49,7 @@
     nixcord,
     nix-flatpak,
     stylix,
+    spicetify,
     ...
   }: let
     inherit (nixpkgs) lib;
@@ -86,6 +92,7 @@
                 noctalia.homeModules.default
                 nixcord.homeModules.nixcord
                 nix-flatpak.homeManagerModules.nix-flatpak
+                spicetify.homeManagerModules.spicetify
                 ./home
               ];
             };

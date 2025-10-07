@@ -3,10 +3,10 @@
     ./discord.nix
     ./mpv.nix
     ./obs.nix
+    ./spicetify.nix
   ];
 
   home.packages = with pkgs; [
-    spotify
     blockbench
     obsidian
     krita

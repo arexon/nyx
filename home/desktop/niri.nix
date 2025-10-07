@@ -36,7 +36,7 @@ in {
         "Mod+Shift+J".action = move-column-to-workspace-down;
         "Mod+Shift+K".action = move-column-to-workspace-up;
         "Mod+Z".action = toggle-window-floating;
-        "Mod+Tab".action = focus-workspace-previous;
+        "Mod+Tab".action = focus-window-previous;
         "Mod+Equal".action = set-column-width "+10%";
         "Mod+Minus".action = set-column-width "-10%";
         "XF86AudioRaiseVolume".action = spawn (noctalia "volume increase");

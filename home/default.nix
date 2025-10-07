@@ -1,10 +1,10 @@
 {user, ...}: {
   imports = [
-    ./colorscheme.nix
     ./desktop
     ./gui-apps
     ./cli-apps
     ./games.nix
+    ./stylix.nix
   ];
 
   home = {

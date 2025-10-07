@@ -8,8 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-colors.url = "github:misterio77/nix-colors";
-
     nixcord.url = "github:kaylorben/nixcord";
 
     helix-editor.url = "github:arexon/helix";
@@ -25,10 +23,16 @@
       url = "github:outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.quickshell.follows = "quickshell";
+    };
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -39,6 +43,7 @@
     noctalia,
     nixcord,
     nix-flatpak,
+    stylix,
     ...
   }: let
     inherit (nixpkgs) lib;
@@ -62,6 +67,7 @@
           home-manager.nixosModules.home-manager
           niri.nixosModules.niri
           noctalia.nixosModules.default
+          stylix.nixosModules.stylix
           {
             nixpkgs = {
               config.allowUnfree = true;

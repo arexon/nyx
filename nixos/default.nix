@@ -64,8 +64,6 @@
 
     plymouth = {
       enable = true;
-      theme = "catppuccin-macchiato";
-      themePackages = with pkgs; [catppuccin-plymouth];
     };
   };
 
@@ -177,6 +175,11 @@
       # Needed for OCCT.
       RUSTICL_ENABLE = "radeonsi";
     };
+  };
+
+  stylix = {
+    enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
   };
 
   documentation.enable = false;

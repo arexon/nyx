@@ -9,8 +9,6 @@
   noctalia = cmd:
     ["noctalia-shell" "ipc" "call"]
     ++ (lib.splitString " " cmd);
-
-  inherit (config.colorscheme) palette;
 in {
   programs.niri.settings = {
     outputs."DP-1".mode = {
@@ -62,17 +60,13 @@ in {
       })
       workspaces);
 
-    layout = {
+    layout = with config.lib.stylix.colors.withHashtag; {
       gaps = 8;
       always-center-single-column = true;
       default-column-width = {proportion = 0.5;};
-      focus-ring = {
-        width = 2;
-        active.color = palette.base0E;
-        urgent.color = palette.base08;
-      };
-      background-color = palette.base01;
-      insert-hint.display.color = palette.base0E;
+      border.width = 2;
+      background-color = base01;
+      insert-hint.display.color = base0E;
     };
 
     window-rules = [
@@ -104,10 +98,9 @@ in {
 
     prefer-no-csd = true;
     hotkey-overlay.skip-at-startup = true;
-    cursor.theme = config.gtk.cursorTheme.name;
-    overview = {
+    overview = with config.lib.stylix.colors.withHashtag; {
       zoom = 0.5;
-      backdrop-color = palette.base01;
+      backdrop-color = base01;
       workspace-shadow.enable = false;
     };
   };

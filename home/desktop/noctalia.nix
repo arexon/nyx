@@ -4,30 +4,28 @@
   system,
   user,
   ...
-}: let
-  inherit (config.colorscheme) palette;
-in {
+}: {
   home.packages = [
     inputs.noctalia.packages.${system}.default
   ];
 
   programs.noctalia-shell = {
     enable = true;
-    colors = {
-      mError = "#${palette.base08}";
-      mOnError = "#${palette.base00}";
-      mOnPrimary = "#${palette.base00}";
-      mOnSecondary = "#${palette.base00}";
-      mOnSurface = "#${palette.base06}";
-      mOnSurfaceVariant = "#${palette.base05}";
-      mOnTertiary = "#${palette.base00}";
-      mOutline = "#${palette.base03}";
-      mPrimary = "#${palette.base0E}";
-      mSecondary = "#${palette.base0A}";
-      mShadow = "#${palette.base00}";
-      mSurface = "#${palette.base00}";
-      mSurfaceVariant = "#${palette.base02}";
-      mTertiary = "#${palette.base0D}";
+    colors = with config.lib.stylix.colors.withHashtag; {
+      mError = base08;
+      mOnError = base00;
+      mOnPrimary = base00;
+      mOnSecondary = base00;
+      mOnSurface = base06;
+      mOnSurfaceVariant = base05;
+      mOnTertiary = base00;
+      mOutline = base03;
+      mPrimary = base0E;
+      mSecondary = base0A;
+      mShadow = base00;
+      mSurface = base00;
+      mSurfaceVariant = base02;
+      mTertiary = base0D;
     };
     settings = {
       general = {

@@ -1,12 +1,9 @@
 {
-  config,
   pkgs,
   inputs,
   system,
   ...
 }: let
-  theme = config.colorscheme.slug;
-
   denoFormatter = ext: {
     command = "deno";
     args = ["fmt" "-" "--ext" ext];
@@ -35,6 +32,7 @@
     '';
   };
 in {
+  stylix.targets.helix.enable = false;
   programs.helix = {
     enable = true;
     package = let
@@ -150,7 +148,7 @@ in {
       ];
     };
     settings = {
-      inherit theme;
+      theme = "kanagawa";
       editor = {
         line-number = "relative";
         bufferline = "never";

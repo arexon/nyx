@@ -4,6 +4,7 @@
     ./mpv.nix
     ./obs.nix
     ./spicetify.nix
+    ./wezterm
   ];
 
   home.packages = with pkgs; [
@@ -14,7 +15,6 @@
     pinta
     losslesscut-bin
     firefox
-    wezterm
     vscode
     totem # Apparently video thumbnails require this..
     file-roller

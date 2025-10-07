@@ -90,22 +90,22 @@ config.keys = {
 	},
 	{
 		key = "h",
-		mods = "LEADER|ALT",
+		mods = "LEADER|SHIFT|ALT",
 		action = action.AdjustPaneSize({ "Left", 5 }),
 	},
 	{
 		key = "l",
-		mods = "LEADER|ALT",
+		mods = "LEADER|SHIFT|ALT",
 		action = action.AdjustPaneSize({ "Right", 5 }),
 	},
 	{
 		key = "k",
-		mods = "LEADER|ALT",
+		mods = "LEADER|SHIFT|ALT",
 		action = action.AdjustPaneSize({ "Up", 5 }),
 	},
 	{
 		key = "j",
-		mods = "LEADER|ALT",
+		mods = "LEADER|SHIFT|ALT",
 		action = action.AdjustPaneSize({ "Down", 5 }),
 	},
 	{

@@ -52,7 +52,7 @@ in {
         base07
       ];
       background = base00;
-      foreground = base07;
+      foreground = base05;
       cursor_bg = base06;
       cursor_border = base06;
       cursor_fg = base01;

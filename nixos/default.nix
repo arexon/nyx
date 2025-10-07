@@ -130,6 +130,7 @@
     };
     power-profiles-daemon.enable = false;
     noctalia-shell.enable = true;
+    lact.enable = true;
   };
 
   networking = {
@@ -161,13 +162,8 @@
     };
   };
 
-  systemd.services.lactd.wantedBy = ["multi-user.target"];
-
   environment = {
-    systemPackages = with pkgs; [
-      nix-output-monitor
-      lact
-    ];
+    systemPackages = with pkgs; [nix-output-monitor];
     sessionVariables = {
       # TODO: Maybe configure with a wayland option.
       NIXOS_OZONE_WL = "1";

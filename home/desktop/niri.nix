@@ -120,7 +120,7 @@ in {
       "org.freedesktop.impl.portal.Secret" = "gnome-keyring";
       "org.freedesktop.impl.portal.FileChooser" = "gtk";
     };
-    extraPortals = [pkgs.xdg-xdg-desktop-portal-gtk];
+    extraPortals = with pkgs; [xdg-desktop-portal-gtk];
   };
   services.cliphist.enable = true;
 

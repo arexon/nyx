@@ -29,5 +29,6 @@
     timewarrior
     git-filter-repo
     gh
+    wl-clipboard
   ];
 }

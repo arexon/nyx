@@ -41,7 +41,6 @@
               id = "Workspace";
               labelMode = "none";
             }
-            {id = "ActiveWindow";}
             {
               id = "MediaMini";
               showAlbumArt = true;

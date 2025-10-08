@@ -65,7 +65,7 @@ in {
       always-center-single-column = true;
       default-column-width = {proportion = 0.5;};
       border.width = 2;
-      background-color = base01;
+      background-color = "transparent";
       insert-hint.display.color = base0E;
     };
 
@@ -81,6 +81,13 @@ in {
           bottom-left = size;
         };
         clip-to-geometry = true;
+      }
+    ];
+
+    layer-rules = [
+      {
+        matches = [{namespace = "^wallpaper$";}];
+        place-within-backdrop = true;
       }
     ];
 

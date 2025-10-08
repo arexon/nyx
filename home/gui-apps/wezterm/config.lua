@@ -32,6 +32,8 @@ config.show_tab_index_in_tab_bar = false
 config.show_new_tab_button_in_tab_bar = false
 config.tab_max_width = 32
 
+config.window_background_opacity = 0.9
+
 -- Equivalent to POSIX basename(3)
 -- Given "/foo/bar" returns "bar"
 ---@param s string

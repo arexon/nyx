@@ -118,8 +118,9 @@ in {
         }
       ];
     };
+
     settings = {
-      theme = "kanagawa";
+      theme = "kanagawa-transparent";
       editor = {
         line-number = "relative";
         bufferline = "never";
@@ -202,6 +203,11 @@ in {
           ";" = ["collapse_selection" "normal_mode"];
         };
       };
+    };
+
+    themes.kanagawa-transparent = {
+      inherits = "kanagawa";
+      "ui.background" = "transparent";
     };
   };
 }

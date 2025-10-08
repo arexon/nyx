@@ -183,4 +183,14 @@
       --purple-5: ${base0E};
     }
   '';
+
+  programs.niri.settings = {
+    window-rules = [
+      {
+        matches = [{app-id = "^discord$";}];
+        open-on-workspace = "III";
+        default-column-width.proportion = 0.7;
+      }
+    ];
+  };
 }

@@ -20,7 +20,7 @@ in {
     binds = with config.lib.niri.actions;
       {
         "Mod+A".action = toggle-overview;
-        "Mod+Space".action = spawn (noctalia "launcher toggle");
+        "Mod+Space".action = spawn "walker";
         "Mod+Return".action = spawn "wezterm";
         "Mod+W".action = spawn "firefox";
         "Mod+E".action = spawn "nautilus";
@@ -45,7 +45,7 @@ in {
         "Mod+Shift+S".action = screenshot;
         # TODO: Swap to an option once added to the niri-flake.
         "Mod+F12".action.screenshot-screen = [];
-        "Mod+Shift+V".action = spawn (noctalia "launcher clipboard");
+        "Mod+Shift+V".action = spawn ["walker" "-m" "clipboard"];
         "Mod+Escape".action = spawn (noctalia "sessionMenu toggle");
       }
       // builtins.listToAttrs (lib.imap1 (index: name: {

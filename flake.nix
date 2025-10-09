@@ -40,6 +40,19 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    elephant = {
+      url = "github:abenz1267/elephant";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs = {
+        elephant.follows = "elephant";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 
   outputs = inputs @ {
@@ -51,6 +64,7 @@
     nix-flatpak,
     stylix,
     spicetify,
+    walker,
     ...
   }: let
     inherit (nixpkgs) lib;
@@ -101,6 +115,7 @@
                 nixcord.homeModules.nixcord
                 nix-flatpak.homeManagerModules.nix-flatpak
                 spicetify.homeManagerModules.spicetify
+                walker.homeManagerModules.default
                 ./home
               ];
             };

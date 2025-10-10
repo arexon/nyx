@@ -5,6 +5,10 @@
     config = {
       disable_mouse = true;
       force_keyboard_focus = true;
+      providers.default = [
+        "desktopapplications"
+        "calc"
+      ];
       keybinds = {
         close = ["ctrl bracketleft"];
         next = ["ctrl j"];

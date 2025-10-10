@@ -1,10 +1,12 @@
 {
+  config,
   pkgs,
   user,
   host,
+  modulesPath,
   ...
 }: {
-  imports = [./hardware-configuration.nix];
+  imports = [(modulesPath + "/installer/scan/not-detected.nix")];
 
   nix = {
     settings = {
@@ -31,9 +33,11 @@
   };
 
   boot = {
+    extraModulePackages = with config.boot.kernelPackages; [r8125];
+
     # Temporary until network cards on x870 motherboards are fixed in the kernel.
     kernelPackages = pkgs.linuxPackages_latest;
-
+    kernelModules = ["kvm-amd" "r8169"];
     kernelParams = [
       # Needed for lact.
       "amdgpu.ppfeaturemask=0xffffffff"
@@ -48,6 +52,9 @@
     ];
 
     initrd = {
+      availableKernelModules = ["nvme" "xhci_pci" "ahci" "thunderbolt" "usb_storage" "usbhid" "sd_mod"];
+      kernelModules = ["dm-snapshot" "r8125" "amdgpu"];
+      luks.devices.enyc.device = "/dev/disk/by-label/GARGANTUA";
       systemd.enable = true;
       verbose = false;
     };
@@ -62,8 +69,26 @@
     # Because Windows ¯\_(ツ)_/¯
     supportedFilesystems = ["ntfs"];
 
-    plymouth = {
-      enable = true;
+    plymouth.enable = true;
+  };
+
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-uuid/f93d6472-5532-46cd-91a5-7e5dcd0b5e70";
+      fsType = "ext4";
+    };
+    "/home" = {
+      device = "/dev/disk/by-uuid/84e3b1ea-368d-44a7-8b28-1a01fe85d42c";
+      fsType = "ext4";
+    };
+    "/nix" = {
+      device = "/dev/disk/by-uuid/2c97b306-4fc5-460f-9ed8-4645fd5d45c1";
+      fsType = "ext4";
+    };
+    "/boot" = {
+      device = "/dev/disk/by-uuid/BAF2-8E18";
+      fsType = "vfat";
+      options = ["fmask=0022" "dmask=0022"];
     };
   };
 
@@ -80,6 +105,7 @@
 
   hardware = {
     bluetooth.enable = true;
+    cpu.amd.updateMicrocode = config.hardware.enableRedistributableFirmware;
     graphics = {
       enable = true;
       extraPackages = with pkgs; [
@@ -126,7 +152,7 @@
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd ${pkgs.niri}/bin/niri-session";
+          command = "${pkgs.tuigreet}/bin/tuigreet --cmd ${pkgs.niri}/bin/niri-session";
           user = "greeter";
         };
       };
@@ -135,6 +161,7 @@
 
   networking = {
     hostName = host;
+    useDHCP = true;
     firewall = {
       enable = true;
       allowedTCPPorts = [

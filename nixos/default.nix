@@ -119,18 +119,18 @@
         (deflayer arrows _    left   down up right)
       '';
     };
-    displayManager.ly = {
-      enable = true;
-      settings = {
-        clock = "%a %d %b %Y - %H:%M:%S";
-        text_in_center = true;
-        initial_info_text = host;
-        animation = "colormix";
-      };
-    };
     power-profiles-daemon.enable = false;
     noctalia-shell.enable = true;
     lact.enable = true;
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd ${pkgs.niri}/bin/niri-session";
+          user = "greeter";
+        };
+      };
+    };
   };
 
   networking = {

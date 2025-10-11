@@ -21,6 +21,7 @@
     loupe
     nautilus
     papers
+    gamepad-tool
   ];
 
   xdg.desktopEntries."org.gnome.Totem" = {

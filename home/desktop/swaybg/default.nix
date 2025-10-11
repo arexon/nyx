@@ -1,5 +1,11 @@
-{pkgs, ...}: let
-  swaybg = "${pkgs.swaybg}/bin/swaybg";
+{
+  lib,
+  pkgs,
+  ...
+}: let
+  inherit (lib) getExe;
+
+  swaybg = getExe pkgs.swaybg;
 
   wallpaper = builtins.path {path = ./platform.jpg;};
 in {

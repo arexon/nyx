@@ -4,8 +4,11 @@
   user,
   host,
   modulesPath,
+  lib,
   ...
-}: {
+}: let
+  inherit (lib) getExe;
+in {
   imports = [(modulesPath + "/installer/scan/not-detected.nix")];
 
   nix = {
@@ -152,7 +155,7 @@
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.tuigreet}/bin/tuigreet --cmd ${pkgs.niri}/bin/niri-session";
+          command = "${getExe pkgs.tuigreet} --cmd ${pkgs.niri}/bin/niri-session";
           user = "greeter";
         };
       };

@@ -1,14 +1,20 @@
-{pkgs, ...}: let
+{
+  lib,
+  pkgs,
+  ...
+}: let
+  inherit (lib) getExe;
+
   denoFormatter = ext: {
     command = "deno";
     args = ["fmt" "-" "--ext" ext];
   };
 
-  harper = "${pkgs.harper}/bin/harper-ls";
-  marksman = "${pkgs.marksman}/bin/marksman";
-  nixd = "${pkgs.nixd}/bin/nixd";
-  alejandra = "${pkgs.alejandra}/bin/alejandra";
-  color-lsp = "${pkgs.color-lsp}/bin/color-lsp";
+  harper = getExe pkgs.harper;
+  marksman = getExe pkgs.marksman;
+  nixd = getExe pkgs.nixd;
+  alejandra = getExe pkgs.alejandra;
+  color-lsp = getExe pkgs.color-lsp;
 in {
   stylix.targets.helix.enable = false;
 

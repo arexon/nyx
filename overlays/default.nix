@@ -48,6 +48,8 @@ with super; {
     };
 
     cargoHash = "sha256-RUQmjM/DLBrsvn9/1BnP0V7VduP4UHrmnPiqUhzFimo=";
+
+    meta.mainProgram = pname;
   };
 
   helix = inputs.helix-editor.packages.${system}.default;

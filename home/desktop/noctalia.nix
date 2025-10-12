@@ -73,7 +73,8 @@
         colorRange = "full";
       };
       location.name = "Cairo";
-      wallpaper.enable = false;
+      wallpaper.enabled = false;
+      audio.visualizerType = "none";
     };
   };
 }

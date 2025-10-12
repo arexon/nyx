@@ -140,6 +140,8 @@ in {
       backdrop-color = base01;
       workspace-shadow.enable = false;
     };
+
+    xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
   };
 
   xdg.portal = {
@@ -150,6 +152,4 @@ in {
     extraPortals = with pkgs; [xdg-desktop-portal-gtk];
   };
   services.cliphist.enable = true;
-
-  home.packages = with pkgs; [xwayland-satellite];
 }

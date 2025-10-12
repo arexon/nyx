@@ -24,6 +24,8 @@ in {
         "Mod+Return".action = spawn "wezterm";
         "Mod+W".action = spawn "firefox";
         "Mod+E".action = spawn "nautilus";
+        "Mod+B".action = spawn "blueman-manager";
+        "Mod+V".action = spawn "pavucontrol";
         "Mod+Q".action = close-window;
         "Mod+F".action = maximize-column;
         "Mod+Shift+F".action = fullscreen-window;
@@ -72,7 +74,10 @@ in {
       insert-hint.display.color = base0E;
     };
 
-    window-rules = [
+    window-rules = let
+      floating-max-height = 600;
+      floating-max-width = 900;
+    in [
       {
         matches = [];
         geometry-corner-radius = let
@@ -84,6 +89,18 @@ in {
           bottom-left = size;
         };
         clip-to-geometry = true;
+      }
+      {
+        matches = [{app-id = "blueman-manager";}];
+        open-floating = true;
+        max-height = floating-max-height;
+        max-width = floating-max-width;
+      }
+      {
+        matches = [{app-id = "pavucontrol";}];
+        open-floating = true;
+        max-height = floating-max-height;
+        max-width = floating-max-width;
       }
     ];
 

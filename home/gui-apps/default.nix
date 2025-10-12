@@ -22,6 +22,7 @@
     nautilus
     papers
     gamepad-tool
+    pavucontrol
   ];
 
   xdg.desktopEntries."org.gnome.Totem" = {

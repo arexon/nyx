@@ -18,7 +18,6 @@
     vscode
     totem # Apparently video thumbnails require this..
     file-roller
-    loupe
     nautilus
     papers
     gamepad-tool

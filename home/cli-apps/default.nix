@@ -11,6 +11,7 @@
     ./bat.nix
     ./direnv.nix
     ./keychain.nix
+    ./imv.nix
   ];
 
   home.packages = with pkgs; [

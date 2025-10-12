@@ -63,7 +63,10 @@
         };
       };
       appLauncher.enableClipboardHistory = true;
-      notifications.location = "bottom_right";
+      notifications = {
+        location = "bottom";
+        alwaysOnTop = true;
+      };
       screenRecorder = {
         directory = config.xdg.userDirs.videos;
         audioCodec = "aac";

@@ -15,27 +15,6 @@ with super; {
     rocmSupport = true;
   };
 
-  # obs-studio-plugins =
-  #   obs-studio-plugins
-  #   // {
-  #     input-overlay = obs-studio-plugins.input-overlay.overrideAttrs (old: rec {
-  #       version = "5.1.0";
-  #       src = fetchFromGitHub {
-  #         owner = "univrsal";
-  #         repo = "input-overlay";
-  #         rev = "refs/tags/${version}";
-  #         hash = "sha256-3mH2QWZSZlRkuYikdFl0d3INA4TnSP85/ePTSdnxo+c=";
-  #         fetchSubmodules = true;
-  #       };
-  #       # postFixup =
-  #       #   (old.postFixup or "")
-  #       #   + ''
-  #       #     substituteInPlace $out/lib/pkgconfig/uiohook.pc \
-  #       #       --replace '//nix' '/nix'
-  #       #   '';
-  #     });
-  #   };
-
   color-lsp = rustPlatform.buildRustPackage rec {
     pname = "color-lsp";
     version = "0.2.0";

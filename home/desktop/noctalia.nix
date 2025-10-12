@@ -50,11 +50,17 @@
             {id = "Clock";}
           ];
           right = [
-            {id = "Tray";}
+            {
+              id = "Tray";
+              blacklist = ["bluetooth*"];
+            }
             {id = "ScreenRecorder";}
-            {id = "Bluetooth";}
-            {id = "Volume";}
             {id = "NotificationHistory";}
+            {id = "Bluetooth";}
+            {
+              id = "Volume";
+              displayMode = "alwaysShow";
+            }
             {
               id = "ControlCenter";
               useDistroLogo = true;
@@ -71,6 +77,10 @@
         directory = config.xdg.userDirs.videos;
         audioCodec = "aac";
         colorRange = "full";
+      };
+      osd = {
+        alwaysOnTop = true;
+        location = "bottom";
       };
       location.name = "Cairo";
       wallpaper.enabled = false;

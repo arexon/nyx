@@ -48,10 +48,12 @@ in {
         "Mod+Shift+N".action = spawn ["playerctl" "next"];
         "Mod+Shift+P".action = spawn ["playerctl" "previous"];
         "Mod+Shift+O".action = spawn ["playerctl" "play-pause"];
+        "Mod+Shift+R".action = spawn (noctalia "screenRecorder toggle");
+        "Mod+Shift+Z".action = spawn (noctalia "notifications toggleHistory");
+        "Mod+Shift+Escape".action = spawn (noctalia "sessionMenu toggle");
         "XF86AudioRaiseVolume".action = spawn (noctalia "volume increase");
         "XF86AudioLowerVolume".action = spawn (noctalia "volume decrease");
         "XF86AudioMute".action = spawn (noctalia "volume muteOutput");
-        "Mod+Escape".action = spawn (noctalia "sessionMenu toggle");
       }
       // builtins.listToAttrs (lib.imap1 (index: name: {
           name = "Mod+${toString index}";

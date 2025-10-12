@@ -102,6 +102,16 @@ in {
         max-height = floating-max-height;
         max-width = floating-max-width;
       }
+      {
+        matches = [{app-id = "discord";}];
+        open-on-workspace = "III";
+        default-column-width.proportion = 0.7;
+      }
+      {
+        matches = [{app-id = "spotify";}];
+        open-on-workspace = "III";
+        default-column-width.proportion = 0.3;
+      }
     ];
 
     layer-rules = [

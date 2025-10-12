@@ -39,13 +39,16 @@ in {
         "Mod+Tab".action = focus-column-right-or-first;
         "Mod+Equal".action = set-column-width "+10%";
         "Mod+Minus".action = set-column-width "-10%";
-        "XF86AudioRaiseVolume".action = spawn (noctalia "volume increase");
-        "XF86AudioLowerVolume".action = spawn (noctalia "volume decrease");
-        "XF86AudioMute".action = spawn (noctalia "volume muteOutput");
         "Mod+Shift+S".action = screenshot;
         # TODO: Swap to an option once added to the niri-flake.
         "Mod+F12".action.screenshot-screen = [];
         "Mod+Shift+V".action = spawn ["walker" "-m" "clipboard"];
+        "Mod+Shift+N".action = spawn ["playerctl" "next"];
+        "Mod+Shift+P".action = spawn ["playerctl" "previous"];
+        "Mod+Shift+O".action = spawn ["playerctl" "play-pause"];
+        "XF86AudioRaiseVolume".action = spawn (noctalia "volume increase");
+        "XF86AudioLowerVolume".action = spawn (noctalia "volume decrease");
+        "XF86AudioMute".action = spawn (noctalia "volume muteOutput");
         "Mod+Escape".action = spawn (noctalia "sessionMenu toggle");
       }
       // builtins.listToAttrs (lib.imap1 (index: name: {

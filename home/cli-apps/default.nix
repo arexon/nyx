@@ -30,5 +30,6 @@
     git-filter-repo
     gh
     wl-clipboard
+    playerctl
   ];
 }

@@ -338,6 +338,21 @@
         "type": "github"
       }
     },
+    "nixpkgs-25": {
+      "locked": {
+        "lastModified": 1759994382,
+        "narHash": "sha256-wSK+3UkalDZRVHGCRikZ//CyZUJWDJkBDTQX1+G77Ow=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "5da4a26309e796daa7ffca72df93dbe53b8164c7",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixos-25.05",
+        "type": "indirect"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1753579242,
@@ -479,6 +494,7 @@
         "nix-flatpak": "nix-flatpak",
         "nixcord": "nixcord",
         "nixpkgs": "nixpkgs_3",
+        "nixpkgs-25": "nixpkgs-25",
         "noctalia": "noctalia",
         "quickshell": "quickshell",
         "spicetify": "spicetify",

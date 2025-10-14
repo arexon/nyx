@@ -1,13 +1,15 @@
 {
+  inputs,
   pkgs,
   config,
+  system,
   ...
 }: {
   programs.obs-studio = {
     enable = true;
     plugins = with pkgs.obs-studio-plugins; [
       obs-pipewire-audio-capture
-      input-overlay
+      (inputs.nixpkgs-25.legacyPackages.${system}.obs-studio-plugins.input-overlay)
     ];
   };
 

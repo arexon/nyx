@@ -3,7 +3,7 @@
   config,
   ...
 }: let
-  weztermTypes = pkgs.stdenv.mkDerivation rec {
+  wezterm-types = pkgs.stdenvNoCC.mkDerivation rec {
     pname = "wezterm-types";
     version = "1.0.0";
     src = pkgs.fetchFromGitHub {
@@ -23,7 +23,7 @@ in {
       "wezterm/wezterm.lua".source = ./config.lua;
       "wezterm/workspace.lua".source = ./workspace.lua;
     };
-    dataFile."wezterm-types".source = weztermTypes;
+    dataFile."wezterm-types".source = wezterm-types;
   };
 
   stylix.targets.wezterm.enable = false;

@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   stylix = {
     cursor = {
-      name = "Bibata-Modern-Ice";
+      name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
       size = 24;
     };

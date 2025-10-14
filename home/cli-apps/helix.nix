@@ -126,7 +126,7 @@ in {
     };
 
     settings = {
-      theme = "kanagawa-transparent";
+      theme = "kanagawa_transparent";
       editor = {
         line-number = "relative";
         bufferline = "never";
@@ -211,7 +211,7 @@ in {
       };
     };
 
-    themes.kanagawa-transparent = {
+    themes.kanagawa_transparent = {
       inherits = "kanagawa";
       "ui.background" = "transparent";
     };

@@ -69,6 +69,28 @@
         };
       };
       appLauncher.enableClipboardHistory = true;
+      controlCenter.cards = [
+        {
+          id = "profile-card";
+          enabled = true;
+        }
+        {
+          id = "media-sysmon-card";
+          enabled = true;
+        }
+        {
+          id = "audio-card";
+          enabled = true;
+        }
+        {
+          id = "weather-card";
+          enabled = false;
+        }
+        {
+          id = "shortcuts-card";
+          enabled = false;
+        }
+      ];
       notifications = {
         location = "bottom";
         alwaysOnTop = true;

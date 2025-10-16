@@ -12,8 +12,6 @@
 
     helix-editor.url = "github:arexon/helix";
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
-
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -47,7 +45,6 @@
     niri,
     noctalia,
     nixcord,
-    nix-flatpak,
     stylix,
     spicetify,
     ...
@@ -98,7 +95,6 @@
               users.${user}.imports = [
                 noctalia.homeModules.default
                 nixcord.homeModules.nixcord
-                nix-flatpak.homeManagerModules.nix-flatpak
                 spicetify.homeManagerModules.spicetify
                 ./home
               ];

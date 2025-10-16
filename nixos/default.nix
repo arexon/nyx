@@ -134,7 +134,6 @@ in {
       excludePackages = [pkgs.xterm];
       videoDrivers = ["amdgpu"];
     };
-    flatpak.enable = true;
     syncthing = {
       enable = true;
       inherit user;

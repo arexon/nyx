@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    prismlauncher
     mangohud
+    prismlauncher
+    mcpelauncher-ui-qt
   ];
 }

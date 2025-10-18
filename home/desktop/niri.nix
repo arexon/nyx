@@ -23,7 +23,6 @@ in {
         "Mod+Return".action = spawn "wezterm";
         "Mod+W".action = spawn "firefox";
         "Mod+E".action = spawn "nautilus";
-        "Mod+B".action = spawn "blueman-manager";
         "Mod+V".action = spawn "pavucontrol";
         "Mod+Q".action = close-window;
         "Mod+F".action = maximize-column;
@@ -91,12 +90,6 @@ in {
           bottom-left = size;
         };
         clip-to-geometry = true;
-      }
-      {
-        matches = [{app-id = "blueman-manager";}];
-        open-floating = true;
-        max-height = floating-max-height;
-        max-width = floating-max-width;
       }
       {
         matches = [{app-id = "pavucontrol";}];

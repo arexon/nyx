@@ -75,10 +75,7 @@ in {
       insert-hint.display.color = base0E;
     };
 
-    window-rules = let
-      floating-max-height = 600;
-      floating-max-width = 900;
-    in [
+    window-rules = [
       {
         matches = [];
         geometry-corner-radius = let
@@ -94,8 +91,6 @@ in {
       {
         matches = [{app-id = "pavucontrol";}];
         open-floating = true;
-        max-height = floating-max-height;
-        max-width = floating-max-width;
       }
       {
         matches = [{app-id = "discord";}];

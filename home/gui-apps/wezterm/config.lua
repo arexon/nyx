@@ -21,10 +21,6 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
-config.inactive_pane_hsb = {
-	saturation = 1.0,
-	brightness = 1.0,
-}
 
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true

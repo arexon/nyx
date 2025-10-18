@@ -45,6 +45,11 @@
               id = "MediaMini";
               showAlbumArt = true;
             }
+            {
+              id = "ActiveWindow";
+              hideMode = "visible";
+              width = 250;
+            }
           ];
           center = [
             {id = "Clock";}
@@ -107,6 +112,7 @@
       location.name = "Cairo";
       wallpaper.enabled = false;
       audio.visualizerType = "none";
+      setupCompleted = true;
     };
   };
 }

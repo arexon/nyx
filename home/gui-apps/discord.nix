@@ -108,7 +108,7 @@
       --colors: on;
 
       /* text colors */
-      --text-0: var(--bg-3); /* text on colored elements */
+      --text-0: ${base06}; /* text on colored elements */
       --text-1: ${base06}; /* other normally white text */
       --text-2: ${base06}; /* headings and important text */
       --text-3: ${base05}; /* normal text */

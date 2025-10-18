@@ -100,12 +100,12 @@ in {
       {
         matches = [{app-id = "discord";}];
         open-on-workspace = "III";
-        default-column-width.proportion = 0.7;
+        default-column-width.proportion = 0.6;
       }
       {
         matches = [{app-id = "spotify";}];
         open-on-workspace = "III";
-        default-column-width.proportion = 0.3;
+        default-column-width.proportion = 0.4;
       }
     ];
 

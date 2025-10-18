@@ -12,6 +12,7 @@
     ./direnv.nix
     ./keychain.nix
     ./imv.nix
+    ./television.nix
   ];
 
   home.packages = with pkgs; [
@@ -32,5 +33,6 @@
     gh
     wl-clipboard
     playerctl
+    fd
   ];
 }

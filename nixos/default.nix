@@ -200,6 +200,7 @@ in {
       # Needed for OCCT.
       RUSTICL_ENABLE = "radeonsi";
     };
+    variables.QT_QPA_PLATFORMTHEME = lib.mkForce "gtk3";
   };
 
   stylix = {

@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./discord.nix
-    ./mpv.nix
     ./obs.nix
     ./spicetify.nix
     ./wezterm
@@ -23,6 +22,8 @@
     gamepad-tool
     pavucontrol
     helvum
+    celluloid
+    loupe
   ];
 
   xdg.desktopEntries."org.gnome.Totem" = {

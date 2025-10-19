@@ -10,7 +10,7 @@
   home.packages = with pkgs; [
     blockbench
     obsidian
-    krita
+    gimp
     kdePackages.kdenlive
     pinta
     losslesscut-bin
@@ -22,6 +22,7 @@
     papers
     gamepad-tool
     pavucontrol
+    helvum
   ];
 
   xdg.desktopEntries."org.gnome.Totem" = {

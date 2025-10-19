@@ -62,10 +62,8 @@
             {id = "ScreenRecorder";}
             {id = "NotificationHistory";}
             {id = "Bluetooth";}
-            {
-              id = "Volume";
-              displayMode = "alwaysShow";
-            }
+            {id = "Microphone";}
+            {id = "Volume";}
             {
               id = "ControlCenter";
               useDistroLogo = true;

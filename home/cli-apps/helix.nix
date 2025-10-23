@@ -213,7 +213,7 @@ in {
 
     themes.kanagawa_transparent = {
       inherits = "kanagawa";
-      "ui.background" = "transparent";
+      "ui.background" = {};
     };
   };
 }

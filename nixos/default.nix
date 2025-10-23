@@ -38,7 +38,6 @@ in {
   boot = {
     extraModulePackages = with config.boot.kernelPackages; [r8125];
 
-    # Temporary until network cards on x870 motherboards are fixed in the kernel.
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = ["kvm-amd" "r8169"];
     kernelParams = [
@@ -64,7 +63,10 @@ in {
     consoleLogLevel = 0;
 
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 5;
+      };
       efi.canTouchEfiVariables = true;
       timeout = 0;
     };

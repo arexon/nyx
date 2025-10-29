@@ -32,4 +32,11 @@ with super; {
   };
 
   helix = inputs.helix-editor.packages.${system}.default;
+
+  # Temporary fix for audio from <https://github.com/NixOS/nixpkgs/issues/380493#issuecomment-3456745728>.
+  mcpelauncher-client = mcpelauncher-client.overrideAttrs (old: {
+    cmakeFlags =
+      (builtins.filter (flag: flag != (lib.cmakeBool "USE_SDL3_AUDIO" false)) old.cmakeFlags)
+      ++ [(lib.cmakeBool "SDL3_VENDORED" false)];
+  });
 }

@@ -34,6 +34,7 @@
         dimDesktop = false;
       };
       bar = {
+        backgroundOpacity = 0.9;
         density = "comfortable";
         widgets = {
           left = [

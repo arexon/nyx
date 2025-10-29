@@ -29,16 +29,21 @@ in {
         "Mod+Shift+F".action = fullscreen-window;
         "Mod+H".action = focus-column-left;
         "Mod+L".action = focus-column-right;
+        "Mod+K".action = focus-window-up;
+        "Mod+J".action = focus-window-down;
         "Mod+Shift+H".action = move-column-left;
         "Mod+Shift+L".action = move-column-right;
-        "Mod+Shift+Equal".action = consume-window-into-column;
-        "Mod+Shift+Minus".action = expel-window-from-column;
-        "Mod+Shift+J".action = move-column-to-workspace-down;
-        "Mod+Shift+K".action = move-column-to-workspace-up;
+        "Mod+Shift+K".action = expel-window-from-column;
+        "Mod+Shift+J".action = consume-window-into-column;
+        "Mod+Control+J".action = move-column-to-workspace-down;
+        "Mod+Control+K".action = move-column-to-workspace-up;
         "Mod+Z".action = toggle-window-floating;
         "Mod+Tab".action = focus-column-right-or-first;
+        "Mod+Shift+Tab".action = focus-column-left-or-last;
         "Mod+Equal".action = set-column-width "+10%";
         "Mod+Minus".action = set-column-width "-10%";
+        "Mod+Shift+Equal".action = set-window-height "+10%";
+        "Mod+Shift+Minus".action = set-window-height "-10%";
         "Mod+Shift+S".action = screenshot;
         # TODO: Swap to an option once added to the niri-flake.
         "Mod+F12".action.screenshot-screen = [];
@@ -69,7 +74,6 @@ in {
 
     layout = with config.lib.stylix.colors.withHashtag; {
       gaps = 8;
-      always-center-single-column = true;
       default-column-width = {proportion = 0.5;};
       border.width = 2;
       background-color = "transparent";

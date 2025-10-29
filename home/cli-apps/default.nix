@@ -12,6 +12,7 @@
     ./direnv.nix
     ./keychain.nix
     ./television.nix
+    ./fastfetch
   ];
 
   home.packages = with pkgs; [

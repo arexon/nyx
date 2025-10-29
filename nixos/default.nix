@@ -38,7 +38,7 @@ in {
   boot = {
     extraModulePackages = with config.boot.kernelPackages; [r8125];
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_cachyos;
     kernelModules = ["kvm-amd" "r8169"];
     kernelParams = [
       # Needed for lact.
@@ -113,6 +113,7 @@ in {
     cpu.amd.updateMicrocode = config.hardware.enableRedistributableFirmware;
     graphics = {
       enable = true;
+      package = pkgs.mesa_git;
       extraPackages = with pkgs; [
         # Needed for OCCT.
         ocl-icd

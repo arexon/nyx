@@ -3,6 +3,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-25.url = "github:NixOS/nixpkgs/nixos-25.05";
 
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -47,6 +49,7 @@
     nixcord,
     stylix,
     spicetify,
+    chaotic,
     ...
   }: let
     inherit (nixpkgs) lib;
@@ -78,6 +81,7 @@
           niri.nixosModules.niri
           noctalia.nixosModules.default
           stylix.nixosModules.stylix
+          chaotic.nixosModules.default
           {
             nixpkgs = {
               config.allowUnfree = true;

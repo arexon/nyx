@@ -21,8 +21,9 @@
         "break"
         "break"
         {
-          type = "title";
-          format = "{#yellow}╭─── {#magenta}{user-name}{#yellow}@{#blue}{host-name}";
+          type = "colors";
+          key = "{#yellow}╭───";
+          symbol = "circle";
         }
         {
           type = "os";
@@ -65,9 +66,8 @@
           format = "{process-name}";
         }
         {
-          type = "colors";
-          key = "{#yellow}╰───";
-          symbol = "circle";
+          type = "title";
+          format = "{#yellow}╰─── {#magenta}{user-name}{#yellow}@{#blue}{host-name}";
         }
       ];
     };

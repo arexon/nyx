@@ -98,7 +98,7 @@ in {
         open-floating = true;
       }
       {
-        matches = [{app-id = "discord";}];
+        matches = [{app-id = "vesktop";}];
         open-on-workspace = "III";
         default-column-width.proportion = 0.6;
       }

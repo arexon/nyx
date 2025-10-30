@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   stylix = {
     cursor = {
-      name = "Bibata-Modern-Classic";
-      package = pkgs.bibata-cursors;
+      name = "catppuccin-macchiato-blue-cursors";
+      package = pkgs.catppuccin-cursors.macchiatoBlue;
       size = 24;
     };
     icons = {

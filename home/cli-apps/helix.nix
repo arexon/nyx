@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }: let
   inherit (lib) getExe;
@@ -26,6 +27,7 @@ in {
   programs.helix = {
     enable = true;
     defaultEditor = true;
+
     languages = {
       language-server = {
         rust-analyzer.config = {
@@ -212,7 +214,8 @@ in {
     };
 
     themes.kanagawa_transparent = {
-      inherits = "kanagawa";
+      inherits = "catppuccin_macchiato";
+      "special" = "green";
       "ui.background" = {};
     };
   };

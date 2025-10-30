@@ -7,7 +7,7 @@
 
   swaybg = getExe pkgs.swaybg;
 
-  wallpaper = builtins.path {path = ./platform.jpg;};
+  wallpaper = builtins.path {path = ./laundry.jpg;};
 in {
   systemd.user.services.swaybg = {
     Unit = {

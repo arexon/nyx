@@ -5,6 +5,7 @@
       configFile.source = ./config.nu;
       extraLogin = ''
         printf '\e[H\ec\e[100B'
+        ^fastfetch
       '';
     };
     carapace = {

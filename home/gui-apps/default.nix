@@ -11,15 +11,11 @@
     obsidian
     gimp
     kdePackages.kdenlive
-    pinta
     losslesscut-bin
     firefox
-    vscode
     totem # Apparently video thumbnails require this..
     file-roller
     nautilus
-    papers
-    gamepad-tool
     pavucontrol
     helvum
     celluloid

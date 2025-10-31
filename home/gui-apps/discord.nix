@@ -63,6 +63,9 @@
       body {
         --custom-dms-icon: off;
         --custom-dms-background: off;
+        --text-0: var(--text-2);
+        --custom-chatbar: separated;
+        --chatbar-height: 56px;
       }
     '';
   };

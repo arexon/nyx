@@ -110,6 +110,7 @@
       };
       location.name = "Cairo";
       wallpaper.enabled = false;
+      dock.enabled = false;
       audio.visualizerType = "none";
       setupCompleted = true;
     };

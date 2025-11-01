@@ -35,8 +35,8 @@ in {
         "Mod+Shift+L".action = move-column-right;
         "Mod+Shift+K".action = expel-window-from-column;
         "Mod+Shift+J".action = consume-window-into-column;
-        "Mod+Control+J".action = move-column-to-workspace-down;
-        "Mod+Control+K".action = move-column-to-workspace-up;
+        "Mod+Ctrl+J".action = move-column-to-workspace-down;
+        "Mod+Ctrl+K".action = move-column-to-workspace-up;
         "Mod+Z".action = toggle-window-floating;
         "Mod+Tab".action = focus-column-right-or-first;
         "Mod+Shift+Tab".action = focus-column-left-or-last;
@@ -44,8 +44,9 @@ in {
         "Mod+Minus".action = set-column-width "-10%";
         "Mod+Shift+Equal".action = set-window-height "+10%";
         "Mod+Shift+Minus".action = set-window-height "-10%";
-        "Mod+Shift+S".action = screenshot;
         # TODO: Swap to an option once added to the niri-flake.
+        "Mod+Shift+S".action.screenshot = [];
+        "Mod+Ctrl+S".action.screenshot-window = [];
         "Mod+F12".action.screenshot-screen = [];
         "Mod+Space".action = spawn (noctalia "launcher toggle");
         "Mod+Shift+V".action = spawn (noctalia "launcher clipboard");

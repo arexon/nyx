@@ -9,8 +9,8 @@
     src = pkgs.fetchFromGitHub {
       owner = "justinsgithub";
       repo = pname;
-      rev = "d275d9f1811a259788468a5550ff6daf25f956bf";
-      sha256 = "sha256-nQuYeXB5bfHiYbJI/eGwKUiwBOc8GK3q2FDcOgB3Pcc=";
+      rev = "39000e439c74cb0394f38eb0b61b12296947101e";
+      sha256 = "sha256-lHmhY35QJXhy9wFo/q/+nYndzvkDNa94xTr5tCPvVPY=";
     };
     installPhase = ''
       mkdir -p $out

@@ -1,9 +1,7 @@
----@type Wezterm
 local wezterm = require("wezterm")
 local workspace = require("workspace")
 
 local action = wezterm.action
----@class Config
 local config = wezterm.config_builder()
 
 config.color_scheme = "kanagawa"
@@ -157,25 +155,21 @@ config.keys = {
 	{
 		key = "w",
 		mods = "LEADER|ALT",
-		---@diagnostic disable-next-line: assign-type-mismatch
 		action = workspace.switch(),
 	},
 	{
 		key = "q",
 		mods = "LEADER|ALT",
-		---@diagnostic disable-next-line: assign-type-mismatch
 		action = workspace.close(),
 	},
 	{
 		key = "f",
 		mods = "LEADER|ALT",
-		---@diagnostic disable-next-line: assign-type-mismatch
 		action = workspace.switch_to_previous(),
 	},
 	{
 		key = "h",
 		mods = "LEADER|ALT",
-		---@diagnostic disable-next-line: assign-type-mismatch
 		action = workspace.switch_to_home(),
 	},
 
@@ -183,7 +177,6 @@ config.keys = {
 	{
 		key = "c",
 		mods = "LEADER",
-		---@diagnostic disable-next-line: assign-type-mismatch
 		action = action.ActivateCopyMode,
 	},
 }
@@ -199,12 +192,10 @@ end
 local copy_mode = wezterm.gui.default_key_tables().copy_mode
 table.insert(copy_mode, {
 	key = "u",
-	---@diagnostic disable-next-line: undefined-field
 	action = action.CopyMode("PageUp"),
 })
 table.insert(copy_mode, {
 	key = "d",
-	---@diagnostic disable-next-line: undefined-field
 	action = action.CopyMode("PageDown"),
 })
 config.key_tables = {

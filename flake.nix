@@ -12,7 +12,7 @@
 
     nixcord.url = "github:kaylorben/nixcord";
 
-    helix-editor.url = "github:arexon/helix";
+    helix-editor.url = "github:helix-editor/helix";
 
     niri = {
       url = "github:sodiboo/niri-flake";
@@ -50,6 +50,7 @@
     stylix,
     spicetify,
     chaotic-nyx,
+    helix-editor,
     ...
   }: let
     inherit (nixpkgs) lib;
@@ -62,8 +63,6 @@
     pkgs = import nixpkgs {inherit system;};
   in {
     formatter.${system} = pkgs.alejandra;
-
-    overlays = import ./overlays {inherit inputs;};
 
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
@@ -86,8 +85,9 @@
             nixpkgs = {
               config.allowUnfree = true;
               overlays = [
-                (import ./overlays {inherit inputs system;})
+                (import ./overlays)
                 niri.overlays.niri
+                helix-editor.overlays.helix
               ];
             };
           }

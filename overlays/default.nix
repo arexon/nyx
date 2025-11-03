@@ -1,8 +1,4 @@
-{
-  inputs,
-  system,
-  ...
-}: self: super:
+self: super:
 with super; {
   spotify = spotify.overrideAttrs {
     postFixup = ''
@@ -30,8 +26,6 @@ with super; {
 
     meta.mainProgram = pname;
   };
-
-  helix = inputs.helix-editor.packages.${system}.default;
 
   # Temporary fix for audio from <https://github.com/NixOS/nixpkgs/issues/380493#issuecomment-3456745728>.
   mcpelauncher-client = mcpelauncher-client.overrideAttrs (old: {

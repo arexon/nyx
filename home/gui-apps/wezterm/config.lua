@@ -173,6 +173,13 @@ config.keys = {
 		action = workspace.switch_to_home(),
 	},
 
+	-- Search overlay
+	{
+		key = "c",
+		mods = "LEADER|SHIFT",
+		action = action.Search("CurrentSelectionOrEmptyString"),
+	},
+
 	-- Copy Mode
 	{
 		key = "c",

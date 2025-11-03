@@ -64,10 +64,6 @@
             {id = "Bluetooth";}
             {id = "Microphone";}
             {id = "Volume";}
-            {
-              id = "ControlCenter";
-              useDistroLogo = true;
-            }
           ];
         };
       };

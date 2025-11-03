@@ -96,6 +96,9 @@ in {
       options = ["fmask=0022" "dmask=0022"];
     };
   };
+  swapDevices = [
+    {device = "/dev/disk/by-uuid/33014247-6ab4-4e01-8410-3489951be101";}
+  ];
 
   time.timeZone = "Africa/Cairo";
   i18n.extraLocaleSettings.LC_TIME = "en_IE.UTF-8";

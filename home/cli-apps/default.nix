@@ -17,6 +17,7 @@
   ];
 
   home.packages = with pkgs; [
+    file
     wget
     p7zip
     _7zz

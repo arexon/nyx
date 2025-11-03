@@ -1,4 +1,4 @@
-{
+{config, ...}: {
   programs = {
     nushell = {
       enable = true;
@@ -7,6 +7,7 @@
         printf '\e[H\ec\e[100B'
         ^fastfetch
       '';
+      environmentVariables = config.home.sessionVariables;
     };
     carapace = {
       enable = true;

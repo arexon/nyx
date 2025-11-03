@@ -33,4 +33,14 @@ with super; {
       (builtins.filter (flag: flag != (lib.cmakeBool "USE_SDL3_AUDIO" false)) old.cmakeFlags)
       ++ [(lib.cmakeBool "SDL3_VENDORED" false)];
   });
+
+  wine = wine64.overrideAttrs {
+    src = fetchFromGitHub {
+      owner = "Weather-OS";
+      repo = "WineGDK";
+      rev = "363ee53c9ae7e5e5f9d90b51c3df231ad427dcf5";
+      sha256 = "sha256-QTlwZpU1djqyQtMaTB2ZPreU5XO0nbw8crr/MSW7f7U=";
+    };
+    patches = [];
+  };
 }

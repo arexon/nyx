@@ -3,6 +3,7 @@
     mangohud
     prismlauncher
     mcpelauncher-ui-qt
+    wine
   ];
 
   xdg.desktopEntries.minecraft = {

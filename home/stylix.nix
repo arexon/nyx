@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   stylix = {
     cursor = {
-      name = "catppuccin-macchiato-dark-cursors";
-      package = pkgs.catppuccin-cursors.macchiatoDark;
+      name = "catppuccin-mocha-dark-cursors";
+      package = pkgs.catppuccin-cursors.mochaDark;
       size = 24;
     };
     icons = {

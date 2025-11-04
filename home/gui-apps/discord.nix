@@ -9,7 +9,7 @@
       frameless = true;
       themeLinks = [
         "https://refact0r.github.io/midnight-discord/build/midnight.css"
-        "https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/themes/flavors/midnight-catppuccin-macchiato.theme.css"
+        "https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/themes/flavors/midnight-catppuccin-mocha.theme.css"
       ];
       useQuickCss = true;
 

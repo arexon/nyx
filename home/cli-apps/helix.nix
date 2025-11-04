@@ -127,7 +127,7 @@ in {
     };
 
     settings = {
-      theme = "kanagawa_transparent";
+      theme = "custom";
       editor = {
         line-number = "relative";
         bufferline = "never";
@@ -193,9 +193,9 @@ in {
       };
     };
 
-    themes.kanagawa_transparent = {
-      inherits = "catppuccin_macchiato";
-      "special" = "green";
+    themes.custom = {
+      inherits = "catppuccin_mocha";
+      special = "green";
       "ui.background" = {};
     };
   };

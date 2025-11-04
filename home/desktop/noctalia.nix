@@ -44,11 +44,12 @@
             {
               id = "MediaMini";
               showAlbumArt = true;
+              maxWidth = 200;
             }
             {
               id = "ActiveWindow";
               hideMode = "visible";
-              width = 250;
+              maxWidth = 200;
             }
           ];
           center = [

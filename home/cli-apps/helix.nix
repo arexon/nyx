@@ -134,6 +134,7 @@ in {
         true-color = true;
         auto-info = false;
         auto-format = true;
+        rainbow-brackets = true;
         end-of-line-diagnostics = "error";
         inline-diagnostics = {
           cursor-line = "info";
@@ -196,6 +197,7 @@ in {
     themes.custom = {
       inherits = "catppuccin_mocha";
       special = "green";
+      rainbow = ["red" "peach" "yellow" "green" "sapphire"];
       "ui.background" = {};
     };
   };

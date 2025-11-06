@@ -34,13 +34,17 @@ with super; {
       ++ [(lib.cmakeBool "SDL3_VENDORED" false)];
   });
 
-  wine = wine64.overrideAttrs {
-    src = fetchFromGitHub {
-      owner = "Weather-OS";
-      repo = "WineGDK";
-      rev = "1b9bb5d47fa4cb5419ce25a5d9fd6e496930cdd8";
-      sha256 = "sha256-1GtRhxDAGVnP2WB+fJ5EZl+HyHcRW8u0YqPQysFRmiE=";
+  wine =
+    (wine64.override {
+      waylandSupport = true;
+      x11Support = false;
+    }).overrideAttrs {
+      src = fetchFromGitHub {
+        owner = "Weather-OS";
+        repo = "WineGDK";
+        rev = "1b9bb5d47fa4cb5419ce25a5d9fd6e496930cdd8";
+        sha256 = "sha256-1GtRhxDAGVnP2WB+fJ5EZl+HyHcRW8u0YqPQysFRmiE=";
+      };
+      patches = [];
     };
-    patches = [];
-  };
 }

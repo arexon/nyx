@@ -42,8 +42,8 @@ with super; {
       src = fetchFromGitHub {
         owner = "Weather-OS";
         repo = "WineGDK";
-        rev = "1b9bb5d47fa4cb5419ce25a5d9fd6e496930cdd8";
-        sha256 = "sha256-1GtRhxDAGVnP2WB+fJ5EZl+HyHcRW8u0YqPQysFRmiE=";
+        rev = "a82854dfa4b54ab935bc3ca69d4bd885c4a63186";
+        sha256 = "sha256-Ja32uLvxCi1weDop+HCrSAagkMaNbSjoW1C720/D3cw=";
       };
       patches = [];
     };

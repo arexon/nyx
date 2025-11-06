@@ -54,9 +54,12 @@
           keepSpotifyActivityOnIdle = true;
         };
         spotifyShareCommands.enable = true;
-        translate = {
-          enable = true;
-        };
+        translate.enable = true;
+        fixSpotifyEmbeds.enable = true;
+        forceOwnerCrown.enable = true;
+        friendsSince.enable = true;
+        sendTimestamps.enable = true;
+        voiceChatDoubleClick.enable = true;
       };
     };
     quickCss = ''

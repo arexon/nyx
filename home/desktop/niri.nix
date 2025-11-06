@@ -138,6 +138,8 @@ in {
     };
 
     xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+
+    debug.honor-xdg-activation-with-invalid-serial = [];
   };
 
   xdg.portal = {

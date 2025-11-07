@@ -32,6 +32,7 @@
         avatarImage = "/home/${user}/.pfp.png";
         showScreenCorners = true;
         dimDesktop = false;
+        enableShadows = false;
       };
       bar = {
         density = "comfortable";
@@ -59,6 +60,7 @@
             {
               id = "Tray";
               blacklist = ["bluetooth*"];
+              drawerEnabled = false;
             }
             {id = "ScreenRecorder";}
             {id = "NotificationHistory";}
@@ -68,7 +70,10 @@
           ];
         };
       };
-      appLauncher.enableClipboardHistory = true;
+      appLauncher = {
+        enableClipboardHistory = true;
+        position = "follow_bar";
+      };
       controlCenter.cards = [
         {
           id = "profile-card";
@@ -103,6 +108,7 @@
       osd = {
         alwaysOnTop = true;
         location = "bottom";
+        settingsPanelAttachToBar = true;
       };
       location.name = "Cairo";
       wallpaper.enabled = false;

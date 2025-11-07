@@ -39,6 +39,11 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    wine-gdk = {
+      url = "github:Weather-OS/WineGDK";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
@@ -85,7 +90,7 @@
             nixpkgs = {
               config.allowUnfree = true;
               overlays = [
-                (import ./overlays)
+                (import ./overlays {inherit inputs;})
                 niri.overlays.niri
                 helix-editor.overlays.helix
               ];

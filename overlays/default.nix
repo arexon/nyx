@@ -1,4 +1,4 @@
-_: super:
+{inputs, ...}: _: super:
 with super; {
   spotify = spotify.overrideAttrs {
     postFixup = ''
@@ -39,12 +39,7 @@ with super; {
       waylandSupport = true;
       x11Support = false;
     }).overrideAttrs {
-      src = fetchFromGitHub {
-        owner = "Weather-OS";
-        repo = "WineGDK";
-        rev = "a82854dfa4b54ab935bc3ca69d4bd885c4a63186";
-        sha256 = "sha256-Ja32uLvxCi1weDop+HCrSAagkMaNbSjoW1C720/D3cw=";
-      };
+      src = inputs.wine-gdk;
       patches = [];
     };
 }

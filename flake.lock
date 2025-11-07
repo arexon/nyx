@@ -582,7 +582,8 @@
         "noctalia": "noctalia",
         "quickshell": "quickshell",
         "spicetify": "spicetify",
-        "stylix": "stylix"
+        "stylix": "stylix",
+        "wine-gdk": "wine-gdk"
       }
     },
     "rust-overlay": {
@@ -805,6 +806,22 @@
       "original": {
         "owner": "tinted-theming",
         "repo": "base16-zed",
+        "type": "github"
+      }
+    },
+    "wine-gdk": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1762510999,
+        "narHash": "sha256-tVYtkA32bO751oebapjnBVGp7XXduBzkaI2Di4r6y8w=",
+        "owner": "Weather-OS",
+        "repo": "WineGDK",
+        "rev": "4ce95b2e94f3b32d277d40ede1f4f6b56342cb35",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Weather-OS",
+        "repo": "WineGDK",
         "type": "github"
       }
     },

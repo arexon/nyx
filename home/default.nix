@@ -5,13 +5,13 @@
     ./cli-apps
     ./games.nix
     ./stylix.nix
+    ./xdg.nix
   ];
 
   home = {
     username = user;
     homeDirectory = "/home/${user}";
   };
-  xdg.enable = true;
 
   home.stateVersion = "24.05";
 }

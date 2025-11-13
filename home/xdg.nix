@@ -7,6 +7,7 @@
       videos = "${config.home.homeDirectory}/vids";
       pictures = "${config.home.homeDirectory}/pics";
       documents = "${config.home.homeDirectory}/docs";
+      desktop = "${config.home.homeDirectory}/desktop";
     };
   };
 }

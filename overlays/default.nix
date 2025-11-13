@@ -34,15 +34,6 @@ with super; {
       ++ [(lib.cmakeBool "SDL3_VENDORED" false)];
   });
 
-  wine =
-    (wine64.override {
-      waylandSupport = true;
-      x11Support = false;
-    }).overrideAttrs {
-      src = inputs.wine-gdk;
-      patches = [];
-    };
-
   proton-gdk-bin = proton-ge-bin.overrideAttrs {
     src = fetchzip {
       url = "https://github.com/Weather-OS/GDK-Proton/releases/download/release/GE-Proton10-25.tar.gz";

@@ -137,6 +137,8 @@ in {
       workspace-shadow.enable = false;
     };
 
+    screenshot-path = "${config.xdg.userDirs.pictures}/screenshots/%Y-%m-%d-%H-%M-%S.png";
+
     xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
     debug.honor-xdg-activation-with-invalid-serial = [];

@@ -190,7 +190,10 @@ in {
       enable = true;
       flake = "/home/${user}/projects/nyx";
     };
-    steam.enable = true;
+    steam = {
+      enable = true;
+      extraCompatPackages = with pkgs; [proton-ge-bin proton-gdk-bin];
+    };
     niri = {
       enable = true;
       package = pkgs.niri-stable;

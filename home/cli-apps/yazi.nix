@@ -37,11 +37,26 @@
         border_symbol = " ";
       };
     };
-    keymap.mgr.append_keymap = [
+    keymap.mgr.prepend_keymap = [
       {
         on = ["g" "m"];
         run = "cd ~/com.mojang";
-        desc = "Go to com.mojang directory";
+        desc = "Go ~/com.mojang";
+      }
+      {
+        on = ["g" "d"];
+        run = "cd ~/dl";
+        desc = "Go ~/dl";
+      }
+      {
+        on = ["g" "v"];
+        run = "cd ~/vids";
+        desc = "Go ~/vids";
+      }
+      {
+        on = ["g" "p"];
+        run = "cd ~/pics";
+        desc = "Go ~/pics";
       }
     ];
   };

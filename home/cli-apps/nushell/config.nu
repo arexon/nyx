@@ -88,3 +88,22 @@ $env.config = {
         }
     ]
 }
+
+$env.config = ($env.config | upsert hooks.env_change.PWD {|config|
+    [
+        {
+            condition: {|_, after|
+                $after | path join dev.nu | path exists
+            }
+            code: "overlay use dev.nu"
+        }
+        {
+            condition: {|before, _|
+                (not ($before | is-empty)
+                    and ($before | path join dev.nu | path exists)
+                    and (overlay list | where name == "dev" | get active | first))
+            }
+            code: "overlay hide dev --keep-env [ PWD ]"
+        }
+    ]
+})

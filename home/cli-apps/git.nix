@@ -8,6 +8,7 @@
 in {
   xdg.configFile.${gitignore}.text = ''
     playground/
+    dev.nu
   '';
 
   programs.git = {

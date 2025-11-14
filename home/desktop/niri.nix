@@ -108,6 +108,10 @@ in {
         open-on-workspace = "III";
         default-column-width.proportion = 0.4;
       }
+      {
+        matches = [{app-id = "steam";}];
+        open-on-workspace = "IV";
+      }
     ];
 
     layer-rules = [

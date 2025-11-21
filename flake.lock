@@ -505,18 +505,14 @@
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
-        ],
-        "quickshell": [
-          "quickshell"
-        ],
-        "systems": "systems"
+        ]
       },
       "locked": {
-        "lastModified": 1762546612,
-        "narHash": "sha256-dqm7o3qoBF0HpujY9fkfM15dCfWoyhEM7UTWPza+HZo=",
+        "lastModified": 1763698122,
+        "narHash": "sha256-gGUJfSyfaBJdc3czWfReYTo/9RfO4iHg/Gwf5RVvehg=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "53515c23ca2aa05556e018c923c876377878b74e",
+        "rev": "972ac47c1bb674b3627cb9582438fc39a016b93b",
         "type": "github"
       },
       "original": {
@@ -550,26 +546,6 @@
         "type": "github"
       }
     },
-    "quickshell": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1761897390,
-        "narHash": "sha256-er4gYrIoThYLjlsOMTysoRfn67d1Gci+ZpqDrtQxrA0=",
-        "owner": "outfoxxed",
-        "repo": "quickshell",
-        "rev": "fc704e6b5d445899a1565955268c91942a4f263f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "outfoxxed",
-        "repo": "quickshell",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "chaotic-nyx": "chaotic-nyx",
@@ -580,7 +556,6 @@
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-25": "nixpkgs-25",
         "noctalia": "noctalia",
-        "quickshell": "quickshell",
         "spicetify": "spicetify",
         "stylix": "stylix"
       }
@@ -632,7 +607,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "systems": "systems_2"
+        "systems": "systems"
       },
       "locked": {
         "lastModified": 1760243311,
@@ -661,7 +636,7 @@
           "nixpkgs"
         ],
         "nur": "nur",
-        "systems": "systems_3",
+        "systems": "systems_2",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",
         "tinted-schemes": "tinted-schemes",
@@ -698,21 +673,6 @@
       }
     },
     "systems_2": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
-      }
-    },
-    "systems_3": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",

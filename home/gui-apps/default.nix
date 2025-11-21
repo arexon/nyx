@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ./discord.nix
+    ./nixcord.nix
     ./mpv.nix
     ./obs.nix
     ./spicetify.nix

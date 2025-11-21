@@ -34,16 +34,12 @@
           ignoreBots = true;
           ignoreSelf = true;
         };
-        moreUserTags = {
-          enable = true;
-          dontShowForBots = true;
-        };
         permissionsViewer.enable = true;
         platformIndicators.enable = true;
         previewMessage.enable = true;
         quickReply = {
           enable = true;
-          shouldMention = "enabled";
+          shouldMention = 1;
         };
         relationshipNotifier.enable = true;
         showHiddenThings.enable = true;

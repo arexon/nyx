@@ -1,7 +1,6 @@
 {
   imports = [
     ./niri.nix
-    ./noctalia.nix
-    ./swaybg
+    ./noctalia
   ];
 }

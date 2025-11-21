@@ -31,7 +31,7 @@
       general = {
         avatarImage = "/home/${user}/.pfp.png";
         showScreenCorners = true;
-        dimDesktop = false;
+        dimmerOpacity = 0;
         enableShadows = false;
       };
       bar = {
@@ -110,8 +110,15 @@
         location = "bottom";
         settingsPanelAttachToBar = true;
       };
+      wallpaper = {
+        monitors = [
+          {
+            name = "DP-1";
+            wallpaper = ./laundry.jpg;
+          }
+        ];
+      };
       location.name = "Cairo";
-      wallpaper.enabled = false;
       dock.enabled = false;
       audio.visualizerType = "none";
       setupCompleted = true;

@@ -62,6 +62,11 @@
               blacklist = ["bluetooth*"];
               drawerEnabled = false;
             }
+            {
+              id = "CustomButton";
+              icon = "app-window";
+              leftClickExec = "nu -e 'niri msg action set-dynamic-cast-window --id (niri msg --json pick-window | from json | get id)'";
+            }
             {id = "ScreenRecorder";}
             {id = "NotificationHistory";}
             {id = "Bluetooth";}

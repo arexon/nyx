@@ -116,10 +116,13 @@
         settingsPanelAttachToBar = true;
       };
       wallpaper = {
+        directory = "${config.xdg.userDirs.pictures}/walls";
+        randomEnabled = true;
+        randomIntervalSec = 60 * 60;
         monitors = [
           {
             name = "DP-1";
-            wallpaper = ./laundry.jpg;
+            wallpaper = "${config.xdg.userDirs.pictures}/walls/katana.png";
           }
         ];
       };

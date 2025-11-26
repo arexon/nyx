@@ -65,6 +65,7 @@
         --text-0: var(--text-2);
         --custom-chatbar: separated;
         --chatbar-height: 56px;
+        --small-user-panel: off;
       }
     '';
   };

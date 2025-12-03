@@ -10,7 +10,6 @@
     ./yazi.nix
     ./bat.nix
     ./direnv.nix
-    ./keychain.nix
     ./imv.nix
     ./television.nix
     ./fastfetch

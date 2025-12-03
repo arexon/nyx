@@ -2,6 +2,48 @@
   programs.yazi = {
     enable = true;
     enableNushellIntegration = true;
+    theme.icon.dirs = [
+      {
+        name = ".config";
+        text = "";
+      }
+      {
+        name = ".git";
+        text = "";
+      }
+      {
+        name = ".github";
+        text = "";
+      }
+      {
+        name = "desktop";
+        text = "";
+      }
+      {
+        name = "docs";
+        text = "";
+      }
+      {
+        name = "dl";
+        text = "";
+      }
+      {
+        name = "pics";
+        text = "";
+      }
+      {
+        name = "vids";
+        text = "";
+      }
+      {
+        name = "games";
+        text = "";
+      }
+      {
+        name = "projects";
+        text = "";
+      }
+    ];
     settings = {
       plugin = {
         prepend_fetchers = [

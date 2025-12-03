@@ -1,7 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-25.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-25-05.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
     chaotic-nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
@@ -67,7 +67,6 @@
 
     nixosConfigurations = {
       falcon = lib.nixosSystem {
-        inherit system;
         specialArgs = {inherit inputs user host;};
         modules = [
           home-manager.nixosModules.home-manager
@@ -78,6 +77,7 @@
           {
             nixpkgs = {
               config.allowUnfree = true;
+              hostPlatform = {inherit system;};
               overlays = [
                 (import ./overlays {inherit inputs;})
                 niri.overlays.niri

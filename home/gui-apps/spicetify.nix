@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  spicePkgs = inputs.spicetify.legacyPackages.${pkgs.system};
+  spicePkgs = inputs.spicetify.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in {
   programs.spicetify = {
     enable = true;

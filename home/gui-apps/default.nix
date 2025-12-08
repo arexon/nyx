@@ -19,6 +19,7 @@
     nautilus
     pavucontrol
     helvum
+    gnome-text-editor
   ];
 
   xdg.desktopEntries."org.gnome.Totem" = {

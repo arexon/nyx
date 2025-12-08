@@ -35,5 +35,6 @@
     wl-clipboard
     playerctl
     fd
+    nix-prefetch-github
   ];
 }

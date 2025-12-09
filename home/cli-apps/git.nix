@@ -13,23 +13,21 @@ in {
 
   programs.git = {
     enable = true;
-    userName = user;
-    userEmail = email;
-    aliases = {
-      aa = "add .";
-      ap = "add --patch";
-      cm = "commit -m";
-      ca = "commit --amend";
-      uncommit = "reset --soft HEAD^";
-      s = "status";
-      lol = "log --graph --decorate --pretty=oneline --abbrev-commit";
-      lola = "log --graph --decorate --pretty=oneline --abbrev-commit --all";
-    };
-    signing = {
-      key = "~/.ssh/id_ed25519.pub";
-      signByDefault = true;
-    };
-    extraConfig = {
+    settings = {
+      alias = {
+        aa = "add .";
+        ap = "add --patch";
+        cm = "commit -m";
+        ca = "commit --amend";
+        uncommit = "reset --soft HEAD^";
+        s = "status";
+        lol = "log --graph --decorate --pretty=oneline --abbrev-commit";
+        lola = "log --graph --decorate --pretty=oneline --abbrev-commit --all";
+      };
+      user = {
+        name = user;
+        email = email;
+      };
       init.defaultBranch = "main";
       gpg = {
         format = "ssh";
@@ -57,6 +55,10 @@ in {
         enabled = true;
         autoupdate = true;
       };
+    };
+    signing = {
+      key = "~/.ssh/id_ed25519.pub";
+      signByDefault = true;
     };
   };
 }

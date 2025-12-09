@@ -27,13 +27,6 @@ with super; {
     meta.mainProgram = pname;
   };
 
-  # Temporary fix for audio from <https://github.com/NixOS/nixpkgs/issues/380493#issuecomment-3456745728>.
-  mcpelauncher-client = mcpelauncher-client.overrideAttrs (old: {
-    cmakeFlags =
-      (builtins.filter (flag: flag != (lib.cmakeBool "USE_SDL3_AUDIO" false)) old.cmakeFlags)
-      ++ [(lib.cmakeBool "SDL3_VENDORED" false)];
-  });
-
   proton-gdk-bin = proton-ge-bin.overrideAttrs {
     src = fetchzip {
       url = "https://github.com/Weather-OS/GDK-Proton/releases/download/release/GE-Proton10-25.tar.gz";

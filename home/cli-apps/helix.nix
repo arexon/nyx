@@ -90,10 +90,7 @@ in {
         }
         {
           name = "jsonc";
-          formatter = {
-            command = "prettier";
-            args = ["--parser" "json"];
-          };
+          formatter = denoFormatter "jsonc";
           file-types = [
             "jsonc"
             "json"

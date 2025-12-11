@@ -4,8 +4,10 @@
       enable = true;
       configFile.source = ./config.nu;
       extraLogin = ''
-        printf '\e[H\ec\e[100B'
-        ^fastfetch
+        if (is-terminal --stdin) {
+          printf '\e[H\ec\e[100B'
+          ^fastfetch
+        }
       '';
       environmentVariables = config.home.sessionVariables;
     };

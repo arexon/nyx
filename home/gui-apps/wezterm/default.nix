@@ -30,7 +30,7 @@ in {
 
   programs.wezterm = {
     enable = true;
-    colorSchemes.kanagawa = with config.lib.stylix.colors.withHashtag; {
+    colorSchemes.stylix = with config.lib.stylix.colors.withHashtag; {
       ansi = [
         base00
         base08

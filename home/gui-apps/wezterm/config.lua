@@ -4,7 +4,7 @@ local workspace = require("workspace")
 local action = wezterm.action
 local config = wezterm.config_builder()
 
-config.color_scheme = "kanagawa"
+config.color_scheme = "stylix"
 
 config.default_workspace = workspace.HOME_WORKSPACE_NAME
 

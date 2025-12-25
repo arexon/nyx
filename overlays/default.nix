@@ -1,4 +1,4 @@
-{inputs, ...}: _: super:
+{...}: _: super:
 with super; {
   spotify = spotify.overrideAttrs {
     postFixup = ''

@@ -25,6 +25,7 @@ in {
 
   programs.helix = {
     enable = true;
+    package = pkgs.helix_git;
     defaultEditor = true;
 
     languages = {

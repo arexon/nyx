@@ -76,6 +76,7 @@ in {
           name = "markdown";
           auto-format = true;
           language-servers = ["marksman" "harper"];
+          formatter = denoFormatter "md";
         }
         {
           name = "typescript";
@@ -101,6 +102,10 @@ in {
             {glob = "flake.lock";}
           ];
           language-servers = ["vscode-json-language-server" "color-lsp"];
+        }
+        {
+          name = "yaml";
+          formatter = denoFormatter "yml";
         }
         {
           name = "toml";

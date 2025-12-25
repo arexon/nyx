@@ -1,7 +1,12 @@
-{
+{pkgs, ...}: {
   programs.yazi = {
     enable = true;
     enableNushellIntegration = true;
+    plugins = with pkgs.yaziPlugins; {
+      git = git;
+      smart-enter = smart-enter;
+    };
+    initLua = ./init.lua;
     theme.icon.dirs = [
       {
         name = ".config";
@@ -99,6 +104,12 @@
         on = ["g" "p"];
         run = "cd ~/pics";
         desc = "Go ~/pics";
+      }
+
+      {
+        on = ["l"];
+        run = "plugin smart-enter";
+        desc = "Enter the child directory, or open the file";
       }
     ];
   };

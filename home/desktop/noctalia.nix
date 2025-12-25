@@ -3,6 +3,7 @@
   config,
   system,
   user,
+  lib,
   ...
 }: {
   home.packages = [
@@ -11,7 +12,7 @@
 
   programs.noctalia-shell = {
     enable = true;
-    colors = with config.lib.stylix.colors.withHashtag; {
+    colors = lib.mkForce (with config.lib.stylix.colors.withHashtag; {
       mError = base08;
       mOnError = base00;
       mOnPrimary = base00;
@@ -26,7 +27,7 @@
       mSurface = base00;
       mSurfaceVariant = base02;
       mTertiary = base0D;
-    };
+    });
     settings = {
       general = {
         avatarImage = "/home/${user}/.pfp.png";

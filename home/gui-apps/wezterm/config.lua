@@ -186,6 +186,13 @@ config.keys = {
 		mods = "LEADER",
 		action = action.ActivateCopyMode,
 	},
+
+	-- Misc
+	{
+		key = "Enter",
+		mods = "ALT",
+		action = action.Nop,
+	},
 }
 
 for index = 1, 8 do

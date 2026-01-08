@@ -35,6 +35,7 @@
     wl-clipboard
     playerctl
     fd
+    tree
     nix-prefetch-github
     copilot-language-server
   ];

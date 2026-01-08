@@ -20,6 +20,7 @@
     pavucontrol
     helvum
     gnome-text-editor
+    vscode
   ];
 
   xdg.desktopEntries."org.gnome.Totem" = {

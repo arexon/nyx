@@ -11,6 +11,7 @@
   };
 
   harper = getExe pkgs.harper;
+  copilot = getExe pkgs.copilot-language-server;
   marksman = getExe pkgs.marksman;
   nixd = getExe pkgs.nixd;
   alejandra = getExe pkgs.alejandra;
@@ -25,7 +26,6 @@ in {
 
   programs.helix = {
     enable = true;
-    package = pkgs.helix_git;
     defaultEditor = true;
 
     languages = {
@@ -54,6 +54,20 @@ in {
           };
         };
         color-lsp.command = color-lsp;
+        copilot = {
+          command = copilot;
+          args = ["--stdio"];
+          config = {
+            editorInfo = {
+              name = "Helix";
+              version = "25.07.1";
+            };
+            editorPluginInfo = {
+              name = "helix-copilot";
+              version = "0.1.0";
+            };
+          };
+        };
       };
       language = [
         {
@@ -82,7 +96,7 @@ in {
           name = "typescript";
           formatter = denoFormatter "ts";
           auto-format = true;
-          language-servers = ["typescript-language-server" "deno-lsp" "color-lsp"];
+          language-servers = ["typescript-language-server" "deno-lsp" "color-lsp" "copilot"];
         }
         {
           name = "javascript";
@@ -184,11 +198,14 @@ in {
           Y = [":yank-join"];
           "C-s" = ":write";
           "C-q" = ":buffer-close";
+          "C-S-q" = ":quit-all!";
           "C-S-r" = ":reload-all";
           "C-r" = ":reload";
         };
         insert = {
           "C-[" = "normal_mode";
+          "A-y" = "inline_completion_accept";
+          "A-n" = "inline_completion_dismiss";
         };
         select = {
           x = "extend_line";

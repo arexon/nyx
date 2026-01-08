@@ -12,6 +12,8 @@
 
     nixcord.url = "github:kaylorben/nixcord";
 
+    helix-editor.url = "github:devmanuelli/helix/textDocument/inlineCompletion";
+
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,6 +44,7 @@
     stylix,
     spicetify,
     chaotic-nyx,
+    helix-editor,
     ...
   }: let
     inherit (nixpkgs) lib;
@@ -78,6 +81,7 @@
               overlays = [
                 (import ./overlays {inherit inputs;})
                 niri.overlays.niri
+                helix-editor.overlays.helix
               ];
             };
           }

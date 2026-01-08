@@ -36,5 +36,6 @@
     playerctl
     fd
     nix-prefetch-github
+    copilot-language-server
   ];
 }

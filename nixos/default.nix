@@ -125,7 +125,15 @@ in {
     };
   };
 
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    wrappers.livesplit-one = {
+      owner = "root";
+      group = "root";
+      capabilities = "cap_sys_ptrace+eip";
+      source = "/run/current-system/sw/bin/livesplit-one";
+    };
+  };
 
   services = {
     pipewire = {
@@ -201,7 +209,7 @@ in {
   };
 
   environment = {
-    systemPackages = with pkgs; [nix-output-monitor];
+    systemPackages = with pkgs; [nix-output-monitor livesplit-one];
     sessionVariables = {
       # TODO: Maybe configure with a wayland option.
       NIXOS_OZONE_WL = "1";

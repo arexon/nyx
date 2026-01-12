@@ -57,7 +57,7 @@
     system = "x86_64-linux";
     user = "arexon";
     host = "falcon";
-    email = "arexonreal@gmail.com";
+    email = "me@arexon.dev";
 
     pkgs = import nixpkgs {inherit system;};
   in {

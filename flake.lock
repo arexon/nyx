@@ -420,11 +420,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1767859386,
-        "narHash": "sha256-AWL0ju7OKKMyvxHolmJ0KhXhQ1NkSKZO5e4OJel+egc=",
+        "lastModified": 1768118572,
+        "narHash": "sha256-EzvShHuEAPrwlKgWL6iiNZY4xGNYLac1Wo9nTgbdy+4=",
         "owner": "kaylorben",
         "repo": "nixcord",
-        "rev": "ba59974679accf680b1f16a74ea72e18dea31ecb",
+        "rev": "dc9193f6e968af926440fda523376109f4d3f915",
         "type": "github"
       },
       "original": {

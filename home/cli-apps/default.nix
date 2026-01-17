@@ -38,5 +38,6 @@
     tree
     nix-prefetch-github
     copilot-language-server
+    gpu-screen-recorder
   ];
 }

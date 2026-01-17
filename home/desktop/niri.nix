@@ -53,7 +53,7 @@ in {
         "Mod+Shift+N".action = spawn ["playerctl" "next"];
         "Mod+Shift+P".action = spawn ["playerctl" "previous"];
         "Mod+Shift+O".action = spawn ["playerctl" "play-pause"];
-        "Mod+Shift+R".action = spawn (noctalia "screenRecorder toggle");
+        "Mod+Shift+R".action = spawn (noctalia "plugin:screen-recorder toggle");
         "Mod+Shift+Z".action = spawn (noctalia "notifications toggleHistory");
         "Mod+Shift+M".action = spawn (noctalia "volume muteInput");
         "Mod+Shift+Escape".action = spawn (noctalia "sessionMenu toggle");

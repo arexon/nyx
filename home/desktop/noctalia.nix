@@ -5,7 +5,9 @@
   user,
   lib,
   ...
-}: {
+}: let
+  plugins-source-url = "https://github.com/noctalia-dev/noctalia-plugins";
+in {
   home.packages = [
     inputs.noctalia.packages.${system}.default
   ];
@@ -28,6 +30,23 @@
       mSurfaceVariant = base02;
       mTertiary = base0D;
     });
+    plugins.states = {
+      screen-recorder = {
+        enabled = true;
+        sourceUrl = plugins-source-url;
+      };
+      catwalk = {
+        enabled = true;
+        sourceUrl = plugins-source-url;
+      };
+    };
+    pluginSettings = {
+      screen-recorder = {
+        directory = config.xdg.userDirs.videos;
+        audioCodec = "aac";
+        colorRange = "full";
+      };
+    };
     settings = {
       general = {
         avatarImage = "/home/${user}/.pfp.png";
@@ -54,9 +73,7 @@
               maxWidth = 200;
             }
           ];
-          center = [
-            {id = "Clock";}
-          ];
+          center = [{id = "Clock";}];
           right = [
             {
               id = "Tray";
@@ -68,11 +85,12 @@
               icon = "app-window";
               leftClickExec = "nu -e 'niri msg action set-dynamic-cast-window --id (niri msg --json pick-window | from json | get id)'";
             }
-            {id = "ScreenRecorder";}
+            {id = "plugin:screen-recorder";}
             {id = "NotificationHistory";}
             {id = "Bluetooth";}
             {id = "Microphone";}
             {id = "Volume";}
+            {id = "plugin:catwalk";}
           ];
         };
       };
@@ -91,7 +109,7 @@
         }
         {
           id = "audio-card";
-          enabled = true;
+          enabled = false;
         }
         {
           id = "weather-card";
@@ -102,15 +120,7 @@
           enabled = false;
         }
       ];
-      notifications = {
-        location = "bottom";
-        alwaysOnTop = true;
-      };
-      screenRecorder = {
-        directory = config.xdg.userDirs.videos;
-        audioCodec = "aac";
-        colorRange = "full";
-      };
+      notifications.location = "bottom";
       osd = {
         alwaysOnTop = true;
         location = "bottom";
@@ -120,12 +130,6 @@
         directory = "${config.xdg.userDirs.pictures}/walls";
         randomEnabled = true;
         randomIntervalSec = 60 * 60;
-        monitors = [
-          {
-            name = "DP-1";
-            wallpaper = "${config.xdg.userDirs.pictures}/walls/katana.png";
-          }
-        ];
       };
       location.name = "Cairo";
       dock.enabled = false;

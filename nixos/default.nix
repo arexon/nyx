@@ -17,9 +17,11 @@ in {
       auto-optimise-store = true;
       substituters = [
         "https://niri.cachix.org"
+        "https://attic.xuyh0120.win/lantian"
       ];
       trusted-public-keys = [
         "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
+        "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
       ];
     };
     gc = {
@@ -38,7 +40,7 @@ in {
   boot = {
     extraModulePackages = with config.boot.kernelPackages; [r8125];
 
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
     kernelModules = ["kvm-amd" "r8169"];
     kernelParams = [
       # Needed for lact.
@@ -116,7 +118,6 @@ in {
     cpu.amd.updateMicrocode = config.hardware.enableRedistributableFirmware;
     graphics = {
       enable = true;
-      package = pkgs.mesa_git;
       extraPackages = with pkgs; [
         # Needed for OCCT.
         ocl-icd

@@ -3,8 +3,6 @@
     nixpkgs-25-05.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
-    chaotic-nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,6 +36,8 @@
       url = "github:TNAZEP/HytaleLauncherFlake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
   };
 
   outputs = inputs @ {
@@ -48,8 +48,8 @@
     nixcord,
     stylix,
     spicetify,
-    chaotic-nyx,
     helix-editor,
+    nix-cachyos-kernel,
     ...
   }: let
     inherit (nixpkgs) lib;
@@ -78,7 +78,6 @@
           niri.nixosModules.niri
           noctalia.nixosModules.default
           stylix.nixosModules.stylix
-          chaotic-nyx.nixosModules.default
           {
             nixpkgs = {
               config.allowUnfree = true;
@@ -87,6 +86,7 @@
                 (import ./overlays {inherit inputs;})
                 niri.overlays.niri
                 helix-editor.overlays.helix
+                nix-cachyos-kernel.overlays.pinned
               ];
             };
           }

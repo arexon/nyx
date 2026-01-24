@@ -10,7 +10,7 @@
 
     nixcord.url = "github:kaylorben/nixcord";
 
-    helix-editor.url = "github:devmanuelli/helix/textDocument/inlineCompletion";
+    helix-editor.url = "github:mattwparas/helix/steel-event-system";
 
     niri = {
       url = "github:sodiboo/niri-flake";
@@ -33,7 +33,7 @@
     };
 
     hytale-launcher = {
-      url = "github:TNAZEP/HytaleLauncherFlake";
+      url = "github:JPyke3/hytale-launcher-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

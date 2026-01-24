@@ -262,16 +262,16 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1765315168,
-        "narHash": "sha256-h8SaMXJB4/+vT0s+vJmi3zvYF1tnLi62AvaeuKwibFE=",
-        "owner": "devmanuelli",
+        "lastModified": 1768067556,
+        "narHash": "sha256-MauqPznenGX/6v5X2uUXc6DNqCtVUzGbQnPfzw6MA44=",
+        "owner": "mattwparas",
         "repo": "helix",
-        "rev": "e927a2256ebdd67ff45811ed782af26a0f34c05f",
+        "rev": "d32de0548fa11f54283baae806c0458f06ea682e",
         "type": "github"
       },
       "original": {
-        "owner": "devmanuelli",
-        "ref": "textDocument/inlineCompletion",
+        "owner": "mattwparas",
+        "ref": "steel-event-system",
         "repo": "helix",
         "type": "github"
       }
@@ -305,16 +305,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1768349407,
-        "narHash": "sha256-T8wgwnZcDLpAU9tQ1OUSYqFv2EYWkwH3+7R+cOnpak4=",
-        "owner": "TNAZEP",
-        "repo": "HytaleLauncherFlake",
-        "rev": "52bde7280b55863f9cc21cc1c063c7f657206fb6",
+        "lastModified": 1769270593,
+        "narHash": "sha256-xk/p25XChk2XB6NRdayRuP17mfQh9JEroLmGVFbE1ow=",
+        "owner": "JPyke3",
+        "repo": "hytale-launcher-nix",
+        "rev": "da53ec38c153a385d13d7adc2fa7af23e8e642df",
         "type": "github"
       },
       "original": {
-        "owner": "TNAZEP",
-        "repo": "HytaleLauncherFlake",
+        "owner": "JPyke3",
+        "repo": "hytale-launcher-nix",
         "type": "github"
       }
     },

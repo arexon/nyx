@@ -13,6 +13,7 @@
     ./imv.nix
     ./television.nix
     ./fastfetch
+    ./fish.nix
   ];
 
   home.packages = with pkgs; [

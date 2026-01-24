@@ -1,6 +1,8 @@
 {
   programs.starship = {
     enable = true;
+    enableFishIntegration = true;
+    enableTransience = true;
     settings = {
       format = builtins.concatStringsSep "" [
         "$directory"
@@ -39,6 +41,7 @@
         success_symbol = "[::](bold green)";
         error_symbol = "[:X](bold red)";
       };
+      time.disabled = false;
     };
   };
 }

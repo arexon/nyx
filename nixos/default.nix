@@ -33,7 +33,7 @@ in {
 
   users.users.${user} = {
     isNormalUser = true;
-    shell = pkgs.nushell;
+    shell = pkgs.fish;
     extraGroups = ["wheel" "uinput"];
   };
 
@@ -207,6 +207,7 @@ in {
       enable = true;
       package = pkgs.niri-stable;
     };
+    fish.enable = true;
   };
 
   environment = {

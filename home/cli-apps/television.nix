@@ -1,6 +1,9 @@
 {
   programs = {
-    television.enable = true;
+    television = {
+      enable = true;
+      enableFishIntegration = true;
+    };
     nix-search-tv = {
       enable = true;
       enableTelevisionIntegration = true;

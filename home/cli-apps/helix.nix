@@ -194,7 +194,6 @@ in {
           "C-u" = ["half_page_up" "align_view_center"];
           "C-d" = ["half_page_down" "align_view_center"];
           "A-x" = [":reset-diff-change"];
-          space.l = ":toggle lsp.display-inlay-hints";
           Y = [":yank-join"];
           "C-s" = ":write";
           "C-q" = ":buffer-close";

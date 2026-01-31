@@ -203,8 +203,6 @@ in {
         };
         insert = {
           "C-[" = "normal_mode";
-          "A-y" = "inline_completion_accept";
-          "A-n" = "inline_completion_dismiss";
         };
         select = {
           x = "extend_line";

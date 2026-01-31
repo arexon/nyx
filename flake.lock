@@ -169,11 +169,11 @@
         "nixpkgs-lib": "nixpkgs-lib_2"
       },
       "locked": {
-        "lastModified": 1765835352,
-        "narHash": "sha256-XswHlK/Qtjasvhd1nOa1e8MgZ8GS//jBoTqWtrS1Giw=",
+        "lastModified": 1768135262,
+        "narHash": "sha256-PVvu7OqHBGWN16zSi6tEmPwwHQ4rLPU9Plvs8/1TUBY=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "a34fae9c08a15ad73f295041fec82323541400a9",
+        "rev": "80daad04eddbbf5a4d883996a73f3f542fa437ac",
         "type": "github"
       },
       "original": {
@@ -256,22 +256,21 @@
         "type": "gitlab"
       }
     },
-    "helix-editor": {
+    "helix": {
       "inputs": {
         "nixpkgs": "nixpkgs",
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1768067556,
-        "narHash": "sha256-MauqPznenGX/6v5X2uUXc6DNqCtVUzGbQnPfzw6MA44=",
-        "owner": "mattwparas",
+        "lastModified": 1769721111,
+        "narHash": "sha256-mwB7UaBiIY7trRH3rJXAMHOrjtcXRAEnp2LGoKzsc34=",
+        "owner": "helix-editor",
         "repo": "helix",
-        "rev": "d32de0548fa11f54283baae806c0458f06ea682e",
+        "rev": "476ae24cc40b5a81522cbf37efe848860b44f434",
         "type": "github"
       },
       "original": {
-        "owner": "mattwparas",
-        "ref": "steel-event-system",
+        "owner": "helix-editor",
         "repo": "helix",
         "type": "github"
       }
@@ -405,11 +404,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1768610265,
-        "narHash": "sha256-JZgnO/gPPBgFCKsQHIT2mRcK0vkwWGfyg/6wOJkb+F8=",
+        "lastModified": 1769337638,
+        "narHash": "sha256-xJvTZGJWaSBq857V/PVL5GblIpiuO0IuUupLvBxNqr0=",
         "owner": "kaylorben",
         "repo": "nixcord",
-        "rev": "02c730b57b8ef16c62624a3410ef724d014c58db",
+        "rev": "ef69bfad63be091496c444675aee2e8af6a8973c",
         "type": "github"
       },
       "original": {
@@ -514,11 +513,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1766885793,
-        "narHash": "sha256-P6RVkrM9JLCW6xBjSwHfgTOQ1JwBUma5xe5LI8xAPC0=",
+        "lastModified": 1769089682,
+        "narHash": "sha256-9yA/LIuAVQq0lXelrZPjLuLVuZdm03p8tfmHhnDIkms=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9ef261221d1e72399f2036786498d78c38185c46",
+        "rev": "078d69f03934859a181e81ba987c2bb033eebfc5",
         "type": "github"
       },
       "original": {
@@ -591,7 +590,7 @@
     },
     "root": {
       "inputs": {
-        "helix-editor": "helix-editor",
+        "helix": "helix",
         "home-manager": "home-manager",
         "hytale-launcher": "hytale-launcher",
         "niri": "niri",
@@ -607,7 +606,7 @@
     "rust-overlay": {
       "inputs": {
         "nixpkgs": [
-          "helix-editor",
+          "helix",
           "nixpkgs"
         ]
       },

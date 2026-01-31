@@ -10,7 +10,7 @@
 
     nixcord.url = "github:kaylorben/nixcord";
 
-    helix-editor.url = "github:mattwparas/helix/steel-event-system";
+    helix.url = "github:helix-editor/helix";
 
     niri = {
       url = "github:sodiboo/niri-flake";
@@ -46,9 +46,9 @@
     niri,
     noctalia,
     nixcord,
+    helix,
     stylix,
     spicetify,
-    helix-editor,
     nix-cachyos-kernel,
     ...
   }: let
@@ -85,7 +85,7 @@
               overlays = [
                 (import ./overlays {inherit inputs;})
                 niri.overlays.niri
-                helix-editor.overlays.helix
+                helix.overlays.default
                 nix-cachyos-kernel.overlays.pinned
               ];
             };

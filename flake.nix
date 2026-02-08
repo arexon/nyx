@@ -1,111 +1,53 @@
+# DO-NOT-EDIT. This file was auto-generated using github:vic/flake-file.
+# Use `nix run .#write-flake` to regenerate it.
 {
+  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
+
   inputs = {
-    nixpkgs-25-05.url = "github:NixOS/nixpkgs/nixos-25.05";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-
-    home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixcord.url = "github:kaylorben/nixcord";
-
-    helix.url = "github:helix-editor/helix";
-
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    stylix = {
-      url = "github:nix-community/stylix/release-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    spicetify = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hytale-launcher = {
-      url = "github:JPyke3/hytale-launcher-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
-  };
-
-  outputs = inputs @ {
-    nixpkgs,
-    home-manager,
-    niri,
-    noctalia,
-    nixcord,
-    helix,
-    stylix,
-    spicetify,
-    nix-cachyos-kernel,
-    ...
-  }: let
-    inherit (nixpkgs) lib;
-
-    system = "x86_64-linux";
-    user = "arexon";
-    host = "falcon";
-    email = "me@arexon.dev";
-
-    pkgs = import nixpkgs {inherit system;};
-  in {
-    formatter.${system} = pkgs.alejandra;
-
-    devShells.${system}.default = pkgs.mkShell {
-      packages = with pkgs; [
-        stylua
-        lua-language-server
-      ];
-    };
-
-    nixosConfigurations = {
-      falcon = lib.nixosSystem {
-        specialArgs = {inherit inputs user host;};
-        modules = [
-          home-manager.nixosModules.home-manager
-          niri.nixosModules.niri
-          noctalia.nixosModules.default
-          stylix.nixosModules.stylix
-          {
-            nixpkgs = {
-              config.allowUnfree = true;
-              hostPlatform = {inherit system;};
-              overlays = [
-                (import ./overlays {inherit inputs;})
-                niri.overlays.niri
-                helix.overlays.default
-                nix-cachyos-kernel.overlays.pinned
-              ];
-            };
-          }
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              extraSpecialArgs = {inherit system inputs user email;};
-              users.${user}.imports = [
-                noctalia.homeModules.default
-                nixcord.homeModules.nixcord
-                spicetify.homeManagerModules.spicetify
-                ./home
-              ];
-            };
-          }
-          ./nixos
-        ];
+    agenix = {
+      inputs = {
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
       };
+      url = "github:ryantm/agenix";
     };
+    flake-file.url = "github:vic/flake-file";
+    flake-parts = {
+      inputs.nixpkgs-lib.follows = "nixpkgs-lib";
+      url = "github:hercules-ci/flake-parts";
+    };
+    helix.url = "github:helix-editor/helix";
+    home-manager = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager/release-25.11";
+    };
+    hytale-launcher = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:JPyke3/hytale-launcher-nix";
+    };
+    import-tree.url = "github:vic/import-tree";
+    niri = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:sodiboo/niri-flake";
+    };
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
+    nixcord.url = "github:kaylorben/nixcord";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-lib.follows = "nixpkgs";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    noctalia-shell = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:noctalia-dev/noctalia-shell";
+    };
+    pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
+    spicetify = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:Gerg-L/spicetify-nix";
+    };
+    stylix = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/stylix/release-25.11";
+    };
+    systems.url = "github:nix-systems/default";
   };
 }

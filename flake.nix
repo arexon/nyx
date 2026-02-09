@@ -8,6 +8,7 @@
       inputs = {
         home-manager.follows = "home-manager";
         nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
       };
       url = "github:ryantm/agenix";
     };
@@ -31,7 +32,10 @@
       url = "github:sodiboo/niri-flake";
     };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
-    nixcord.url = "github:kaylorben/nixcord";
+    nixcord = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:FlameFlag/nixcord";
+    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-lib.follows = "nixpkgs";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -41,11 +45,17 @@
     };
     pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
     spicetify = {
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+      };
       url = "github:Gerg-L/spicetify-nix";
     };
     stylix = {
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+      };
       url = "github:nix-community/stylix/release-25.11";
     };
     systems.url = "github:nix-systems/default";

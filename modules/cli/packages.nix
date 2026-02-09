@@ -18,7 +18,6 @@
       fd
       tree
       jq
-      inotify-tools
     ];
   };
 }

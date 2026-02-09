@@ -8,11 +8,6 @@
           inherit (pkgs.fishPlugins.autopair) src;
         }
       ];
-      shellAbbrs = {
-        nhs = "nh os switch";
-        nhb = "nh os boot";
-        nht = "nh os test";
-      };
       shellAliases = {
         cat = "bat";
         lg = "lazygit";

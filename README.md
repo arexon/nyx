@@ -1,3 +1,3 @@
 # Nyx
 
-My simple NixOS and home-manager configuration.
+My [dendritic](https://dendrix.oeiuwq.com/Dendritic-Ecosystem.html#vics-dendritic-libraries)-based NixOS and home-manager configuration.

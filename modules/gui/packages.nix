@@ -1,8 +1,4 @@
 {
-  inputs,
-  system,
-  ...
-}: {
   flake.modules.homeManager.gui = {pkgs, ...}: {
     home.packages = with pkgs; [
       blockbench
@@ -18,7 +14,6 @@
       helvum
       gnome-text-editor
       vscode
-      # inputs.zed-editor-flake.packages.${pkgs.stdenv.hostPlatform.system}.zed-editor-preview-bin
     ];
 
     xdg.desktopEntries."org.gnome.Totem" = {

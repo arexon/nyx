@@ -14,7 +14,7 @@ in {
     |> lib.mapAttrs' (name: module: let
       hostName = lib.removePrefix hostsPrefix name;
     in {
-      name = "falcon";
+      name = hostName;
       value = inputs.nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [

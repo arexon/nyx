@@ -12,6 +12,10 @@
       };
       url = "github:ryantm/agenix";
     };
+    disko = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/disko";
+    };
     flake-file.url = "github:vic/flake-file";
     flake-parts = {
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
@@ -25,6 +29,10 @@
     hytale-launcher = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:JPyke3/hytale-launcher-nix";
+    };
+    hytale-server = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:essegd/hytale-server-flake";
     };
     import-tree.url = "github:vic/import-tree";
     niri = {

@@ -1,10 +1,7 @@
 {
   flake.modules.homeManager.cli = {
     programs = {
-      television = {
-        enable = true;
-        enableFishIntegration = true;
-      };
+      television.enable = true;
       nix-search-tv = {
         enable = true;
         enableTelevisionIntegration = true;

@@ -2,7 +2,6 @@
   flake.modules.homeManager.shell = {
     programs.starship = {
       enable = true;
-      enableFishIntegration = true;
       enableTransience = true;
       settings = {
         format = builtins.concatStringsSep "" [

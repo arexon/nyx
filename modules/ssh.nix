@@ -4,6 +4,11 @@
   };
 
   flake.modules.homeManager.ssh = {
+    programs.keychain = {
+      enable = true;
+      keys = ["id_ed25519"];
+    };
+
     programs.ssh = {
       enable = true;
       enableDefaultConfig = false;

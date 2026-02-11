@@ -10,6 +10,10 @@ in {
     programs.git = {
       enable = true;
       settings = {
+        url = {
+          # Mainly because of Regolith.
+          "git@github.com:".insteadOf = ["https://github.com"];
+        };
         alias = {
           aa = "add .";
           ap = "add --patch";

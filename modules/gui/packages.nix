@@ -6,7 +6,6 @@
       gimp
       kdePackages.kdenlive
       losslesscut-bin
-      firefox
       totem # Apparently video thumbnails require this..
       file-roller
       nautilus

@@ -18,6 +18,8 @@
       fd
       tree
       jq
+      calc
+      yt-dlp
     ];
   };
 }

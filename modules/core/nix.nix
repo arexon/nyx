@@ -14,6 +14,7 @@
       };
       optimise.automatic = true;
       settings = {
+        trusted-users = ["@wheel"];
         experimental-features = ["nix-command" "flakes" "pipe-operators"];
         max-jobs = "auto";
         use-xdg-base-directories = true;

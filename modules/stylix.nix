@@ -4,10 +4,7 @@ in {
   flake-file.inputs = {
     stylix = {
       url = "github:nix-community/stylix/release-25.11";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

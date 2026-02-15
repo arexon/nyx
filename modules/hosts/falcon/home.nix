@@ -12,7 +12,6 @@
     niri
     noctalia
     shell
-    ssh
     stylix
     xdg
   ];

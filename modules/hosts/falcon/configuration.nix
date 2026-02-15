@@ -9,7 +9,6 @@
     kanata
     niri
     plymouth
-    root
     shell
     sound
     ssh

@@ -18,10 +18,5 @@
     environment.systemPackages = with pkgs; [
       agenix
     ];
-
-    age.secrets = {
-      arexon-password.file = ../secrets/arexon-password.age;
-      root-password.file = ../secrets/root-password.age;
-    };
   };
 }

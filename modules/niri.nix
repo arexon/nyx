@@ -155,6 +155,10 @@
           matches = [{app-id = "steam";}];
           open-on-workspace = "IV";
         }
+        {
+          matches = [{app-id = "Bitwarden";}];
+          open-floating = true;
+        }
       ];
 
       layer-rules = [

@@ -1,11 +1,8 @@
 let
-  primary = "age14jgf5lrmmgg45tqsrg3y6um3x2cm0k6enssm8da5vnx2fyelu58qegcv8y";
+  arexon = builtins.readFile ../modules/users/arexon/public-ssh-key.pub;
 
-  falcon = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMKnYRP4yyR232d5KbVBkZpe3ikBM3nXJnFa7yKCc9ON root@falcon";
+  leviathan = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIESFCS7s0HzdzgQgBYb61EUZFhwBA6i46aDz5Erz+LsN";
 in {
-  "arexon-private-ssh-key.age".publicKeys = [primary falcon];
-
-  "arexon-password.age".publicKeys = [primary falcon];
-
-  "root-password.age".publicKeys = [primary falcon];
+  "restic-password.age".publicKeys = [arexon leviathan];
+  "restic-r2-environment.age".publicKeys = [arexon leviathan];
 }

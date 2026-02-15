@@ -8,6 +8,7 @@
     imports = [(modulesPath + "/installer/scan/not-detected.nix")];
 
     boot = {
+      supportedFilesystems = ["ntfs"];
       extraModulePackages = with config.boot.kernelPackages; [r8125];
       initrd = {
         availableKernelModules = [

@@ -13,6 +13,5 @@
     sound
     ssh
     stylix
-    hytale
   ];
 }

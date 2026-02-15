@@ -18,5 +18,10 @@
     environment.systemPackages = with pkgs; [
       agenix
     ];
+
+    age.secrets = {
+      restic-password.file = ../secrets/restic-password.age;
+      restic-r2-environment.file = ../secrets/restic-r2-environment.age;
+    };
   };
 }

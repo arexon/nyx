@@ -44,7 +44,7 @@
         bar = {
           density = "comfortable";
           position = "left";
-          capsuleOpacity = 0.25;
+          capsuleOpacity = lib.mkForce 0.25;
           capsuleColorKey = "primary";
           widgets = {
             left = [

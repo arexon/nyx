@@ -1,6 +1,5 @@
 {config, ...}: {
   flake.modules.nixos."hosts/falcon".imports = with config.flake.modules.nixos; [
-    agenix
     amdgpu
     arexon
     bluetooth

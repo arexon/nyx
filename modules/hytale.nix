@@ -26,6 +26,20 @@
         autoUpdate = true;
         restart = "no";
         tmux.enable = true;
+        files = with pkgs; {
+          "mods/ItemDisplays.jar".source = fetchurl {
+            url = "https://www.curseforge.com/api/v1/mods/1438861/files/7554548/download";
+            sha512 = "3yjg9606yvaqz0xsf1mi91nl5fz5zbkv5idwwr2lqvp9qjhavcd92n9mfydi9r6949y03jqzs1xdhyam2rd5cxddkpnbjcbc9gi2y7v";
+          };
+          "mods/SignaturePreservation.jar".source = fetchurl {
+            url = "https://www.curseforge.com/api/v1/mods/1446007/files/7553748/download";
+            sha512 = "06pfhh75gxyjy460myxx92kl8b8mkhqhbaxgy1w3l6i5wi06ba3mz6rm43z3w130xhdpycl5shqxbcksacsg224ylll5pn759kqw684";
+          };
+          "mods/TextSigns.jar".source = fetchurl {
+            url = "https://www.curseforge.com/api/v1/mods/1430832/files/7586850/download";
+            sha512 = "0p2pil1szidpslblsh2g2n2pdr64apmhlb9z9vykmb0x6hk8klvld6lz3mvyp797ky258wswphab288ifxlwp76f6sq2jpmlfi8k7ac";
+          };
+        };
       };
     };
 

@@ -10,6 +10,7 @@ config.default_workspace = workspace.HOME_WORKSPACE_NAME
 
 config.font_size = 14
 config.font = wezterm.font({ family = "Iosevka NF" })
+---@diagnostic disable-next-line: assign-type-mismatch
 config.harfbuzz_features = { "calt = 0", "clig = 0", "liga = 0" }
 
 config.window_close_confirmation = "NeverPrompt"

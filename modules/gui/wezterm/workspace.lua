@@ -1,5 +1,4 @@
 ---@type Wezterm
----@diagnostic disable-next-line: assign-type-mismatch
 local wezterm = require("wezterm")
 local act = wezterm.action
 local mux = wezterm.mux
@@ -41,12 +40,31 @@ end
 
 ---@return string[]
 local function get_projects()
-	local args = {
-		"nu",
-		"-c",
-		"ls ~/projects/*/.git | append (ls ~/projects/minecraft/**/*/.git) | get name | each {path dirname} | to text",
+	local patterns = {
+		"/projects/*/.git",
+		"/projects/minecraft/*/.git",
 	}
-	return wezterm.split_by_newlines(run_child_process(args))
+	local project_dirs = {}
+	local home = wezterm.home_dir
+
+	for _, pattern in ipairs(patterns) do
+		local full_pattern = home .. pattern
+
+		local success, matches = pcall(wezterm.glob, full_pattern)
+
+		if success and matches then
+			for _, path in ipairs(matches) do
+				local project_path = path:match("(.*)[/\\].git$")
+				if project_path then
+					table.insert(project_dirs, project_path)
+				end
+			end
+		else
+			wezterm.log_error("Failed to glob pattern: " .. full_pattern)
+		end
+	end
+
+	return project_dirs
 end
 
 ---@return Workspaces
@@ -68,7 +86,9 @@ local function get_workspaces()
 		local entry = {
 			name = workspace_name,
 			label = wezterm.format({
+				---@diagnostic disable-next-line: missing-fields
 				{ Attribute = { Intensity = "Bold" } },
+				---@diagnostic disable-next-line: missing-fields
 				{ Attribute = { Italic = true } },
 				{ Text = label },
 			}),
@@ -150,7 +170,6 @@ function M.switch()
 	return wezterm.action_callback(function(window, pane)
 		local choices = get_choices()
 		window:perform_action(
-			---@diagnostic disable-next-line: param-type-mismatch
 			act.InputSelector({
 				title = "Switch workspace",
 				description = "Switch workspace",
@@ -174,11 +193,7 @@ function M.switch()
 							opts = { name = id, spawn = { cwd = cwd } }
 						end
 
-						inner_window:perform_action(
-							---@diagnostic disable-next-line: param-type-mismatch
-							act.SwitchToWorkspace(opts),
-							inner_pane
-						)
+						inner_window:perform_action(act.SwitchToWorkspace(opts), inner_pane)
 					end
 				end),
 			}),
@@ -191,7 +206,6 @@ function M.close()
 	return wezterm.action_callback(function(window, pane)
 		local choices = get_choices()
 		window:perform_action(
-			---@diagnostic disable-next-line: param-type-mismatch
 			act.InputSelector({
 				title = "Close workspace",
 				description = "Close workspace",
@@ -220,26 +234,14 @@ function M.switch_to_previous()
 
 		GLOBAL.previous_workspace = current_workspace
 
-		window:perform_action(
-			---@diagnostic disable-next-line: param-type-mismatch
-			act.SwitchToWorkspace({
-				name = previous_workspace,
-			}),
-			pane
-		)
+		window:perform_action(act.SwitchToWorkspace({ name = previous_workspace }), pane)
 	end)
 end
 
 function M.switch_to_home()
 	return wezterm.action_callback(function(window, pane)
 		wezterm.emit(WORKSPACE_SWTICHED_EVENT, window)
-		window:perform_action(
-			---@diagnostic disable-next-line: param-type-mismatch
-			act.SwitchToWorkspace({
-				name = M.HOME_WORKSPACE_NAME,
-			}),
-			pane
-		)
+		window:perform_action(act.SwitchToWorkspace({ name = M.HOME_WORKSPACE_NAME }), pane)
 	end)
 end
 

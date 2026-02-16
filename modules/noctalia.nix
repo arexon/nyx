@@ -43,6 +43,9 @@
         };
         bar = {
           density = "comfortable";
+          position = "left";
+          capsuleOpacity = 0.25;
+          capsuleColorKey = "primary";
           widgets = {
             left = [
               {
@@ -80,11 +83,14 @@
           };
         };
         appLauncher = {
+          viewMode = "grid";
+          density = "compact";
           position = "follow_bar";
           enableClipboardHistory = true;
           showCategories = false;
           enableSettingsSearch = false;
           enableWindowsSearch = false;
+          enableSessionSearch = false;
         };
         controlCenter.cards = [
           {

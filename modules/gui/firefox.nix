@@ -1,10 +1,9 @@
 {
-  flake.modules.homeManager.gui = {pkgs, ...}: {
+  flake.modules.homeManager.gui = {
     stylix.targets.firefox.enable = false;
 
     programs.firefox = {
       enable = true;
-      nativeMessagingHosts = [pkgs.firefoxpwa];
     };
   };
 }

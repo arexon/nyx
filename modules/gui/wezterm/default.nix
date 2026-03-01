@@ -16,6 +16,7 @@
 
     programs.wezterm = {
       enable = true;
+      package = pkgs.unstable.wezterm;
       colorSchemes.stylix = with config.lib.stylix.colors.withHashtag; {
         ansi = [
           base00

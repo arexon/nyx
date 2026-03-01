@@ -2,6 +2,7 @@
   flake.modules.nixos."hosts/leviathan" = {
     lib,
     modulesPath,
+    pkgs,
     ...
   }: {
     imports = [
@@ -13,6 +14,8 @@
       availableKernelModules = ["ahci" "xhci_pci" "virtio_pci" "virtio_scsi" "sd_mod" "sr_mod"];
       kernelModules = ["dm-snapshot"];
     };
+
+    boot.kernelPackages = pkgs.linuxPackages_latest;
 
     networking.useDHCP = lib.mkDefault true;
 

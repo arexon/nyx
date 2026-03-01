@@ -68,6 +68,7 @@
           friendsSince.enable = true;
           sendTimestamps.enable = true;
           voiceChatDoubleClick.enable = true;
+          openInApp.enable = true;
         };
       };
       quickCss = ''

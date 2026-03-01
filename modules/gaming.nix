@@ -22,7 +22,6 @@
       prismlauncher
       pcsx2
       inputs.hytale-launcher.packages.${pkgs.stdenv.hostPlatform.system}.default
-      local.wine-gdk
     ];
   };
 }

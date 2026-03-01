@@ -3,7 +3,7 @@
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
   };
 
-  flake.modules.nixos.core = {pkgs, ...}: {
+  flake.modules.nixos.cachyos-kernel = {pkgs, ...}: {
     nix.settings = {
       substituters = [
         "https://attic.xuyh0120.win/lantian"

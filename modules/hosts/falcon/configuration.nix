@@ -3,6 +3,7 @@
     amdgpu
     arexon
     bluetooth
+    cachyos-kernel
     core
     gaming
     kanata

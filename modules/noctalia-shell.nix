@@ -104,7 +104,7 @@
               {
                 id = "CustomButton";
                 icon = "app-window";
-                leftClickExec = "nu -e 'niri msg action set-dynamic-cast-window --id (niri msg --json pick-window | from json | get id)'";
+                leftClickExec = "niri msg action set-dynamic-cast-window --id (niri msg --json pick-window | jq -r '.id')";
               }
               {id = "NotificationHistory";}
               {id = "Bluetooth";}

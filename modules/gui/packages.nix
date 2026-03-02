@@ -4,7 +4,7 @@
       blockbench
       obsidian
       gimp
-      kdePackages.kdenlive
+      unstable.kdePackages.kdenlive
       losslesscut-bin
       totem # Apparently video thumbnails require this..
       file-roller

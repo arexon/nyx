@@ -159,6 +159,7 @@
         location.name = "Cairo";
         dock.enabled = false;
         audio.visualizerType = "none";
+        sessionMenu.showKeybinds = false;
         setupCompleted = true;
       };
     };

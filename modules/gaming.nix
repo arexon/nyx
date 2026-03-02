@@ -23,5 +23,14 @@
       pcsx2
       inputs.hytale-launcher.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
+
+    programs.niri.settings = {
+      window-rules = [
+        {
+          matches = [{app-id = "steam";}];
+          open-on-workspace = "IV";
+        }
+      ];
+    };
   };
 }

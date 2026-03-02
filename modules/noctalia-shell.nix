@@ -25,28 +25,6 @@
       inputs.noctalia-shell.homeModules.default
     ];
 
-    programs.niri.settings = {
-      spawn-at-startup = [
-        {command = ["noctalia-shell"];}
-      ];
-
-      binds = with config.lib.niri.actions; let
-        noctalia = cmd:
-          ["noctalia-shell" "ipc" "call"]
-          ++ (lib.splitString " " cmd);
-      in {
-        "Mod+R".action = spawn [(lib.getExe noctalia-reload)];
-        "Mod+Space".action = spawn (noctalia "launcher toggle");
-        "Mod+Shift+V".action = spawn (noctalia "launcher clipboard");
-        "Mod+Shift+Z".action = spawn (noctalia "notifications toggleHistory");
-        "Mod+Shift+M".action = spawn (noctalia "volume muteInput");
-        "Mod+Shift+Escape".action = spawn (noctalia "sessionMenu toggle");
-        "XF86AudioRaiseVolume".action = spawn (noctalia "volume increase");
-        "XF86AudioLowerVolume".action = spawn (noctalia "volume decrease");
-        "XF86AudioMute".action = spawn (noctalia "volume muteOutput");
-      };
-    };
-
     programs.noctalia-shell = {
       enable = true;
       colors = lib.mkForce (with config.lib.stylix.colors.withHashtag; {
@@ -161,6 +139,28 @@
         audio.visualizerType = "none";
         sessionMenu.showKeybinds = false;
         setupCompleted = true;
+      };
+    };
+
+    programs.niri.settings = {
+      spawn-at-startup = [
+        {command = ["noctalia-shell"];}
+      ];
+
+      binds = with config.lib.niri.actions; let
+        noctalia = cmd:
+          ["noctalia-shell" "ipc" "call"]
+          ++ (lib.splitString " " cmd);
+      in {
+        "Mod+R".action = spawn [(lib.getExe noctalia-reload)];
+        "Mod+Space".action = spawn (noctalia "launcher toggle");
+        "Mod+Shift+V".action = spawn (noctalia "launcher clipboard");
+        "Mod+Shift+Z".action = spawn (noctalia "notifications toggleHistory");
+        "Mod+Shift+M".action = spawn (noctalia "volume muteInput");
+        "Mod+Shift+Escape".action = spawn (noctalia "sessionMenu toggle");
+        "XF86AudioRaiseVolume".action = spawn (noctalia "volume increase");
+        "XF86AudioLowerVolume".action = spawn (noctalia "volume decrease");
+        "XF86AudioMute".action = spawn (noctalia "volume muteOutput");
       };
     };
   };

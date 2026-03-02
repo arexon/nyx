@@ -129,24 +129,6 @@
           matches = [{app-id = "pavucontrol";}];
           open-floating = true;
         }
-        {
-          matches = [{app-id = "vesktop";}];
-          open-on-workspace = "III";
-          default-column-width.proportion = 0.6;
-        }
-        {
-          matches = [{app-id = "spotify";}];
-          open-on-workspace = "III";
-          default-column-width.proportion = 0.4;
-        }
-        {
-          matches = [{app-id = "steam";}];
-          open-on-workspace = "IV";
-        }
-        {
-          matches = [{app-id = "Bitwarden";}];
-          open-floating = true;
-        }
       ];
 
       layer-rules = [

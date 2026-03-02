@@ -2,7 +2,6 @@
   flake.modules.homeManager.cli = {pkgs, ...}: {
     programs.yazi = {
       enable = true;
-      enableNushellIntegration = true;
       plugins = with pkgs.yaziPlugins; {
         git = git;
         smart-enter = smart-enter;

@@ -44,10 +44,6 @@
     ...
   }: let
     workspaces = ["I" "II" "III" "IV" "V"];
-
-    noctalia = cmd:
-      ["noctalia-shell" "ipc" "call"]
-      ++ (lib.splitString " " cmd);
   in {
     imports = [
       inputs.niri.homeModules.niri
@@ -92,17 +88,9 @@
           "Mod+Shift+S".action.screenshot = [];
           "Mod+Ctrl+S".action.screenshot-window = [];
           "Mod+F12".action.screenshot-screen = [];
-          "Mod+Space".action = spawn (noctalia "launcher toggle");
-          "Mod+Shift+V".action = spawn (noctalia "launcher clipboard");
           "Mod+Shift+N".action = spawn ["playerctl" "next"];
           "Mod+Shift+P".action = spawn ["playerctl" "previous"];
           "Mod+Shift+O".action = spawn ["playerctl" "play-pause"];
-          "Mod+Shift+Z".action = spawn (noctalia "notifications toggleHistory");
-          "Mod+Shift+M".action = spawn (noctalia "volume muteInput");
-          "Mod+Shift+Escape".action = spawn (noctalia "sessionMenu toggle");
-          "XF86AudioRaiseVolume".action = spawn (noctalia "volume increase");
-          "XF86AudioLowerVolume".action = spawn (noctalia "volume decrease");
-          "XF86AudioMute".action = spawn (noctalia "volume muteOutput");
         }
         // builtins.listToAttrs (lib.imap1 (index: name: {
             name = "Mod+${toString index}";

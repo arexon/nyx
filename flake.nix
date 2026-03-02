@@ -48,7 +48,7 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     noctalia-shell = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:noctalia-dev/noctalia-shell/v4.5.0";
+      url = "github:noctalia-dev/noctalia-shell/v4.6.1";
     };
     pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
     spicetify = {
@@ -59,6 +59,5 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/stylix/release-25.11";
     };
-    systems.url = "github:nix-systems/default";
   };
 }

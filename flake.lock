@@ -426,11 +426,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1770053602,
-        "narHash": "sha256-HXLOGeJhwbruEsYwG28rNO08xbgh9E/p6PTb9GbloYM=",
+        "lastModified": 1772267349,
+        "narHash": "sha256-gqEV2tspaHAteSy3NZrBqwaoQa14u64ikwWzb5w1nV8=",
         "owner": "essegd",
         "repo": "hytale-server-flake",
-        "rev": "dfbe2e440aa2184462dafaf3559f343c66028817",
+        "rev": "75a98e213f1827da1c40733f0487d25e6909a3db",
         "type": "github"
       },
       "original": {

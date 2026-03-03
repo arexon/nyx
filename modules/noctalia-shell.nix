@@ -12,14 +12,18 @@
     pkgs,
     ...
   }: let
-    noctalia-reload = pkgs.writeShellApplication {
-      name = "noctalia-reload";
-      runtimeInputs = [pkgs.killall];
-      text = ''
-        killall .quickshell-wra || true
+    noctalia-reload =
+      pkgs.writers.writeFishBin "noctalia-reload"
+      ''
+        ${lib.getExe pkgs.killall} .quickshell-wra; or true
         noctalia-shell
       '';
-    };
+
+    set-niri-dynamic-cast-window =
+      pkgs.writers.writeFishBin "set-niri-dynamic-cast-window"
+      ''
+        niri msg action set-dynamic-cast-window --id (niri msg --json pick-window | ${lib.getExe pkgs.killall} -r '.id')
+      '';
   in {
     imports = [
       inputs.noctalia-shell.homeModules.default
@@ -82,7 +86,7 @@
               {
                 id = "CustomButton";
                 icon = "app-window";
-                leftClickExec = "niri msg action set-dynamic-cast-window --id (niri msg --json pick-window | jq -r '.id')";
+                leftClickExec = lib.getExe set-niri-dynamic-cast-window;
               }
               {id = "NotificationHistory";}
               {id = "Bluetooth";}

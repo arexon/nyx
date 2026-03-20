@@ -22,6 +22,7 @@
       prismlauncher
       pcsx2
       inputs.hytale-launcher.packages.${pkgs.stdenv.hostPlatform.system}.default
+      r2modman
     ];
 
     programs.niri.settings = {

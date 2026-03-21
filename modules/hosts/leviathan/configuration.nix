@@ -5,9 +5,10 @@
       arexon
       core
       disko
+      hytale
       shell
       ssh
-      hytale
+      v-rising
     ];
   };
 }

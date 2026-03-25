@@ -13,6 +13,7 @@
     noctalia
     shell
     stylix
+    water-reminders
     xdg
   ];
 }

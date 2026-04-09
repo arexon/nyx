@@ -51,6 +51,7 @@
       url = "github:noctalia-dev/noctalia-shell/v4.6.1";
     };
     pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
+    proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
     spicetify = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:Gerg-L/spicetify-nix";

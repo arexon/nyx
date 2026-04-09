@@ -22,7 +22,7 @@
     set-niri-dynamic-cast-window =
       pkgs.writers.writeFishBin "set-niri-dynamic-cast-window"
       ''
-        niri msg action set-dynamic-cast-window --id (niri msg --json pick-window | ${lib.getExe pkgs.killall} -r '.id')
+        niri msg action set-dynamic-cast-window --id (niri msg --json pick-window | ${lib.getExe pkgs.jq} -r '.id')
       '';
   in {
     imports = [

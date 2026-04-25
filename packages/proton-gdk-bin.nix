@@ -4,8 +4,8 @@
 }:
 proton-ge-bin.overrideAttrs {
   src = fetchzip {
-    url = "https://github.com/Weather-OS/GDK-Proton/releases/download/release10-32/GDK-Proton10-32.tar.gz";
-    hash = "sha256-x6LuikI5/hdl6+Y0llTYLDJbX+flma1wJSrJYHxyYQ0=";
+    url = "https://github.com/LukasPAH/GDK-Proton-Custom/releases/download/release-10-32-3/GDK-Proton10-32-Custom-3.tar.gz";
+    hash = "sha256-cFf9PxZoeLC8sUyde0QOxpR3J7reINgJF06+Guq2qhU=";
   };
 
   preFixup = ''

@@ -153,6 +153,7 @@
       settings = {
         theme = "custom";
         editor = {
+          insecure = true;
           line-number = "relative";
           bufferline = "never";
           true-color = true;

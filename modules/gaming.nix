@@ -22,6 +22,7 @@
   flake.modules.homeManager.gaming = {pkgs, ...}: {
     home.packages = with pkgs; [
       mangohud
+      mangojuice
       prismlauncher
       pcsx2
       inputs.hytale-launcher.packages.${pkgs.stdenv.hostPlatform.system}.default

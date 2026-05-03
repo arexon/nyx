@@ -30,6 +30,12 @@
   };
 
   flake = {
+    overlays.unstable = final: prev: {
+      unstable = import inputs.nixpkgs-unstable {
+        inherit (final) system config;
+      };
+    };
+
     overlays.default = final: prev:
       withSystem prev.stdenv.hostPlatform.system (
         {config, ...}: {

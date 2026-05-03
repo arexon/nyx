@@ -2,7 +2,7 @@
   flake.modules.nixos.core = {
     nixpkgs = {
       config.allowUnfree = true;
-      overlays = [inputs.self.overlays.default];
+      overlays = [inputs.self.overlays.default inputs.self.overlays.unstable];
     };
 
     nix = {

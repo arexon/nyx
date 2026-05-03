@@ -69,6 +69,7 @@
           sendTimestamps.enable = true;
           voiceChatDoubleClick.enable = true;
           openInApp.enable = true;
+          unindent.enable = true;
         };
       };
       quickCss = ''

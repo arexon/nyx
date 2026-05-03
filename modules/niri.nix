@@ -9,6 +9,7 @@
   flake.modules.nixos.niri = {
     lib,
     pkgs,
+    config,
     ...
   }: {
     imports = [inputs.niri.nixosModules.niri];
@@ -24,13 +25,16 @@
       ];
     };
 
-    programs.niri.enable = true;
+    programs.niri = {
+      enable = true;
+      package = pkgs.niri-unstable;
+    };
 
     services.greetd = {
       enable = true;
       settings = {
         default_session = {
-          command = "${lib.getExe pkgs.tuigreet} --cmd ${lib.getExe' pkgs.niri-stable "niri-session"}";
+          command = "${lib.getExe pkgs.tuigreet} --cmd ${lib.getExe' config.programs.niri.package "niri-session"}";
           user = "greeter";
         };
       };

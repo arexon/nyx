@@ -6,12 +6,12 @@
     cachyos-kernel
     core
     gaming
-    kanata
     niri
     plymouth
     shell
     sound
     ssh
     stylix
+    zsa
   ];
 }

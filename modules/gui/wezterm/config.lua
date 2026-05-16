@@ -51,175 +51,68 @@ wezterm.on("format-tab-title", function(tab)
 	}
 end)
 
-config.leader = { key = "a", mods = "ALT" }
+wezterm.on("update-right-status", function(window)
+	local name = window:active_key_table()
+	if name then
+		name = "table: " .. name
+	end
+	window:set_right_status(name or "")
+end)
+
+config.leader = { key = "f", mods = "CTRL" }
+
+local copy_mode = wezterm.gui.default_key_tables().copy_mode
+table.insert(copy_mode, { key = "u", action = action.CopyMode("PageUp") })
+table.insert(copy_mode, { key = "d", action = action.CopyMode("PageDown") })
+
+config.key_tables = {
+	copy_mode = copy_mode,
+	resize_pane = {
+		{ key = "h", action = action.AdjustPaneSize({ "Left", 5 }) },
+		{ key = "l", action = action.AdjustPaneSize({ "Right", 5 }) },
+		{ key = "k", action = action.AdjustPaneSize({ "Up", 5 }) },
+		{ key = "j", action = action.AdjustPaneSize({ "Down", 5 }) },
+		{ key = "[", mods = "CTRL", action = action.PopKeyTable },
+	},
+}
+
 config.keys = {
 	-- Pane
-	{
-		key = "v",
-		mods = "LEADER",
-		action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		key = "s",
-		mods = "LEADER",
-		action = action.SplitVertical({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		key = "q",
-		mods = "LEADER",
-		action = action.CloseCurrentPane({ confirm = false }),
-	},
-	{
-		key = "h",
-		mods = "LEADER",
-		action = action.ActivatePaneDirection("Left"),
-	},
-	{
-		key = "l",
-		mods = "LEADER",
-		action = action.ActivatePaneDirection("Right"),
-	},
-	{
-		key = "k",
-		mods = "LEADER",
-		action = action.ActivatePaneDirection("Up"),
-	},
-	{
-		key = "j",
-		mods = "LEADER",
-		action = action.ActivatePaneDirection("Down"),
-	},
-	{
-		key = "h",
-		mods = "LEADER|SHIFT|ALT",
-		action = action.AdjustPaneSize({ "Left", 5 }),
-	},
-	{
-		key = "l",
-		mods = "LEADER|SHIFT|ALT",
-		action = action.AdjustPaneSize({ "Right", 5 }),
-	},
-	{
-		key = "k",
-		mods = "LEADER|SHIFT|ALT",
-		action = action.AdjustPaneSize({ "Up", 5 }),
-	},
-	{
-		key = "j",
-		mods = "LEADER|SHIFT|ALT",
-		action = action.AdjustPaneSize({ "Down", 5 }),
-	},
-	{
-		key = "r",
-		mods = "LEADER",
-		action = action.RotatePanes("Clockwise"),
-	},
-	{
-		key = "R",
-		mods = "LEADER",
-		action = action.RotatePanes("CounterClockwise"),
-	},
+	{ key = "v", mods = "LEADER", action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "s", mods = "LEADER", action = action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "q", mods = "LEADER", action = action.CloseCurrentPane({ confirm = false }) },
+	{ key = "h", mods = "LEADER", action = action.ActivatePaneDirection("Left") },
+	{ key = "l", mods = "LEADER", action = action.ActivatePaneDirection("Right") },
+	{ key = "k", mods = "LEADER", action = action.ActivatePaneDirection("Up") },
+	{ key = "j", mods = "LEADER", action = action.ActivatePaneDirection("Down") },
+	{ key = "r", mods = "LEADER", action = action.ActivateKeyTable({ name = "resize_pane", one_shot = false }) },
+	{ key = "t", mods = "LEADER", action = action.RotatePanes("Clockwise") },
+	{ key = "T", mods = "LEADER", action = action.RotatePanes("CounterClockwise") },
 
 	-- Tabs
-	{
-		key = "w",
-		mods = "LEADER",
-		action = action.SpawnTab("CurrentPaneDomain"),
-	},
-	{
-		key = "Q",
-		mods = "LEADER",
-		action = action.CloseCurrentTab({ confirm = false }),
-	},
-	{
-		key = "p",
-		mods = "LEADER",
-		action = action.ActivateTabRelative(-1),
-	},
-	{
-		key = "n",
-		mods = "LEADER",
-		action = action.ActivateTabRelative(1),
-	},
-	{
-		key = "P",
-		mods = "LEADER",
-		action = action.MoveTabRelative(-1),
-	},
-	{
-		key = "N",
-		mods = "LEADER",
-		action = action.MoveTabRelative(1),
-	},
-	{
-		key = "g",
-		mods = "LEADER|ALT",
-		action = action.ActivateLastTab,
-	},
+	{ key = "w", mods = "LEADER", action = action.SpawnTab("CurrentPaneDomain") },
+	{ key = "Q", mods = "LEADER", action = action.CloseCurrentTab({ confirm = false }) },
+	{ key = "p", mods = "LEADER", action = action.ActivateTabRelative(-1) },
+	{ key = "n", mods = "LEADER", action = action.ActivateTabRelative(1) },
+	{ key = "P", mods = "LEADER", action = action.MoveTabRelative(-1) },
+	{ key = "N", mods = "LEADER", action = action.MoveTabRelative(1) },
+	{ key = "g", mods = "LEADER|CTRL", action = action.ActivateLastTab },
 
 	-- Workspaces
-	{
-		key = "w",
-		mods = "LEADER|ALT",
-		action = workspace.switch(),
-	},
-	{
-		key = "q",
-		mods = "LEADER|ALT",
-		action = workspace.close(),
-	},
-	{
-		key = "f",
-		mods = "LEADER|ALT",
-		action = workspace.switch_to_previous(),
-	},
-	{
-		key = "h",
-		mods = "LEADER|ALT",
-		action = workspace.switch_to_home(),
-	},
+	{ key = "w", mods = "LEADER|CTRL", action = workspace.switch() },
+	{ key = "q", mods = "LEADER|CTRL", action = workspace.close() },
+	{ key = "f", mods = "LEADER|CTRL", action = workspace.switch_to_previous() },
+	{ key = "h", mods = "LEADER|CTRL", action = workspace.switch_to_home() },
 
 	-- Search overlay
-	{
-		key = "c",
-		mods = "LEADER|SHIFT",
-		action = action.Search("CurrentSelectionOrEmptyString"),
-	},
+	{ key = "c", mods = "LEADER|SHIFT", action = action.Search("CurrentSelectionOrEmptyString") },
 
 	-- Copy Mode
-	{
-		key = "c",
-		mods = "LEADER",
-		action = action.ActivateCopyMode,
-	},
-
-	-- Misc
-	{
-		key = "Enter",
-		mods = "ALT",
-		action = action.Nop,
-	},
+	{ key = "c", mods = "LEADER", action = action.ActivateCopyMode },
 }
 
 for index = 1, 8 do
-	table.insert(config.keys, {
-		key = tostring(index),
-		mods = "LEADER",
-		action = action.ActivateTab(index - 1),
-	})
+	table.insert(config.keys, { key = tostring(index), mods = "LEADER", action = action.ActivateTab(index - 1) })
 end
-
-local copy_mode = wezterm.gui.default_key_tables().copy_mode
-table.insert(copy_mode, {
-	key = "u",
-	action = action.CopyMode("PageUp"),
-})
-table.insert(copy_mode, {
-	key = "d",
-	action = action.CopyMode("PageDown"),
-})
-config.key_tables = {
-	copy_mode = copy_mode,
-}
 
 return config

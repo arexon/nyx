@@ -16,10 +16,7 @@
     };
 
     harper = getExe pkgs.harper;
-    copilot = getExe pkgs.copilot-language-server;
     marksman = getExe pkgs.marksman;
-    nixd = getExe pkgs.nixd;
-    alejandra = getExe pkgs.alejandra;
     color-lsp = getExe pkgs.local.color-lsp;
   in {
     nixpkgs.overlays = [inputs.helix.overlays.default];
@@ -42,7 +39,6 @@
             cargo.features = "all";
             diagnostics.disabled = ["macro-error"];
           };
-          nixd.command = nixd;
           marksman.command = marksman;
           harper = {
             command = harper;
@@ -61,20 +57,6 @@
             };
           };
           color-lsp.command = color-lsp;
-          copilot = {
-            command = copilot;
-            args = ["--stdio"];
-            config = {
-              editorInfo = {
-                name = "Helix";
-                version = "25.07.1";
-              };
-              editorPluginInfo = {
-                name = "helix-copilot";
-                version = "0.1.0";
-              };
-            };
-          };
         };
         language = [
           {
@@ -89,7 +71,7 @@
           }
           {
             name = "nix";
-            formatter.command = alejandra;
+            formatter.command = "alejandra";
             auto-format = true;
             language-servers = ["nixd" "color-lsp"];
           }
@@ -155,18 +137,11 @@
         editor = {
           insecure = true;
           line-number = "relative";
-          bufferline = "never";
-          true-color = true;
           auto-info = false;
-          auto-format = true;
           rainbow-brackets = true;
           end-of-line-diagnostics = "error";
-          inline-diagnostics = {
-            cursor-line = "info";
-            other-lines = "disable";
-          };
-          completion-trigger-len = 1;
           indent-guides.render = true;
+          clipboard-provider = "wayland";
           cursor-shape = {
             insert = "bar";
             select = "underline";
@@ -193,27 +168,28 @@
               "spacer"
             ];
           };
-          lsp.display-messages = true;
+          lsp = {
+            display-progress-messages = true;
+            display-messages = true;
+          };
         };
         keys = {
           normal = {
-            x = "extend_line";
-            esc = ["collapse_selection" "keep_primary_selection"];
+            "x" = "extend_line";
+            "esc" = ["collapse_selection" "keep_primary_selection"];
             "C-u" = ["half_page_up" "align_view_center"];
             "C-d" = ["half_page_down" "align_view_center"];
             "A-x" = [":reset-diff-change"];
-            Y = [":yank-join"];
+            "Y" = [":yank-join"];
             "C-s" = ":write";
-            "C-q" = ":buffer-close";
-            "C-S-q" = ":quit-all!";
             "C-S-r" = ":reload-all";
             "C-r" = ":reload";
           };
           insert = {
-            "C-[" = "normal_mode";
+            "C-space" = "completion";
           };
           select = {
-            x = "extend_line";
+            "x" = "extend_line";
             ";" = ["collapse_selection" "normal_mode"];
           };
         };

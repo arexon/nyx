@@ -15,8 +15,6 @@
 
     programs.nixcord = {
       enable = true;
-      discord.enable = false;
-      vesktop.enable = true;
       config = {
         frameless = true;
         themeLinks = [
@@ -34,10 +32,6 @@
           };
           betterGifAltText.enable = true;
           betterGifPicker.enable = true;
-          betterNotesBox = {
-            enable = true;
-            hide = true;
-          };
           betterUploadButton.enable = true;
           biggerStreamPreview.enable = true;
           favoriteGifSearch.enable = true;
@@ -70,6 +64,7 @@
           voiceChatDoubleClick.enable = true;
           openInApp.enable = true;
           unindent.enable = true;
+          customIdle.enable = true;
         };
       };
       quickCss = ''
@@ -87,7 +82,7 @@
     programs.niri.settings = {
       window-rules = [
         {
-          matches = [{app-id = "vesktop";}];
+          matches = [{app-id = "discord";}];
           open-on-workspace = "III";
           default-column-width.proportion = 0.6;
         }

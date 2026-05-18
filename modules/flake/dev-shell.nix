@@ -5,6 +5,8 @@
         stylua
         lua-language-server
         just
+        nixd
+        alejandra
       ];
     };
   };

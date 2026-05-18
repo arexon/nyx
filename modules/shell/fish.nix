@@ -31,5 +31,7 @@
         starship_transient_rprompt_func = "starship module time";
       };
     };
+
+    programs.helix.settings.editor.shell = ["fish" "-c"];
   };
 }

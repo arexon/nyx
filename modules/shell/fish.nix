@@ -15,6 +15,7 @@
       };
       binds = {
         "ctrl-l".command = "clear";
+        "ctrl-h".command = "backward-kill-word";
       };
       functions = let
         clear = "printf '\\e[H\\e[J\\e[100B'";

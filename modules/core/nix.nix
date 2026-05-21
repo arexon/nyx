@@ -39,6 +39,8 @@
     };
 
     home.packages = with pkgs; [
+      nixd
+      alejandra
       nix-output-monitor
     ];
 

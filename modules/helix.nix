@@ -142,6 +142,10 @@
           end-of-line-diagnostics = "error";
           indent-guides.render = true;
           clipboard-provider = "wayland";
+          soft-wrap = {
+            wrap-at-text-width = true;
+            wrap-indicator = "";
+          };
           cursor-shape = {
             insert = "bar";
             select = "underline";

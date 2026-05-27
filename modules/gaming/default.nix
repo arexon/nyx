@@ -20,6 +20,11 @@
   };
 
   flake.modules.homeManager.gaming = {pkgs, ...}: {
+    home.file."options.txt" = {
+      source = ./options.txt;
+      target = "com.mojang/minecraftpe/options.txt";
+    };
+
     home.packages = with pkgs; [
       mangohud
       mangojuice
@@ -28,6 +33,8 @@
       inputs.hytale-launcher.packages.${pkgs.stdenv.hostPlatform.system}.default
       r2modman
       protontricks
+      mesa-demos
+      steamcmd
     ];
 
     programs.niri.settings = {

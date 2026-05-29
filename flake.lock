@@ -803,11 +803,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1779776853,
-        "narHash": "sha256-bIR2nlu29mfJF7fGYHL/sSF7/0asd8G77AiX+yA31T4=",
+        "lastModified": 1779863612,
+        "narHash": "sha256-VyyWc4AwF90RtKVq3qNYRseJokiIzeqgUKL+rP4ZT7s=",
         "owner": "powerofthe69",
         "repo": "proton-cachyos-nix",
-        "rev": "f324294dd9b1869e2beabb2d49671ecae5459fdd",
+        "rev": "d2d6ac111e19ff31966ed230e817176184f2f560",
         "type": "github"
       },
       "original": {

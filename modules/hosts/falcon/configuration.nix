@@ -3,7 +3,7 @@
     amdgpu
     arexon
     bluetooth
-    cachyos-kernel
+    kernel
     core
     gaming
     niri

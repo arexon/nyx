@@ -11,12 +11,12 @@
     pkgs,
     ...
   }: let
-    spice-pkgs = inputs.spicetify.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+    spicePkgs = inputs.spicetify.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 
-    spotify = spotify.overrideAttrs {
+    spotify = pkgs.spotify.overrideAttrs {
       postFixup = ''
         substituteInPlace $out/share/applications/spotify.desktop \
-          --replace-fail "Exec=spotify %U" "Exec=env NIXOS_OZONE_WL= spotify %U"
+          --replace-fail "Exec=spotify %U" "Exec=env -u DISPLAY spotify %U"
       '';
     };
   in {
@@ -26,8 +26,9 @@
 
     programs.spicetify = {
       enable = true;
+      spotifyPackage = spotify;
       wayland = true;
-      enabledExtensions = with spice-pkgs.extensions; [shuffle];
+      enabledExtensions = with spicePkgs.extensions; [shuffle];
     };
 
     programs.niri.settings = {

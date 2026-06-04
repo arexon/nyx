@@ -10,7 +10,7 @@
       file-roller
       nautilus
       pavucontrol
-      helvum
+      crosspipe
       gnome-text-editor
       vscode
     ];

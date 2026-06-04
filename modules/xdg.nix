@@ -4,6 +4,7 @@
       enable = true;
       userDirs = {
         enable = true;
+        setSessionVariables = true;
         download = "${config.home.homeDirectory}/dl";
         videos = "${config.home.homeDirectory}/vids";
         pictures = "${config.home.homeDirectory}/pics";

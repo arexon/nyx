@@ -6,6 +6,8 @@
         git = git;
         smart-enter = smart-enter;
       };
+      # Due to home.stateVersion being 25.11
+      shellWrapperName = "y";
       initLua = ./init.lua;
       theme.icon.dirs = [
         {
@@ -53,13 +55,13 @@
         plugin = {
           prepend_fetchers = [
             {
-              id = "git";
-              name = "*";
+              group = "git";
+              url = "*";
               run = "git";
             }
             {
-              id = "git";
-              name = "*/";
+              group = "git";
+              url = "*/";
               run = "git";
             }
           ];

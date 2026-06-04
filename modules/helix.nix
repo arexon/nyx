@@ -95,7 +95,6 @@
           }
           {
             name = "jsonc";
-            formatter = denoFormatter "jsonc";
             file-types = [
               "jsonc"
               "json"
@@ -104,7 +103,7 @@
               {glob = "bun.lock";}
               {glob = "flake.lock";}
             ];
-            language-servers = ["vscode-json-language-server" "color-lsp"];
+            language-servers = ["deno-lsp" "vscode-json-language-server" "color-lsp"];
           }
           {
             name = "yaml";

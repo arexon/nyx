@@ -15,9 +15,15 @@
 
     programs.nixcord = {
       enable = true;
+      discord = {
+        krisp.enable = true;
+        equicord.enable = true;
+        vencord.enable = false;
+      };
       config = {
         frameless = true;
-        themeLinks = [
+        notifyAboutUpdates = true;
+        enabledThemeLinks = [
           "https://refact0r.github.io/midnight-discord/build/midnight.css"
           "https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/themes/flavors/midnight-catppuccin-mocha.theme.css"
         ];
@@ -31,10 +37,8 @@
             randomisedLength = 8;
           };
           betterGifAltText.enable = true;
-          betterGifPicker.enable = true;
           betterUploadButton.enable = true;
           biggerStreamPreview.enable = true;
-          favoriteGifSearch.enable = true;
           messageLogger = {
             enable = true;
             ignoreBots = true;
@@ -65,6 +69,10 @@
           openInApp.enable = true;
           unindent.enable = true;
           customIdle.enable = true;
+          gifCollections = {
+            enable = true;
+            preventDuplicates = true;
+          };
         };
       };
       quickCss = ''

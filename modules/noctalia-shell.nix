@@ -56,7 +56,7 @@
         };
         bar = {
           density = "comfortable";
-          position = "left";
+          position = "top";
           capsuleOpacity = lib.mkForce 0.25;
           capsuleColorKey = "primary";
           widgets = {

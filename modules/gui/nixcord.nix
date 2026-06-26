@@ -63,16 +63,12 @@
           translate.enable = true;
           fixSpotifyEmbeds.enable = true;
           forceOwnerCrown.enable = true;
-          friendsSince.enable = true;
           sendTimestamps.enable = true;
           voiceChatDoubleClick.enable = true;
           openInApp.enable = true;
           unindent.enable = true;
           customIdle.enable = true;
-          gifCollections = {
-            enable = true;
-            preventDuplicates = true;
-          };
+          favoriteGifSearch.enable = true;
         };
       };
       quickCss = ''

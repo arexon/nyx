@@ -22,7 +22,7 @@ mp_xboxlive_visible:1
 mp_nex_visible:1
 mp_psn_visible:1
 game_language:
-game_skintypefull:5eb65f73-af11-448e-82aa-1b7b165316ad_persona-e0fdc34d398a88b1-5
+game_skintypefull:5205dc4d-8561-2256-8aed-eb1c4f70d9cf_arexon
 game_recentskin1:
 game_recentskin2:
 game_recentskin3:
@@ -42,7 +42,7 @@ gfx_damagebobbing:1
 gfx_transparentleaves:1
 gfx_smoothlighting:1
 gfx_fancyskies:1
-gfx_field_of_view:75
+gfx_field_of_view:70
 gfx_msaa:2
 gfx_texel_aa_2:0
 gfx_gamma:0.5
@@ -87,7 +87,6 @@ realms_show_friend_invites_only:0
 number_of_owned_realms:0
 number_of_friends_realms:0
 realms_view_upsell_screen_count:3
-realms_ore_ui_moderation:1
 realms_ore_ui_purchase_enabled:1
 MultipleSwitchRealms:0
 realms_enable_subpacks:1
@@ -95,7 +94,7 @@ realms_switch_reconciliation:0
 realms_switch_test_offers:0
 realms_commerce_v2:0
 shown_ratings_prompt:0
-save_and_quit_count:1
+save_and_quit_count:4
 show_worlds_trial_button:1
 allow_cellular_data:0
 auto_update_mode:1
@@ -135,7 +134,7 @@ ctrl_togglecrouch_touch:1
 ctrl_togglecrouch_gamepad:0
 ctrl_sneak:0
 crossplatform_toggle:1
-last_xuid:2535408400914819
+last_xuid:
 gfx_hidepaperdoll:1
 gfx_tooltips:0
 show_learning_Prompts:0
@@ -185,24 +184,24 @@ game_tips_enabled_for_debug:0
 pause_feature_enabled:1
 game_tips_animation_enabled:1
 iap_owning_account:
-last_minecraft_id:E0FDC34D398A88B1
-last_title_account_id:EF3BEEA519020462
+last_minecraft_id:A8441AED9D25EA9A
+last_title_account_id:AA0E3276D7C9A4D8
 show_camera_tip_times_remain:0
 show_movement_tip_times_remain:0
 show_flying_tip_times_remain:0
 show_fly_up_tip_times_remain:0
-show_fly_down_tip_times_remain:3
-show_stop_flying_tip_times_remain:3
+show_fly_down_tip_times_remain:0
+show_stop_flying_tip_times_remain:0
 show_jump_tip_times_remain:0
 show_swim_tip_times_remain:3
-show_break_block_tip_times_remain:3
-show_place_block_tip_times_remain:3
-show_open_inventory_tip_times_remain:3
-show_sneak_tip_times_remain:3
+show_break_block_tip_times_remain:0
+show_place_block_tip_times_remain:0
+show_open_inventory_tip_times_remain:0
+show_sneak_tip_times_remain:2
 show_stop_sneaking_tip_times_remain:3
 show_place_crafting_table_tip_times_remain:3
 show_use_crafting_table_tip_times_remain:3
-show_hotbar_scrolling_tip_times_remain:3
+show_hotbar_scrolling_tip_times_remain:0
 show_chat_tip_times_remain:0
 show_emote_tip_times_remain:3
 day_one_experience_completed:1
@@ -216,8 +215,8 @@ only_show_trusted_skins:1
 filter_profanity:1
 camera_shake:1
 hide_endflash:0
-enable_dithering_blocks:1
-enable_dithering_mobs:1
+enable_dithering_blocks:0
+enable_dithering_mobs:0
 gfx_gui_accessibility_scaling:0
 raytracing_viewdistance:8
 deferred_viewdistance:20
@@ -257,6 +256,7 @@ device_info_use_memory_tier_override:0
 debug_text_filtering_delay_sec_override:0
 debug_text_filtering_use_delay_sec_override:0
 darkness_effect_modifier:1
+screen_distortion:1
 glint_strength:0.75
 glint_speed:0.5
 touch_control_selection_screen:1
@@ -326,7 +326,6 @@ graphics_quality_preset_mode:2
 shadow_quality:3
 cloud_quality:3
 lighting_mixed_res_upscale:1
-point_light_shadow_quality:0
 point_light_loding_quality:0
 volumetric_fog_quality:2
 reflections_quality:3
@@ -334,12 +333,13 @@ bloom_strength:1
 bloom_custom_strength:1
 do_not_show_multiplayer_ip_safety_warning:0
 do_not_show_worlds_without_entitlement_warning:0
-do_not_show_old_worlds_warning:0
+do_not_show_old_worlds_warning:1
 do_not_hardcore_mode_warning:0
 DO_NOT_SHOW_PARTY_TOO_LARGE_WARNING:0
 DO_NOT_SHOW_PARTY_MEMBERS_NO_ACCESS_CANT_INVITE_WARNING:0
 DO_NOT_SHOW_PARTY_MEMBERS_NO_ACCESS_INVITE_WARNING:0
 DO_NOT_SHOW_PARTIES_NOT_SUPPORTED_WARNING:0
+DO_NOT_SHOW_NON_PUBLIC_SERVER_WARNING_THIS_JOIN:0
 do_not_show_experimental_worlds_warning:[""]
 do_not_show_using_external_storage_warning:0
 do_not_show_hidden_local_worlds_warning:0
@@ -357,10 +357,10 @@ loading_tips_index:-1
 nether_reached:0
 has_dismissed_new_player_flow:1
 ctrl_improvedInputResponse:1
-app_launched_count:1
+app_launched_count:9
 gfx_debug_trace:0
 xbl_use_remote_connect:0
-worlds_friends_servers_SISU_third_session:1
+worlds_friends_servers_SISU_third_session:0
 show_free_preview_realm_available_new_icon:1
 ecomode_toggle:1
 playScreenWorldLayoutMode:0
@@ -375,15 +375,15 @@ partyInviteSendPrivileges:0
 frame_pacing_enabled:0
 options_version_major:1
 options_version_minor:26
-options_version_patch:30
-options_version_revision:32
+options_version_patch:40
+options_version_revision:27
 graphics_mode_switch:1
 gfx_texture_streaming:1
 command_macro_command_0:reload
 command_macro_command_1:reload all
 command_macro_command_2:gamemode survival
 command_macro_command_3:gamemode creative
-command_macro_command_4:spectator
+command_macro_command_4:gamemode spectator
 command_macro_command_5:effect @s night_vision infinite 255 true
 command_macro_command_6:
 command_macro_command_7:
@@ -391,6 +391,7 @@ command_macro_command_8:
 command_macro_command_9:
 editor_collect_network_metrics:1
 pause_menu_on_focus_lost:1
+graphics_quality_preset_changed:1
 gamepadMappingVersion:1
 ctrl_type_0_key.jump:1
 ctrl_type_0_key.drop:6

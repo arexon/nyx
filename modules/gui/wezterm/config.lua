@@ -67,7 +67,8 @@ table.insert(copy_mode, { key = "d", action = action.CopyMode("PageDown") })
 
 config.key_tables = {
 	copy_mode = copy_mode,
-	resize_pane = {
+	resize_pane_mode = {
+		{ key = "h", action = action.AdjustPaneSize({ "Left", 5 }) },
 		{ key = "h", action = action.AdjustPaneSize({ "Left", 5 }) },
 		{ key = "l", action = action.AdjustPaneSize({ "Right", 5 }) },
 		{ key = "k", action = action.AdjustPaneSize({ "Up", 5 }) },
@@ -85,18 +86,31 @@ config.keys = {
 	{ key = "l", mods = "LEADER", action = action.ActivatePaneDirection("Right") },
 	{ key = "k", mods = "LEADER", action = action.ActivatePaneDirection("Up") },
 	{ key = "j", mods = "LEADER", action = action.ActivatePaneDirection("Down") },
-	{ key = "r", mods = "LEADER", action = action.ActivateKeyTable({ name = "resize_pane", one_shot = false }) },
+	{ key = "r", mods = "LEADER", action = action.ActivateKeyTable({ name = "resize_pane_mode", one_shot = false }) },
 	{ key = "t", mods = "LEADER", action = action.RotatePanes("Clockwise") },
 	{ key = "T", mods = "LEADER", action = action.RotatePanes("CounterClockwise") },
 
 	-- Tabs
-	{ key = "w", mods = "LEADER", action = action.SpawnTab("CurrentPaneDomain") },
+	{ key = "t", mods = "LEADER", action = action.SpawnTab("CurrentPaneDomain") },
+	{
+		key = "T",
+		mods = "LEADER",
+		action = action.PromptInputLine({
+			description = "Rename tab",
+			initial_value = "",
+			action = wezterm.action_callback(function(window, _, line)
+				if line then
+					window:active_tab():set_title(line)
+				end
+			end),
+		}),
+	},
 	{ key = "Q", mods = "LEADER", action = action.CloseCurrentTab({ confirm = false }) },
 	{ key = "p", mods = "LEADER", action = action.ActivateTabRelative(-1) },
 	{ key = "n", mods = "LEADER", action = action.ActivateTabRelative(1) },
 	{ key = "P", mods = "LEADER", action = action.MoveTabRelative(-1) },
 	{ key = "N", mods = "LEADER", action = action.MoveTabRelative(1) },
-	{ key = "g", mods = "LEADER|CTRL", action = action.ActivateLastTab },
+	{ key = "t", mods = "LEADER|CTRL", action = action.ActivateLastTab },
 
 	-- Workspaces
 	{ key = "w", mods = "LEADER|CTRL", action = workspace.switch() },
@@ -105,7 +119,7 @@ config.keys = {
 	{ key = "h", mods = "LEADER|CTRL", action = workspace.switch_to_home() },
 
 	-- Search overlay
-	{ key = "c", mods = "LEADER|SHIFT", action = action.Search("CurrentSelectionOrEmptyString") },
+	{ key = "C", mods = "LEADER", action = action.Search("CurrentSelectionOrEmptyString") },
 
 	-- Copy Mode
 	{ key = "c", mods = "LEADER", action = action.ActivateCopyMode },

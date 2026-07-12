@@ -11,7 +11,23 @@
     pkgs,
     config,
     ...
-  }: {
+  }: let
+    src = pkgs.fetchFromGitHub {
+      owner = "niri-wm";
+      repo = "niri";
+      rev = "6c1613cee488515f3021ae9d8ef9233d6719c13f";
+      hash = "sha256-TS21rzz6TXoRsNf7BJCZDTap8h1IlTJootmwj3A7uoQ=";
+    };
+
+    niri-shm = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri-unstable.overrideAttrs (old: {
+      inherit src;
+      cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
+        inherit src;
+        name = "niri-shm-cargo-deps";
+        hash = "sha256-gfnalA3qI3a9h3PvsxgQLCrzapfjLLkxhTMJpwRh+ro=";
+      };
+    });
+  in {
     imports = [inputs.niri.nixosModules.niri];
 
     nixpkgs.overlays = [inputs.niri.overlays.niri];
@@ -27,7 +43,7 @@
 
     programs.niri = {
       enable = true;
-      package = pkgs.niri-unstable;
+      package = niri-shm;
     };
 
     services.greetd = {

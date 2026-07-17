@@ -1,16 +1,16 @@
 local wezterm = require("wezterm")
-local workspace = require("workspace")
+local workspace = dofile(wezterm.config_dir .. "/workspace.lua")
 
 local action = wezterm.action
 local config = wezterm.config_builder()
 
-config.color_scheme = "stylix"
+config.color_scheme = "Catppuccin Mocha"
 
 config.default_workspace = workspace.HOME_WORKSPACE_NAME
 
-config.font_size = 14
+local is_darwin = wezterm.target_triple:find("darwin") ~= nil
+config.font_size = is_darwin and 20 or 14
 config.font = wezterm.font({ family = "Iosevka NF" })
----@diagnostic disable-next-line: assign-type-mismatch
 config.harfbuzz_features = { "calt = 0", "clig = 0", "liga = 0" }
 
 config.window_close_confirmation = "NeverPrompt"
@@ -87,8 +87,8 @@ config.keys = {
 	{ key = "k", mods = "LEADER", action = action.ActivatePaneDirection("Up") },
 	{ key = "j", mods = "LEADER", action = action.ActivatePaneDirection("Down") },
 	{ key = "r", mods = "LEADER", action = action.ActivateKeyTable({ name = "resize_pane_mode", one_shot = false }) },
-	{ key = "t", mods = "LEADER", action = action.RotatePanes("Clockwise") },
-	{ key = "T", mods = "LEADER", action = action.RotatePanes("CounterClockwise") },
+	{ key = "y", mods = "LEADER", action = action.RotatePanes("Clockwise") },
+	{ key = "Y", mods = "LEADER", action = action.RotatePanes("CounterClockwise") },
 
 	-- Tabs
 	{ key = "t", mods = "LEADER", action = action.SpawnTab("CurrentPaneDomain") },

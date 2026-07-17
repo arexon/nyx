@@ -22,7 +22,9 @@
       in {
         fish_greeting = ''
           ${clear}
-          fastfetch
+          if command -q fastfetch
+            fastfetch
+          end
         '';
         clear = ''
           ${clear}

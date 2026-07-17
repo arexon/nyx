@@ -65,18 +65,7 @@
   }: let
     workspaces = ["I" "II" "III" "IV" "V"];
   in {
-    imports = [
-      inputs.niri.homeModules.niri
-      inputs.niri.homeModules.stylix
-    ];
-
     programs.niri.settings = {
-      outputs."DP-1".mode = {
-        width = 3440;
-        height = 1440;
-        refresh = 175.000;
-      };
-
       binds = with config.lib.niri.actions;
         {
           "Mod+A".action = toggle-overview;
@@ -147,6 +136,24 @@
         }
         {
           matches = [{app-id = "pavucontrol";}];
+          open-floating = true;
+        }
+        {
+          matches = [{app-id = "discord";}];
+          open-on-workspace = "III";
+          default-column-width.proportion = 0.6;
+        }
+        {
+          matches = [{app-id = "spotify";}];
+          open-on-workspace = "III";
+          default-column-width.proportion = 0.4;
+        }
+        {
+          matches = [{app-id = "steam";}];
+          open-on-workspace = "IV";
+        }
+        {
+          matches = [{app-id = "Bitwarden";}];
           open-floating = true;
         }
       ];

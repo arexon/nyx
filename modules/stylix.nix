@@ -3,14 +3,21 @@
 in {
   flake-file.inputs = {
     stylix = {
-      url = "github:nix-community/stylix/release-26.05";
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   flake.modules.nixos.stylix = {pkgs, ...}: {
     imports = [inputs.stylix.nixosModules.stylix];
+    stylix = {
+      enable = true;
+      base16Scheme = theme pkgs;
+    };
+  };
 
+  flake.modules.darwin.stylix = {pkgs, ...}: {
+    imports = [inputs.stylix.darwinModules.stylix];
     stylix = {
       enable = true;
       base16Scheme = theme pkgs;
@@ -18,31 +25,31 @@ in {
   };
 
   flake.modules.homeManager.stylix = {
+    lib,
     pkgs,
     config,
     ...
   }: {
-    imports = [inputs.stylix.homeModules.stylix];
-
-    stylix = {
-      enable = true;
-      base16Scheme = theme pkgs;
-      cursor = {
-        name = "catppuccin-mocha-dark-cursors";
-        package = pkgs.catppuccin-cursors.mochaDark;
-        size = 24;
+    stylix =
+      {
+        cursor = {
+          name = "catppuccin-mocha-dark-cursors";
+          package = pkgs.catppuccin-cursors.mochaDark;
+          size = 24;
+        };
+        fonts = {
+          sansSerif.name = "Lexend";
+          serif.name = config.stylix.fonts.sansSerif.name;
+          monospace.name = "Iosevka NF";
+          emoji.name = "Noto Color Emoji";
+        };
+      }
+      // lib.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
+        icons = {
+          enable = true;
+          dark = "Papirus";
+          package = pkgs.papirus-icon-theme;
+        };
       };
-      icons = {
-        enable = true;
-        dark = "Papirus";
-        package = pkgs.papirus-icon-theme;
-      };
-      fonts = {
-        sansSerif.name = "Lexend";
-        serif.name = config.stylix.fonts.sansSerif.name;
-        monospace.name = "Iosevka NF";
-        emoji.name = "Noto Color Emoji";
-      };
-    };
   };
 }

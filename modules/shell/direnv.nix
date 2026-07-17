@@ -4,7 +4,7 @@
       enable = true;
       config = {
         whitelist = {
-          prefix = ["~/projects"];
+          prefix = ["~/Projects"];
         };
         global = {
           hide_env_diff = true;

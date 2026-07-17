@@ -1,7 +1,21 @@
 {
   flake.modules.homeManager.cli = {
     programs = {
-      television.enable = true;
+      television = {
+        enable = true;
+        channels.fish-history = {
+          metadata = {
+            name = "fish-history";
+            description = "A channel to select from your fish history";
+            requirements = ["fish"];
+          };
+          source = {
+            command = "fish -c 'history'";
+            no_sort = true;
+            frecency = false;
+          };
+        };
+      };
       nix-search-tv = {
         enable = true;
         enableTelevisionIntegration = true;

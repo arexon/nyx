@@ -1,15 +1,13 @@
 {inputs, ...}: {
   flake-file.inputs = {
     nixcord = {
-      url = "github:FlameFlag/nixcord";
+      url = "github:4evy/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   flake.modules.homeManager.gui = {
-    imports = [
-      inputs.nixcord.homeModules.nixcord
-    ];
+    imports = [inputs.nixcord.homeModules.nixcord];
 
     stylix.targets.nixcord.enable = false;
 
@@ -81,16 +79,6 @@
           --small-user-panel: off;
         }
       '';
-    };
-
-    programs.niri.settings = {
-      window-rules = [
-        {
-          matches = [{app-id = "discord";}];
-          open-on-workspace = "III";
-          default-column-width.proportion = 0.6;
-        }
-      ];
     };
   };
 }

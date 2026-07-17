@@ -115,10 +115,5 @@
         }
       ];
     };
-
-    xdg.desktopEntries.yazi = {
-      name = "";
-      noDisplay = true;
-    };
   };
 }

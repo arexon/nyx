@@ -5,11 +5,6 @@
       userDirs = {
         enable = true;
         setSessionVariables = true;
-        download = "${config.home.homeDirectory}/dl";
-        videos = "${config.home.homeDirectory}/vids";
-        pictures = "${config.home.homeDirectory}/pics";
-        documents = "${config.home.homeDirectory}/docs";
-        desktop = "${config.home.homeDirectory}/desktop";
         music = null;
         templates = null;
         publicShare = null;

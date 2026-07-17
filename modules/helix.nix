@@ -1,6 +1,9 @@
 {inputs, ...}: {
   flake-file.inputs = {
-    helix.url = "github:helix-editor/helix";
+    helix = {
+      url = "github:helix-editor/helix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   flake.modules.homeManager.helix = {
@@ -17,20 +20,14 @@
 
     harper = getExe pkgs.harper;
     marksman = getExe pkgs.marksman;
-    color-lsp = getExe pkgs.local.color-lsp;
+    color-lsp = getExe pkgs.color-lsp;
   in {
-    nixpkgs.overlays = [inputs.helix.overlays.default];
-
     stylix.targets.helix.enable = false;
-
-    xdg.desktopEntries.Helix = {
-      name = "";
-      noDisplay = true;
-    };
 
     programs.helix = {
       enable = true;
       defaultEditor = true;
+      package = inputs.helix.packages.${pkgs.stdenv.hostPlatform.system}.helix;
 
       languages = {
         language-server = {
@@ -133,49 +130,51 @@
 
       settings = {
         theme = "custom";
-        editor = {
-          insecure = true;
-          line-number = "relative";
-          auto-info = false;
-          rainbow-brackets = true;
-          end-of-line-diagnostics = "error";
-          indent-guides.render = true;
-          clipboard-provider = "wayland";
-          soft-wrap = {
-            wrap-at-text-width = true;
-            wrap-indicator = "";
+        editor =
+          (lib.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
+            clipboard-provider = "wayland";
+          })
+          // {
+            line-number = "relative";
+            auto-info = false;
+            rainbow-brackets = true;
+            end-of-line-diagnostics = "error";
+            indent-guides.render = true;
+            soft-wrap = {
+              wrap-at-text-width = true;
+              wrap-indicator = "";
+            };
+            cursor-shape = {
+              insert = "bar";
+              select = "underline";
+            };
+            statusline = {
+              left = [
+                "mode"
+                "file-name"
+                "file-modification-indicator"
+                "read-only-indicator"
+                "spacer"
+                "version-control"
+              ];
+              right = [
+                "spinner"
+                "spacer"
+                "diagnostics"
+                "workspace-diagnostics"
+                "spacer"
+                "primary-selection-length"
+                "spacer"
+                "position"
+                "position-percentage"
+                "spacer"
+              ];
+            };
+            lsp = {
+              display-progress-messages = true;
+              display-messages = true;
+            };
           };
-          cursor-shape = {
-            insert = "bar";
-            select = "underline";
-          };
-          statusline = {
-            left = [
-              "mode"
-              "file-name"
-              "file-modification-indicator"
-              "read-only-indicator"
-              "spacer"
-              "version-control"
-            ];
-            right = [
-              "spinner"
-              "spacer"
-              "diagnostics"
-              "workspace-diagnostics"
-              "spacer"
-              "primary-selection-length"
-              "spacer"
-              "position"
-              "position-percentage"
-              "spacer"
-            ];
-          };
-          lsp = {
-            display-progress-messages = true;
-            display-messages = true;
-          };
-        };
         keys = {
           normal = {
             "x" = "extend_line";

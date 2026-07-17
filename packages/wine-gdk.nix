@@ -1,8 +1,8 @@
 {
-  unstable,
+  wineWow64Packages,
   fetchFromGitHub,
 }:
-unstable.wineWow64Packages.wayland.overrideAttrs {
+wineWow64Packages.wayland.overrideAttrs {
   src = fetchFromGitHub {
     owner = "LukasPAH";
     repo = "WineGDK";

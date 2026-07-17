@@ -4,10 +4,20 @@ let
   publicSshKey = builtins.readFile ./public-ssh-key.pub;
 in {
   flake.modules.nixos.arexon = {
+    username = name;
     users.users.arexon = {
       isNormalUser = true;
       extraGroups = ["wheel"];
       openssh.authorizedKeys.keys = [publicSshKey];
+    };
+  };
+
+  flake.modules.darwin.arexon = {
+    username = name;
+    system.primaryUser = name;
+    users.users.${name} = {
+      name = name;
+      home = "/Users/${name}";
     };
   };
 

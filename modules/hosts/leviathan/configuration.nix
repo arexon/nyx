@@ -8,6 +8,7 @@
       hytale
       shell
       ssh
+      stylix
       v-rising
     ];
   };

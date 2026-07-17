@@ -1,31 +1,32 @@
-{inputs, ...}: {
-  flake.modules.nixos.core = {
+{inputs, ...}: let
+  common = {
     nixpkgs = {
       config.allowUnfree = true;
-      overlays = [inputs.self.overlays.default inputs.self.overlays.unstable];
+      overlays = [inputs.self.overlays.default];
     };
-
     nix = {
       channel.enable = false;
+      optimise.automatic = true;
+      settings = {
+        experimental-features = ["nix-command" "flakes" "pipe-operators"];
+        trusted-users = ["@wheel" "@admin"];
+        auto-optimise-store = true;
+      };
       gc = {
         automatic = true;
         options = "--delete-older-than 8d";
-        dates = "weekly";
-      };
-      optimise.automatic = true;
-      settings = {
-        trusted-users = ["@wheel"];
-        experimental-features = ["nix-command" "flakes" "pipe-operators"];
-        max-jobs = "auto";
-        use-xdg-base-directories = true;
-        http-connections = 128;
-        max-substitution-jobs = 128;
-        auto-optimise-store = true;
-        keep-outputs = true;
-        keep-derivations = true;
-        warn-dirty = false;
       };
     };
+  };
+in {
+  flake.modules.nixos.core = {
+    imports = [common];
+    nix.gc.dates = "weekly";
+  };
+
+  flake.modules.darwin.core = {
+    imports = [common];
+    nix.gc.interval.Weekday = 0;
   };
 
   flake.modules.homeManager.core = {
@@ -33,11 +34,6 @@
     config,
     ...
   }: {
-    nixpkgs = {
-      config.allowUnfree = true;
-      overlays = [inputs.self.overlays.default];
-    };
-
     home.packages = with pkgs; [
       nixd
       alejandra
@@ -46,7 +42,10 @@
 
     programs.nh = {
       enable = true;
-      flake = "${config.home.homeDirectory}/projects/nyx";
+      flake = "${config.home.homeDirectory}/Projects/nyx";
     };
+
+    # Darwin has no man-db package; cache gen only warns.
+    programs.man.generateCaches = !pkgs.stdenv.hostPlatform.isDarwin;
   };
 }

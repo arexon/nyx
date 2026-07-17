@@ -4,7 +4,10 @@
       url = "github:JPyke3/hytale-launcher-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
+    proton-cachyos = {
+      url = "github:powerofthe69/proton-cachyos-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   flake.modules.nixos.gaming = {pkgs, ...}: {
@@ -14,9 +17,15 @@
       enable = true;
       extraCompatPackages = with pkgs; [
         proton-cachyos
-        local.proton-gdk-bin
+        proton-gdk-bin
       ];
     };
+  };
+
+  flake.modules.darwin.gaming = {
+    homebrew.casks = [
+      "steam"
+    ];
   };
 
   flake.modules.homeManager.gaming = {pkgs, ...}: {
@@ -28,7 +37,6 @@
     home.packages = with pkgs; [
       mangohud
       mangojuice
-      unstable.modrinth-app
       pcsx2
       inputs.hytale-launcher.packages.${pkgs.stdenv.hostPlatform.system}.default
       r2modman
@@ -36,14 +44,5 @@
       mesa-demos
       steamcmd
     ];
-
-    programs.niri.settings = {
-      window-rules = [
-        {
-          matches = [{app-id = "steam";}];
-          open-on-workspace = "IV";
-        }
-      ];
-    };
   };
 }

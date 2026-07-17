@@ -1,10 +1,14 @@
 {
-  flake.modules.homeManager.cli = {pkgs, ...}: {
+  flake.modules.homeManager.cli = {
+    pkgs,
+    lib,
+    ...
+  }: {
     programs.btop = {
       enable = true;
-      package = pkgs.btop.override {
+      package = pkgs.btop.override (lib.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
         rocmSupport = true;
-      };
+      });
       settings = {
         theme_background = false;
         vim_keys = true;
@@ -13,11 +17,6 @@
         base_10_sizes = true;
         update_ms = 500;
       };
-    };
-
-    xdg.desktopEntries.btop = {
-      name = "";
-      noDisplay = true;
     };
   };
 }

@@ -29,6 +29,8 @@
       inputs.noctalia.homeModules.default
     ];
 
+    stylix.targets.noctalia.enable = false;
+
     programs.noctalia = {
       enable = true;
       # colors = lib.mkForce (with config.lib.stylix.colors.withHashtag; {

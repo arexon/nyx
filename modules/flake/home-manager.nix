@@ -1,23 +1,8 @@
 {
-  lib,
-  flake-parts-lib,
-  ...
-}: {
-  options = {
-    flake = flake-parts-lib.mkSubmoduleOptions {
-      homeConfigurations = lib.mkOption {
-        type = with lib.types; lazyAttrsOf raw;
-        default = {};
-      };
-    };
-  };
-
-  config = {
-    flake-file.inputs = {
-      home-manager = {
-        url = "github:nix-community/home-manager/release-26.05";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
+  flake-file.inputs = {
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 }

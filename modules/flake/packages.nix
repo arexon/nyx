@@ -1,46 +1,40 @@
 {
   inputs,
   withSystem,
+  lib,
   ...
 }: {
   flake-file.inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   imports = [
     inputs.pkgs-by-name-for-flake-parts.flakeModule
   ];
 
-  perSystem = {system, ...}: {
-    _module.args.pkgs = import inputs.nixpkgs {
-      inherit system;
-      overlays = [
-        (final: _prev: {
-          unstable = import inputs.nixpkgs-unstable {
-            inherit (final) config;
-            inherit system;
-          };
-        })
-      ];
-    };
-
+  perSystem = {
     pkgsDirectory = ../../packages;
   };
 
   flake = {
-    overlays.unstable = final: prev: {
-      unstable = import inputs.nixpkgs-unstable {
-        inherit (final) system config;
-      };
-    };
-
-    overlays.default = final: prev:
-      withSystem prev.stdenv.hostPlatform.system (
-        {config, ...}: {
-          local = config.packages;
-        }
-      );
+    overlays.default = final: prev: let
+      system = prev.stdenv.hostPlatform.system;
+      supported = [
+        "x86_64-linux"
+        "aarch64-darwin"
+      ];
+    in
+      if lib.elem system supported
+      then
+        withSystem system (
+          {config, ...}:
+            lib.filterAttrs (name: _: !(lib.hasPrefix "write-" name)) config.packages
+        )
+      else {};
   };
 }

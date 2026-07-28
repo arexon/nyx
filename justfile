@@ -4,5 +4,5 @@ _default:
 sync:
     nix run .#write-flake
 
-os:
+switch:
     nh {{ if os() == "macos" { "darwin" } else { "os" } }} switch

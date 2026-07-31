@@ -29,6 +29,8 @@
   };
 
   flake.modules.homeManager.gaming = {pkgs, ...}: {
+    stylix.targets.mangohud.enable = true;
+
     home.file."options.txt" = {
       source = ./options.txt;
       target = "com.mojang/minecraftpe/options.txt";

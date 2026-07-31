@@ -1,5 +1,7 @@
 {
   flake.modules.nixos.plymouth = {
+    stylix.targets.plymouth.enable = true;
+
     boot = {
       plymouth.enable = true;
       kernelParams = [

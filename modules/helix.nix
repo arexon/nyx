@@ -22,8 +22,6 @@
     marksman = getExe pkgs.marksman;
     color-lsp = getExe pkgs.color-lsp;
   in {
-    stylix.targets.helix.enable = false;
-
     programs.helix = {
       enable = true;
       defaultEditor = true;

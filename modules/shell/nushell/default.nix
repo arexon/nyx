@@ -1,5 +1,7 @@
 {
   flake.modules.homeManager.shell = {config, ...}: {
+    stylix.targets.nushell.enable = true;
+
     programs = {
       nushell = {
         enable = true;

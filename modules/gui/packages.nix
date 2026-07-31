@@ -22,6 +22,7 @@
       [
         blockbench
         firefox
+        localsend
       ]
       ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
         gimp
@@ -40,7 +41,6 @@
       ]
       ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
         stats
-        localsend
       ];
   };
 }

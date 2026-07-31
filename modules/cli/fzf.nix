@@ -1,5 +1,7 @@
 {
   flake.modules.homeManager.cli = {
+    stylix.targets.fzf.enable = true;
+
     programs.fzf = {
       enable = true;
       defaultOptions = [

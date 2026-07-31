@@ -4,6 +4,8 @@
     lib,
     ...
   }: {
+    stylix.targets.btop.enable = true;
+
     programs.btop = {
       enable = true;
       package = pkgs.btop.override (lib.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {

@@ -9,8 +9,6 @@
   flake.modules.homeManager.gui = {
     imports = [inputs.nixcord.homeModules.nixcord];
 
-    stylix.targets.nixcord.enable = false;
-
     programs.nixcord = {
       enable = true;
       discord = {

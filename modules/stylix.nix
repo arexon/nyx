@@ -12,6 +12,7 @@ in {
     imports = [inputs.stylix.nixosModules.stylix];
     stylix = {
       enable = true;
+      autoEnable = false;
       base16Scheme = theme pkgs;
     };
   };
@@ -20,6 +21,7 @@ in {
     imports = [inputs.stylix.darwinModules.stylix];
     stylix = {
       enable = true;
+      autoEnable = false;
       base16Scheme = theme pkgs;
     };
   };
@@ -32,11 +34,7 @@ in {
   }: {
     stylix =
       {
-        cursor = {
-          name = "catppuccin-mocha-dark-cursors";
-          package = pkgs.catppuccin-cursors.mochaDark;
-          size = 24;
-        };
+        autoEnable = false;
         fonts = {
           sansSerif.name = "Lexend";
           serif.name = config.stylix.fonts.sansSerif.name;
@@ -45,11 +43,17 @@ in {
         };
       }
       // lib.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
+        cursor = {
+          name = "catppuccin-mocha-dark-cursors";
+          package = pkgs.catppuccin-cursors.mochaDark;
+          size = 24;
+        };
         icons = {
           enable = true;
           dark = "Papirus";
           package = pkgs.papirus-icon-theme;
         };
+        targets.gtk.enable = true;
       };
   };
 }

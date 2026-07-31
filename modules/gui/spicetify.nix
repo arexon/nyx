@@ -28,8 +28,6 @@
   in {
     imports = [inputs.spicetify.homeManagerModules.spicetify];
 
-    stylix.targets.spicetify.enable = false;
-
     programs.spicetify =
       {
         enable = true;

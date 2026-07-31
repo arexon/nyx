@@ -1,5 +1,7 @@
 {
   flake.modules.homeManager.shell = {pkgs, ...}: {
+    stylix.targets.fish.enable = true;
+
     programs.fish = {
       enable = true;
       plugins = [
@@ -22,9 +24,7 @@
       in {
         fish_greeting = ''
           ${clear}
-          if command -q fastfetch
-            fastfetch
-          end
+          fastfetch
         '';
         clear = ''
           ${clear}

@@ -5,6 +5,7 @@
     cli
     core
     fonts
+    gaming
     git
     gui
     helix

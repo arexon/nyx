@@ -28,23 +28,35 @@
     ];
   };
 
-  flake.modules.homeManager.gaming = {pkgs, ...}: {
-    stylix.targets.mangohud.enable = true;
+  flake.modules.homeManager.gaming = {
+    lib,
+    pkgs,
+    ...
+  }: {
+    config = lib.mkMerge [
+      (lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
+        stylix.targets.mangohud.enable = true;
 
-    home.file."options.txt" = {
-      source = ./options.txt;
-      target = "com.mojang/minecraftpe/options.txt";
-    };
+        home.file."options.txt" = {
+          source = ./options.txt;
+          target = "com.mojang/minecraftpe/options.txt";
+        };
 
-    home.packages = with pkgs; [
-      mangohud
-      mangojuice
-      pcsx2
-      inputs.hytale-launcher.packages.${pkgs.stdenv.hostPlatform.system}.default
-      r2modman
-      protontricks
-      mesa-demos
-      steamcmd
+        home.packages = with pkgs; [
+          mangohud
+          mangojuice
+          pcsx2
+          inputs.hytale-launcher.packages.${pkgs.stdenv.hostPlatform.system}.default
+          r2modman
+          protontricks
+          mesa-demos
+          steamcmd
+        ];
+      })
+
+      (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
+        home.packages = [pkgs.minecraft-bedrock];
+      })
     ];
   };
 }

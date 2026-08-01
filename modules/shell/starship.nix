@@ -46,7 +46,6 @@
           vimcmd_visual_symbol = success_symbol;
           vimcmd_replace_symbol = success_symbol;
         };
-        time.disabled = false;
       };
     };
   };

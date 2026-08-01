@@ -34,6 +34,7 @@
           confirm-close-surface = false;
           unfocused-split-opacity = 1;
           mouse-scroll-multiplier = "precision:1,discrete:1";
+          mouse-hide-while-typing = true;
           background-blur = "macos-glass-clear";
 
           keybind = [

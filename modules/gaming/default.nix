@@ -55,7 +55,7 @@
       })
 
       (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
-        home.packages = [pkgs.minecraft-bedrock];
+        home.packages = [pkgs.minecraft];
       })
     ];
   };

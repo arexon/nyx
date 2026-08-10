@@ -8,21 +8,21 @@
 }: let
   inherit (lib.generators) toPlist;
 
-  launcher = writeShellScript "MinecraftBedrock" ''
+  launcher = writeShellScript "Minecraft" ''
     set -euo pipefail
 
-    support="$HOME/Library/Application Support/Minecraft Bedrock"
+    support="$HOME/Library/Application Support/Minecraft"
     wine="$support/wine/bin/wine"
     exe="$support/game/Minecraft.Windows.exe"
     export WINEPREFIX="$support/prefix"
 
     if [[ ! -x "$wine" ]]; then
-      echo "Minecraft Bedrock: missing wine at $wine" >&2
+      echo "Minecraft: missing wine at $wine" >&2
       exit 1
     fi
 
     if [[ ! -f "$exe" ]]; then
-      echo "Minecraft Bedrock: missing game at $exe" >&2
+      echo "Minecraft: missing game at $exe" >&2
       exit 1
     fi
 
@@ -30,10 +30,10 @@
   '';
 
   infoPlist = writeText "Info.plist" (toPlist {escape = true;} {
-    CFBundleExecutable = "MinecraftBedrock";
+    CFBundleExecutable = "Minecraft";
     CFBundleIconFile = "AppIcon";
-    CFBundleIdentifier = "app.minecraft-bedrock";
-    CFBundleName = "Minecraft Bedrock";
+    CFBundleIdentifier = "app.minecraft";
+    CFBundleName = "Minecraft";
     CFBundlePackageType = "APPL";
     CFBundleShortVersionString = "0.1.0";
     CFBundleVersion = "0.1.0";
@@ -41,7 +41,7 @@
   });
 in
   stdenvNoCC.mkDerivation {
-    pname = "minecraft-bedrock";
+    pname = "minecraft";
     version = "0.1.0";
 
     src = ./.;
@@ -54,10 +54,10 @@ in
     installPhase = ''
       runHook preInstall
 
-      app="$out/Applications/Minecraft Bedrock.app/Contents"
+      app="$out/Applications/Minecraft.app/Contents"
       mkdir -p "$app/MacOS" "$app/Resources"
-      cp ${launcher} "$app/MacOS/MinecraftBedrock"
-      chmod +x "$app/MacOS/MinecraftBedrock"
+      cp ${launcher} "$app/MacOS/Minecraft"
+      chmod +x "$app/MacOS/Minecraft"
       cp ${infoPlist} "$app/Info.plist"
 
       magick icon.png -background none -flatten PNG32:icon-rgba.png
@@ -71,7 +71,7 @@ in
     '';
 
     meta = {
-      description = "Thin launcher for Minecraft Bedrock (Wine) on macOS";
+      description = "Thin launcher for Minecraft (Wine) on macOS";
       platforms = lib.platforms.darwin;
     };
   }

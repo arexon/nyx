@@ -64,7 +64,7 @@
           openInApp.enable = true;
           unindent.enable = true;
           customIdle.enable = true;
-          favoriteGifSearch.enable = true;
+          voiceMessages.enable = true;
         };
       };
       quickCss = ''

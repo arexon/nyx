@@ -70,7 +70,7 @@
             # Search
             "ctrl+f>shift+c=start_search"
 
-            # Resize pane mode (leader+r)
+            # Resize pane mode
             "resize_pane/"
             "resize_pane/h=resize_split:left,50"
             "resize_pane/l=resize_split:right,50"

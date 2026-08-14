@@ -6,7 +6,7 @@
       "protonvpn"
       "bitwarden"
       "obs"
-      "scroll-reverser"
+      "vorssaint"
     ];
   };
 
@@ -39,8 +39,6 @@
         obs-studio
         bitwarden-desktop
       ]
-      ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
-        stats
-      ];
+      ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [];
   };
 }

@@ -23,11 +23,11 @@ rustPlatform.buildRustPackage {
   src = fetchFromGitHub {
     owner = "xodus-gaming";
     repo = "xodus";
-    rev = "1eefc6dc659add0b427f8793e312e32f32cbb8dc";
-    hash = "sha256-CkOqMZgJM0QF2btsM+CjlKRk/8v4rU65a6kccFMgEEM=";
+    rev = "4615749c6e02cc3b9acce2abbe9916fe8c376f9a";
+    hash = "sha256-4BNbNANSsKpiCVLYM8TPWpykum4RQ/cNmsHhiax6pdA=";
   };
 
-  cargoHash = "sha256-c3Nx8GoiAkzo5ob4t3mSJ98CZZvj5w5MTTc5kbVWnc8=";
+  cargoHash = "sha256-VenzKiQlyNGsT3bS4wuZmpbEm9KL3dv5JeVtngoZeec=";
 
   nativeBuildInputs =
     [

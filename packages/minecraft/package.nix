@@ -5,28 +5,31 @@
   writeText,
   libicns,
   imagemagick,
+  xodus,
 }: let
   inherit (lib.generators) toPlist;
+
+  xodus-cli = lib.getExe' xodus "xodus-cli";
 
   launcher = writeShellScript "Minecraft" ''
     set -euo pipefail
 
-    support="$HOME/Library/Application Support/Minecraft"
-    wine="$support/wine/bin/wine"
-    exe="$support/game/Minecraft.Windows.exe"
-    export WINEPREFIX="$support/prefix"
+    mc="$HOME/Library/Application Support/Minecraft"
+    wine="$mc/wine/bin/wine"
+    game="$mc/game"
+    export WINEPREFIX="$mc/prefix"
 
     if [[ ! -x "$wine" ]]; then
       echo "Minecraft: missing wine at $wine" >&2
       exit 1
     fi
 
-    if [[ ! -f "$exe" ]]; then
-      echo "Minecraft: missing game at $exe" >&2
+    if [[ ! -d "$game" ]]; then
+      echo "Minecraft: missing game at $game" >&2
       exit 1
     fi
 
-    "$wine" "$exe" "$@"
+    ${xodus-cli} run "$game" "$wine"
   '';
 
   infoPlist = writeText "Info.plist" (toPlist {escape = true;} {

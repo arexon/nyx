@@ -36,6 +36,7 @@
           shuffle
           fullAlbumDate
           catJamSynced
+          oneko
         ];
         theme = spicePkgs.themes.catppuccin;
         colorScheme = "mocha";

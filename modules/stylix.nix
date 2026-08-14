@@ -10,6 +10,7 @@ in {
 
   flake.modules.nixos.stylix = {pkgs, ...}: {
     imports = [inputs.stylix.nixosModules.stylix];
+
     stylix = {
       enable = true;
       autoEnable = false;
@@ -19,6 +20,7 @@ in {
 
   flake.modules.darwin.stylix = {pkgs, ...}: {
     imports = [inputs.stylix.darwinModules.stylix];
+
     stylix = {
       enable = true;
       autoEnable = false;

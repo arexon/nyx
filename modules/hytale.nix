@@ -1,7 +1,7 @@
 {inputs, ...}: {
   flake-file.inputs = {
     hytale-server = {
-      url = "github:essegd/hytale-server-flake";
+      url = "github:liquidnya/hytale-server-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

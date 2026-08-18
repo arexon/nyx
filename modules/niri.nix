@@ -6,6 +6,17 @@
     };
   };
 
+  flake.modules.nixos.core = {
+    nix.settings = {
+      substituters = [
+        "https://niri.cachix.org"
+      ];
+      trusted-public-keys = [
+        "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
+      ];
+    };
+  };
+
   flake.modules.nixos.niri = {
     lib,
     pkgs,
@@ -31,15 +42,6 @@
     imports = [inputs.niri.nixosModules.niri];
 
     nixpkgs.overlays = [inputs.niri.overlays.niri];
-
-    nix.settings = {
-      substituters = [
-        "https://niri.cachix.org"
-      ];
-      trusted-public-keys = [
-        "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
-      ];
-    };
 
     programs.niri = {
       enable = true;

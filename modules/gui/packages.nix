@@ -23,6 +23,7 @@
         blockbench
         firefox
         localsend
+        vscodium
       ]
       ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
         gimp

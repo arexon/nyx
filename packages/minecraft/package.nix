@@ -18,6 +18,11 @@
     wine="$mc/wine/bin/wine"
     game="$mc/game"
     export WINEPREFIX="$mc/prefix"
+    export D3DM_DEVICE_DESCRIPTION="$(
+      system_profiler SPDisplaysDataType 2>/dev/null \
+        | awk -F': ' '/Chipset Model:/{print $2; exit}'
+    )"
+    export D3DM_DEVICE_DESCRIPTION="''${D3DM_DEVICE_DESCRIPTION:-Apple GPU}"
 
     if [[ ! -x "$wine" ]]; then
       echo "Minecraft: missing wine at $wine" >&2

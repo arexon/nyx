@@ -25,6 +25,9 @@
   flake.modules.darwin.gaming = {
     homebrew.casks = [
       "steam"
+      "crossover"
+      "modrinth"
+      "hytale"
     ];
   };
 

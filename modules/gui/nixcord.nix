@@ -6,7 +6,7 @@
     };
   };
 
-  flake.modules.homeManager.gui = {
+  flake.modules.homeManager.gui = {config, ...}: {
     imports = [inputs.nixcord.homeModules.nixcord];
 
     programs.nixcord = {
@@ -65,6 +65,13 @@
           unindent.enable = true;
           customIdle.enable = true;
           voiceMessages.enable = true;
+          cursorBuddy = with config.lib.stylix.colors.withHashtag; {
+            enable = true;
+            speed = 7;
+            fps = 11;
+            fade = false;
+            furColor = base0E;
+          };
         };
       };
       quickCss = ''

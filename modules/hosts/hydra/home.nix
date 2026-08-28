@@ -11,5 +11,6 @@
     helix
     shell
     stylix
+    xdg
   ];
 }

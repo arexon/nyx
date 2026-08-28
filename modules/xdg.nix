@@ -1,8 +1,15 @@
 {
-  flake.modules.homeManager.xdg = {config, ...}: {
+  flake.modules.homeManager.xdg = {
+    config,
+    lib,
+    pkgs,
+    ...
+  }: let
+    inherit (pkgs.stdenv.hostPlatform) isLinux;
+  in {
     xdg = {
-      enable = true;
-      userDirs = {
+      enable = isLinux;
+      userDirs = lib.mkIf isLinux {
         enable = true;
         setSessionVariables = true;
         music = null;

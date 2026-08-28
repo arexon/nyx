@@ -11,6 +11,7 @@
         experimental-features = ["nix-command" "flakes" "pipe-operators"];
         trusted-users = ["@wheel" "@admin"];
         auto-optimise-store = true;
+        use-xdg-base-directories = true;
       };
       gc = {
         automatic = true;

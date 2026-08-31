@@ -65,6 +65,11 @@
           unindent.enable = true;
           customIdle.enable = true;
           voiceMessages.enable = true;
+          pinDms = {
+            enable = true;
+            canCollapseDmSection = true;
+            pinOrder = 1;
+          };
           cursorBuddy = with config.lib.stylix.colors.withHashtag; {
             enable = true;
             speed = 7;

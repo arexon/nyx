@@ -67,6 +67,8 @@
   }: let
     workspaces = ["I" "II" "III" "IV" "V"];
   in {
+    stylix.targets.niri.enable = true;
+
     programs.niri.settings = {
       binds = with config.lib.niri.actions;
         {
@@ -172,7 +174,7 @@
           repeat-rate = 40;
           repeat-delay = 500;
         };
-        mouse.accel-speed = 0.05;
+        mouse.accel-speed = -0.65;
       };
 
       animations.workspace-switch.enable = false;

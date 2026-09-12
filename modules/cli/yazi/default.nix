@@ -25,23 +25,23 @@
           text = "";
         }
         {
-          name = "desktop";
+          name = "Desktop";
           text = "";
         }
         {
-          name = "docs";
+          name = "Documents";
           text = "";
         }
         {
-          name = "dl";
+          name = "Downloads";
           text = "";
         }
         {
-          name = "pics";
+          name = "Pictures";
           text = "";
         }
         {
-          name = "vids";
+          name = "Movies";
           text = "";
         }
         {
@@ -49,7 +49,7 @@
           text = "";
         }
         {
-          name = "projects";
+          name = "Projects";
           text = "";
         }
       ];
@@ -96,18 +96,18 @@
         }
         {
           on = ["g" "d"];
-          run = "cd ~/dl";
-          desc = "Go ~/dl";
+          run = "cd ~/Downloads";
+          desc = "Go ~/Downloads";
         }
         {
           on = ["g" "v"];
-          run = "cd ~/vids";
-          desc = "Go ~/vids";
+          run = "cd ~/Movies";
+          desc = "Go ~/Movies";
         }
         {
           on = ["g" "p"];
-          run = "cd ~/pics";
-          desc = "Go ~/pics";
+          run = "cd ~/Pictures";
+          desc = "Go ~/Pictures";
         }
 
         {

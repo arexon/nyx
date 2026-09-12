@@ -12,9 +12,9 @@
       userDirs = lib.mkIf isLinux {
         enable = true;
         setSessionVariables = true;
-        music = null;
+        createDirectories = true;
         templates = null;
-        publicShare = null;
+        videos = "${config.home.homeDirectory}/Movies";
       };
     };
 

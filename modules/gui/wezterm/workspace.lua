@@ -6,7 +6,7 @@ local mux = wezterm.mux
 ---@diagnostic disable-next-line: assign-type-mismatch
 local GLOBAL = wezterm.GLOBAL
 
-local PROJECTS_DIR = wezterm.home_dir .. "/projects/"
+local PROJECTS_DIR = wezterm.home_dir .. "/Projects/"
 local WORKSPACE_SWTICHED_EVENT = "workspace.switched"
 local FUZZY_DESCRPTION = "::: "
 
@@ -41,8 +41,8 @@ end
 ---@return string[]
 local function get_projects()
 	local patterns = {
-		"/projects/*/.git",
-		"/projects/minecraft/*/.git",
+		"/Projects/*/.git",
+		"/Projects/minecraft/*/.git",
 	}
 	local project_dirs = {}
 	local home = wezterm.home_dir

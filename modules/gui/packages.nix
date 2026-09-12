@@ -24,11 +24,11 @@
         firefox
         localsend
         vscodium
+        losslesscut-bin
       ]
       ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
         gimp
         kdePackages.kdenlive
-        losslesscut-bin
         totem # video thumbnails
         file-roller
         nautilus

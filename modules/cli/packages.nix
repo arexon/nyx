@@ -24,7 +24,7 @@
         jq
         calc
         yt-dlp
-        opencode
+        uv
         xodus
       ]
       ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [

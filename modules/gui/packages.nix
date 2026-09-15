@@ -40,6 +40,8 @@
         obs-studio
         bitwarden-desktop
       ]
-      ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [];
+      ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
+        tailscale-gui
+      ];
   };
 }

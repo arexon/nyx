@@ -10,6 +10,11 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+
+    homebrew-tinycast = {
+      url = "github:abue-ammar/homebrew-tinycast";
+      flake = false;
+    };
   };
 
   flake.modules.darwin.core = {
@@ -37,6 +42,7 @@
       taps = {
         "homebrew/homebrew-core" = inputs.homebrew-core;
         "homebrew/homebrew-cask" = inputs.homebrew-cask;
+        "abue-ammar/homebrew-tinycast" = inputs.homebrew-tinycast;
       };
       mutableTaps = false;
     };

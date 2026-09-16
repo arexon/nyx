@@ -34,6 +34,10 @@
       url = "github:homebrew/homebrew-core";
       flake = false;
     };
+    homebrew-tinycast = {
+      url = "github:abue-ammar/homebrew-tinycast";
+      flake = false;
+    };
     hytale-launcher = {
       url = "github:JPyke3/hytale-launcher-nix";
       inputs.nixpkgs.follows = "nixpkgs";

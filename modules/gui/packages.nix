@@ -7,6 +7,7 @@
       "bitwarden"
       "obs"
       "vorssaint"
+      "abue-ammar/tinycast/tinycast"
     ];
   };
 

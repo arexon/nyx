@@ -468,6 +468,22 @@
         "type": "github"
       }
     },
+    "homebrew-tinycast": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789505887,
+        "narHash": "sha256-eoxILzYPNj6wsJowiju0V2/CSYZ4xsuzpzjmsYRLvLk=",
+        "owner": "abue-ammar",
+        "repo": "homebrew-tinycast",
+        "rev": "10ff254a225fd637b94d230e6726291e2629b5e5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "abue-ammar",
+        "repo": "homebrew-tinycast",
+        "type": "github"
+      }
+    },
     "hytale-launcher": {
       "inputs": {
         "nixpkgs": [
@@ -892,6 +908,7 @@
         "homebrew": "homebrew",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
+        "homebrew-tinycast": "homebrew-tinycast",
         "hytale-launcher": "hytale-launcher",
         "hytale-server": "hytale-server",
         "import-tree": "import-tree",

@@ -6,6 +6,7 @@
   }: {
     home.packages = with pkgs;
       [
+        aria2
         file
         _7zz
         unar

@@ -8,6 +8,7 @@
     git
     gui
     helix
+    mac-app-util
     shell
     stylix
     xdg

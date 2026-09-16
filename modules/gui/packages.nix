@@ -8,6 +8,7 @@
       "obs"
       "vorssaint"
       "abue-ammar/tinycast/tinycast"
+      "tailscale-app"
     ];
   };
 
@@ -42,7 +43,6 @@
         bitwarden-desktop
       ]
       ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
-        tailscale-gui
       ];
   };
 }

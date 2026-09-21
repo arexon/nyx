@@ -19,6 +19,14 @@
         enable = true;
         package = pkgs.neoforgeServers.neoforge-1_21_1-21_1_249;
         jvmOpts = "-Xms8G -Xmx8G";
+        serverProperties = {
+          difficulty = "normal";
+          allow-flight = true;
+          max-players = 4;
+          view-distance = 24;
+          simulation-distance = 12;
+          motd = "The Silly World :3";
+        };
         symlinks.mods = with pkgs;
           linkFarmFromDrvs "mods" (builtins.attrValues {
             "balm" = fetchurl {

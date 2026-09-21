@@ -7,6 +7,10 @@
     "url": "https://cdn.modrinth.com/data/iGEl6Crx/versions/EAjbdreT/biolith-neoforge-3.0.14.jar",
     "sha512": "49d225425627eca3b52514752ad297d39c571853a72f4e539c6e233a1289126fbb50593b01af2a782369e1aca55654e225ae25d494c3885baf6ed9fe212887ad"
   },
+  "chunky": {
+    "url": "https://cdn.modrinth.com/data/fALzjamp/versions/LuFhm4eU/Chunky-NeoForge-1.4.23.jar",
+    "sha512": "2db769dd723f243a21e1881e7c9f825e9c193da6f2bed454b70cb6fa9e51c57f63fdcf017c0657bbd26f7bba30815413e27c74d3c7be0783390a96ee9baa4bf7"
+  },
   "companion": {
     "url": "https://cdn.modrinth.com/data/4w0EzGRW/versions/PfXPQBGy/Companion-1.21.1-NeoForge-6.3.0.jar",
     "sha512": "bdc3b9d19c3650366404a6c4e0959b19ce9759a0861b5df05262eaf9af3ae6b0ed931dfe62b9cf61fe2b92f21bd9ea320822512af8cd27636edcc0010b2ddc7c"
@@ -60,8 +64,8 @@
     "sha512": "7c0e1bb82bb28ea310eb28e2bf01fb44b351d856e6c9f5caa44d50e6f8a6625e92818f68191714c767244cc2f48f4a4789f9ddf3295420bbbee42d9148d6e84d"
   },
   "jei": {
-    "url": "https://cdn.modrinth.com/data/u6dRKJwZ/versions/ZWGz5dZX/jei-1.21.1-neoforge-19.56.0.441.jar",
-    "sha512": "cee8f743819fdeb99fde9a91cd72b9200c07a7fd7e581e3b2561843fd0ee59f0b7dc7e0b619c79cee80402c7557eb4ae3b218bd05ec3e6d9e79801f01b791fa3"
+    "url": "https://cdn.modrinth.com/data/u6dRKJwZ/versions/JwdTIMH0/jei-1.21.1-neoforge-19.57.0.446.jar",
+    "sha512": "bd6e620cc93e98146d239f9732d7badceecacc71a7b17a146badea56931ec8719e28946aa455617eee8ca6057b01a037a4cdca17ecf79ca45a62848340821aa9"
   },
   "kiwi": {
     "url": "https://cdn.modrinth.com/data/ufdDoWPd/versions/tfwJWC8g/Kiwi-1.21.1-NeoForge-15.8.7.jar",
@@ -80,8 +84,8 @@
     "sha512": "d3654fdab95ca5b929778a21fb30c2124f6f66e3c6067af23595301800d797f584dd099ce046f8ae288a6084e92c46a161a8238d19ac793bd3bface2b3b2eef8"
   },
   "mezzconfig": {
-    "url": "https://cdn.modrinth.com/data/7tEfOcA7/versions/Bg8bfSgj/mezz_config-1.21.1-neoforge-0.5.11.jar",
-    "sha512": "cb62caa9d2c2e76eaf3400abc459e27180ed429d2421467b3d4de292ed1dfdf84a3b697118b5399bc2696cca5e94c4e76b968041928bdc6dbfe6b3fb5ac4829f"
+    "url": "https://cdn.modrinth.com/data/7tEfOcA7/versions/zcRUPwOA/mezz_config-1.21.1-neoforge-0.6.3.jar",
+    "sha512": "c901c3fb3cfeea75050c676dbff058049fbbbd53a82e41dc95deabf9f8de673812ea216d3f5bd459baff19256bcd34092ad9ba22983dd53278991407bc51dc15"
   },
   "modernfix": {
     "url": "https://cdn.modrinth.com/data/nmDcB62a/versions/5HLHxQ2F/modernfix-neoforge-5.27.24%2Bmc1.21.1.jar",
@@ -124,8 +128,8 @@
     "sha512": "bf3d8c87bcc5efb99afffd50305fc978086ed48a63e106816e3a8a3901f8052f4480ea527dbd7d4003f7775ed4d020529098034f4e307aefac9cc42df2b4c19a"
   },
   "slice-and-dice": {
-    "url": "https://cdn.modrinth.com/data/GmjmRQ0A/versions/N67LJgrN/sliceanddice-4.3.3-neoforge.jar",
-    "sha512": "3bdbd282ae5aa11ef6c186b752497541730b50fb400c4962230bcd7734cfe4e8daa2ee565387450dfe0eb6deaa0fa44bf81f99c788bac09b1a60d8f1991db37f"
+    "url": "https://cdn.modrinth.com/data/GmjmRQ0A/versions/D6mQaFRW/sliceanddice-4.3.4-neoforge.jar",
+    "sha512": "18fc9c70d2958ad6a0e7106ca2a5659d664fe9d5001a02afbd0c7d6980749764fcd90203abb2b9c6d7b1c8e564e421be04dfca1aeb25974371d7deeabf4b96a3"
   },
   "sophisticated-backpacks": {
     "url": "https://cdn.modrinth.com/data/TyCTlI4b/versions/AhPnzNtJ/sophisticatedbackpacks-1.21.1-3.26.3.2158.jar",

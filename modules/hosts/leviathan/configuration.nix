@@ -6,6 +6,7 @@
       core
       disko
       hytale
+      minecraft
       shell
       ssh
       stylix

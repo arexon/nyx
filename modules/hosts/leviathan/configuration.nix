@@ -9,6 +9,7 @@
       shell
       ssh
       stylix
+      tailscale
       v-rising
     ];
   };

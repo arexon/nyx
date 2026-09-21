@@ -9,6 +9,7 @@
       "vorssaint"
       "abue-ammar/tinycast/tinycast"
       "tailscale-app"
+      "handbrake-app"
     ];
   };
 
@@ -26,7 +27,6 @@
         firefox
         localsend
         vscodium
-        losslesscut-bin
       ]
       ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
         gimp
@@ -41,6 +41,7 @@
         mpv
         obs-studio
         bitwarden-desktop
+        losslesscut-bin
       ]
       ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
       ];

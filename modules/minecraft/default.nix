@@ -22,7 +22,7 @@
       servers.main = {
         enable = true;
         package = pkgs.neoforgeServers.neoforge-1_21_1-21_1_249;
-        jvmOpts = "-Xms8G -Xmx8G";
+        jvmOpts = "-Xms8G -Xmx8G -XX:+UseZGC -XX:+AlwaysPreTouch";
         serverProperties = {
           motd = "The Silly World :3";
           difficulty = "normal";

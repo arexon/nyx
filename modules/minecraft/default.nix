@@ -31,9 +31,12 @@
           view-distance = 24;
           simulation-distance = 12;
         };
-        symlinks.mods = pkgs.linkFarmFromDrvs "mods" (
-          lib.mapAttrsToList (_: pkgs.fetchurl) (lib.importJSON ./mods.json)
-        );
+        symlinks = {
+          "server-icon.png" = ./server-icon.png;
+          mods = pkgs.linkFarmFromDrvs "mods" (
+            lib.mapAttrsToList (_: pkgs.fetchurl) (lib.importJSON ./mods.json)
+          );
+        };
       };
     };
   };

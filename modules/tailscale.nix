@@ -5,6 +5,12 @@
       openFirewall = true;
     };
     networking.firewall.trustedInterfaces = ["tailscale0"];
-    services.openssh.openFirewall = false;
+    services.openssh = {
+      openFirewall = false;
+      settings = {
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+      };
+    };
   };
 }

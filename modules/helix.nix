@@ -27,7 +27,6 @@ in {
 
     harper = getExe pkgs.harper;
     marksman = getExe pkgs.marksman;
-    color-lsp = getExe pkgs.color-lsp;
   in {
     programs.helix = {
       enable = true;
@@ -58,7 +57,6 @@ in {
               variableTypes.enabled = true;
             };
           };
-          color-lsp.command = color-lsp;
         };
         language = [
           {
@@ -75,7 +73,7 @@ in {
             name = "nix";
             formatter.command = "alejandra";
             auto-format = true;
-            language-servers = ["nixd" "color-lsp"];
+            language-servers = ["nixd"];
           }
           {
             name = "markdown";
@@ -87,13 +85,13 @@ in {
             name = "typescript";
             formatter = denoFormatter "ts";
             auto-format = true;
-            language-servers = ["typescript-language-server" "deno-lsp" "color-lsp" "copilot"];
+            language-servers = ["typescript-language-server" "deno-lsp" "copilot"];
           }
           {
             name = "javascript";
             formatter = denoFormatter "js";
             auto-format = true;
-            language-servers = ["typescript-language-server" "deno-lsp" "color-lsp"];
+            language-servers = ["typescript-language-server" "deno-lsp"];
           }
           {
             name = "jsonc";
@@ -105,7 +103,7 @@ in {
               {glob = "bun.lock";}
               {glob = "flake.lock";}
             ];
-            language-servers = ["deno-lsp" "vscode-json-language-server" "color-lsp"];
+            language-servers = ["deno-lsp" "vscode-json-language-server"];
           }
           {
             name = "yaml";
@@ -114,7 +112,7 @@ in {
           {
             name = "toml";
             auto-format = true;
-            language-servers = ["taplo" "color-lsp"];
+            language-servers = ["taplo"];
           }
           {
             name = "lua";

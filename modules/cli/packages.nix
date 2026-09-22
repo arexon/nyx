@@ -26,7 +26,6 @@
         calc
         yt-dlp
         uv
-        xodus
       ]
       ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
         mole-cleaner

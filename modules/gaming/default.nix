@@ -54,6 +54,7 @@
           protontricks
           mesa-demos
           steamcmd
+          xodus
         ];
       })
 

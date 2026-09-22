@@ -27,9 +27,14 @@
           motd = "The Silly World :3";
           difficulty = "normal";
           allow-flight = true;
+          pvp = false;
           max-players = 4;
-          view-distance = 24;
+          view-distance = 32;
           simulation-distance = 12;
+        };
+        files."config/plasmovoice/server/config.toml".value = {
+          server_id = "73a034c8-70ab-4668-b789-c172e01b81d3";
+          host.port = 25566;
         };
         symlinks = {
           "server-icon.png" = ./server-icon.png;

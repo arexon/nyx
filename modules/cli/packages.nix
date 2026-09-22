@@ -26,6 +26,7 @@
         calc
         yt-dlp
         uv
+        tmux
       ]
       ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
         mole-cleaner

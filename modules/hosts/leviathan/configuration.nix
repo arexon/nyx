@@ -5,7 +5,6 @@
       arexon
       core
       disko
-      hytale
       minecraft
       shell
       ssh

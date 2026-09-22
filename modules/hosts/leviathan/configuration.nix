@@ -12,5 +12,7 @@
       tailscale
       v-rising
     ];
+
+    programs.dconf.enable = true;
   };
 }

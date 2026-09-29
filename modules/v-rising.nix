@@ -29,6 +29,7 @@
         User = "vrising";
         Group = "vrising";
         WorkingDirectory = "${dataDir}/default";
+        ExecStartPre = "${lib.getExe' pkgs.wine64 "wineboot"} -u";
         ExecStart = "${lib.getExe' pkgs.xvfb-run "xvfb-run"} ${lib.getExe pkgs.wine64} start_server.bat";
         Restart = "on-failure";
         RestartSec = "10s";

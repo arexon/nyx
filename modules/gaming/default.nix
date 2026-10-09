@@ -54,12 +54,14 @@
           protontricks
           mesa-demos
           steamcmd
-          xodus
         ];
       })
 
       (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
-        home.packages = [pkgs.minecraft];
+        home.packages = with pkgs; [
+          minecraft
+          xodus
+        ];
       })
     ];
   };

@@ -10,6 +10,7 @@
       "abue-ammar/tinycast/tinycast"
       "tailscale-app"
       "handbrake-app"
+      "karabiner-elements"
     ];
   };
 

@@ -21,7 +21,6 @@
       enable = true;
       servers.${name} = {
         enable = true;
-        openFirewall = true;
         patchline = "release";
         autoUpdate = true;
         restart = "no";

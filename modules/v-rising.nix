@@ -17,8 +17,6 @@
 
     users.groups.vrising = {};
 
-    networking.firewall.allowedUDPPorts = [9876 9877];
-
     systemd.services.vrising = {
       description = "V Rising Dedicated Server";
       after = ["network.target"];

@@ -78,6 +78,7 @@
             furColor = base0E;
           };
           expressionCloner.enable = true;
+          directFileDownload.enable = true;
         };
       };
       quickCss = ''

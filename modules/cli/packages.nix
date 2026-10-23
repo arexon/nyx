@@ -13,7 +13,7 @@
         wget
         ripgrep
         repgrep
-        cloc
+        tokei
         ast-grep
         hyperfine
         ffmpeg

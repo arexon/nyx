@@ -39,7 +39,9 @@
         "lua"
         "oxc"
         "tsgo"
+        "deno"
         "git-firefly"
+        "editorconfig"
       ];
 
       userSettings = {
@@ -131,7 +133,7 @@
           notify_when_agent_waiting = "never";
           play_sound_when_agent_done = "when_hidden";
           flexible = false;
-          default_width = 480;
+          default_width = 650;
           enable_feedback = false;
           expand_edit_card = false;
           expand_terminal_card = false;

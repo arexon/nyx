@@ -28,7 +28,6 @@
         uv
         tmux
         watchexec
-        claude-code
       ]
       ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
         mole-cleaner

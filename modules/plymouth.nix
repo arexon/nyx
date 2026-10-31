@@ -12,10 +12,6 @@
         "rd.udev.log_level=3"
         "udev.log_priority=3"
       ];
-      initrd = {
-        verbose = false;
-        systemd.enable = true;
-      };
       consoleLogLevel = 0;
     };
   };

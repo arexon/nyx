@@ -179,8 +179,6 @@
 
       animations.workspace-switch.enable = false;
 
-      gestures.hot-corners.enable = false;
-
       prefer-no-csd = true;
       hotkey-overlay.skip-at-startup = true;
       overview = with config.lib.stylix.colors.withHashtag; {

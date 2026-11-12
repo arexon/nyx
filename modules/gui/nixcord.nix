@@ -77,7 +77,7 @@
             fade = false;
             furColor = base0E;
           };
-          expressionCloner.enable = true;
+          expressionManager.enable = true;
           directFileDownload.enable = true;
         };
       };

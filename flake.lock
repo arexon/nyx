@@ -473,6 +473,22 @@
         "type": "github"
       }
     },
+    "homebrew-notproton": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794521977,
+        "narHash": "sha256-OIhXUMf61dNFy3kzAdwPBfnKcdfWJ1uVeGnDvsU+pUM=",
+        "owner": "NotProtonNot",
+        "repo": "homebrew-notproton",
+        "rev": "886a488e75f621d3e993c9ce184c99a16c3c30fd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NotProtonNot",
+        "repo": "homebrew-notproton",
+        "type": "github"
+      }
+    },
     "homebrew-tinycast": {
       "flake": false,
       "locked": {
@@ -947,6 +963,7 @@
         "homebrew": "homebrew",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
+        "homebrew-notproton": "homebrew-notproton",
         "homebrew-tinycast": "homebrew-tinycast",
         "hytale-launcher": "hytale-launcher",
         "hytale-server": "hytale-server",

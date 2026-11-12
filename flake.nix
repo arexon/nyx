@@ -35,6 +35,10 @@
       url = "github:homebrew/homebrew-core";
       flake = false;
     };
+    homebrew-notproton = {
+      url = "github:NotProtonNot/homebrew-notproton";
+      flake = false;
+    };
     homebrew-tinycast = {
       url = "github:abue-ammar/homebrew-tinycast";
       flake = false;

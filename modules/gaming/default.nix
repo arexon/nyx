@@ -1,5 +1,9 @@
 {inputs, ...}: {
   flake-file.inputs = {
+    homebrew-notproton = {
+      url = "github:NotProtonNot/homebrew-notproton";
+      flake = false;
+    };
     hytale-launcher = {
       url = "github:JPyke3/hytale-launcher-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,9 +27,11 @@
   };
 
   flake.modules.darwin.gaming = {
+    nix-homebrew.taps."NotProtonNot/homebrew-notproton" = inputs.homebrew-notproton;
+
     homebrew.casks = [
       "steam"
-      "crossover"
+      "notprotonnot/notproton/notproton"
       "modrinth"
       "hytale"
     ];

@@ -37,6 +37,8 @@
     ...
   }: {
     config = lib.mkMerge [
+      {home.packages = [pkgs.lip];}
+
       (lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
         stylix.targets.mangohud.enable = true;
 
@@ -54,7 +56,6 @@
           protontricks
           mesa-demos
           steamcmd
-          lip
         ];
       })
 

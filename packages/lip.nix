@@ -1,8 +1,10 @@
 {
   lib,
+  stdenv,
   fetchzip,
   writeShellApplication,
   wine64,
+  gcenx-wine,
 }: let
   version = "0.35.0";
 
@@ -20,26 +22,35 @@
 
   # Wine maps the Unix root to drive Z:.
   toWinePath = path: "Z:" + lib.replaceStrings ["/"] ["\\"] (toString path);
+
+  wine = lib.getExe (
+    if stdenv.hostPlatform.isDarwin
+    then gcenx-wine
+    else wine64
+  );
+
+  prefix =
+    if stdenv.hostPlatform.isDarwin
+    then "$HOME/Library/Application Support/Minecraft/prefix"
+    else "\${XDG_DATA_HOME:-$HOME/.local/share}/lip/prefix";
 in
   writeShellApplication {
     name = "lip";
 
-    runtimeInputs = [wine64];
-
     text = ''
-      export WINEPREFIX="''${XDG_DATA_HOME:-$HOME/.local/share}/lip/prefix"
+      export WINEPREFIX="${prefix}"
       export WINEDEBUG="''${WINEDEBUG:--all}"
-      export WINEDLLOVERRIDES="mscoree,mshtml=d;winemenubuilder.exe=d"
+      export WINEDLLOVERRIDES="mshtml=d;winemenubuilder.exe=d"
       export DOTNET_ROOT='${toWinePath dotnet-runtime}'
 
-      exec wine ${lip}/lip.exe "$@"
+      exec ${wine} ${lip}/lip.exe "$@"
     '';
 
     meta = {
       description = "Package installer for LeviMC, run under Wine";
       homepage = "https://github.com/LiteLDev/lip";
       license = lib.licenses.gpl3Only;
-      platforms = ["x86_64-linux"];
+      platforms = ["x86_64-linux" "aarch64-darwin"];
       mainProgram = "lip";
     };
   }

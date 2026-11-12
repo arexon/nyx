@@ -42,6 +42,7 @@
         "deno"
         "git-firefly"
         "editorconfig"
+        "justfile"
       ];
 
       userSettings = {

@@ -8,8 +8,8 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    asd-ste100 = {
-      url = "github:danyuchn/asd-ste100-skill";
+    agent-style = {
+      url = "github:yzhao062/agent-style";
       flake = false;
     };
     disko = {

@@ -20,19 +20,19 @@
         "type": "github"
       }
     },
-    "asd-ste100": {
+    "agent-style": {
       "flake": false,
       "locked": {
-        "lastModified": 1793843316,
-        "narHash": "sha256-sev9mzDC4wlBRNfONnYUAVSNuhXK+mzESb0bkOvQg8o=",
-        "owner": "danyuchn",
-        "repo": "asd-ste100-skill",
-        "rev": "fd86652be0d5d3485c69e1529dfd1fa3c9a7a640",
+        "lastModified": 1793140577,
+        "narHash": "sha256-2GxVbWyVcVeSqhxLxCQboOygHIZKBJQpeoISvju+484=",
+        "owner": "yzhao062",
+        "repo": "agent-style",
+        "rev": "d1bdb0fa0c6305942bf43805edeae330946e8cf7",
         "type": "github"
       },
       "original": {
-        "owner": "danyuchn",
-        "repo": "asd-ste100-skill",
+        "owner": "yzhao062",
+        "repo": "agent-style",
         "type": "github"
       }
     },
@@ -938,7 +938,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
-        "asd-ste100": "asd-ste100",
+        "agent-style": "agent-style",
         "disko": "disko",
         "flake-file": "flake-file",
         "flake-parts": "flake-parts",

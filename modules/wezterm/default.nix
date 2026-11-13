@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.gui = {pkgs, ...}: {
+  flake.modules.homeManager.wezterm = {pkgs, ...}: {
     stylix.targets.wezterm.enable = true;
 
     xdg = {

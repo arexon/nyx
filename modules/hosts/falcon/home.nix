@@ -15,6 +15,7 @@
       stylix
       water-reminders
       wayland-env
+      wezterm
       xdg
       zsa
     ];

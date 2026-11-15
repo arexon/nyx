@@ -143,6 +143,9 @@
         agent_servers.claude-acp = {
           type = "registry";
           default_config_options.mode = "auto";
+          # The adapter otherwise runs the SDK's bundled generic-Linux binary, which NixOS cannot
+          # execute. This profile path exists on every host, so it holds in remote projects too.
+          env.CLAUDE_CODE_EXECUTABLE = "/etc/profiles/per-user/arexon/bin/claude";
         };
 
         # Zed otherwise downloads its own older Node for Node-based language servers.

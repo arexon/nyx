@@ -13,5 +13,6 @@
     ssh
     stylix
     zsa
+    tailscale
   ];
 }

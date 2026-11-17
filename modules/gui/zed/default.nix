@@ -4,6 +4,7 @@
   };
 
   flake.modules.homeManager.gui = {
+    config,
     lib,
     pkgs,
     ...
@@ -24,6 +25,8 @@
     };
     denoFormatter = ext: formatWith "deno" ["fmt" "-" "--ext" ext];
   in {
+    home.packages = [pkgs.claude-agent-acp];
+
     programs.zed-editor = {
       enable = true;
       package =
@@ -141,11 +144,9 @@
           thinking_display = "always_collapsed";
         };
         agent_servers.claude-acp = {
-          type = "registry";
+          type = "custom";
+          command = "/etc/profiles/per-user/${config.home.username}/bin/claude-agent-acp";
           default_config_options.mode = "auto";
-          # The adapter otherwise runs the SDK's bundled generic-Linux binary, which NixOS cannot
-          # execute. This profile path exists on every host, so it holds in remote projects too.
-          env.CLAUDE_CODE_EXECUTABLE = "/etc/profiles/per-user/arexon/bin/claude";
         };
 
         # Zed otherwise downloads its own older Node for Node-based language servers.

@@ -9,9 +9,6 @@
   flake.modules.homeManager.cli = {pkgs, ...}: {
     home.packages = [pkgs.claude-code];
 
-    # TODO: Remove when https://github.com/NixOS/nixpkgs/pull/579756 lands.
-    home.sessionVariables.CLAUDE_CODE_CERT_STORE = "bundled,system";
-
     home.file = {
       ".claude/skills/agent-style".source = "${inputs.agent-style}/agents/anthropic-skill";
       ".claude/skills/api-docs".source = ./skills/api-docs;

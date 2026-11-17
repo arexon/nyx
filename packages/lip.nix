@@ -6,11 +6,11 @@
   wine64,
   gcenx-wine,
 }: let
-  version = "0.35.0";
+  version = "0.41.0";
 
   lip = fetchzip {
     url = "https://github.com/LiteLDev/lip/releases/download/v${version}/lip-${version}-win-x64.zip";
-    hash = "sha256-0QZwtRuE4VP1As/pKFlvXOV/xEmsJVI8EYfjzc54+X8=";
+    hash = "sha256-g0NwvlMHJCoeMeByuj8e0/Zmhpe6J5QZRnoMWHzROXc=";
     stripRoot = false;
   };
 

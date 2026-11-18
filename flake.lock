@@ -951,6 +951,23 @@
         "type": "github"
       }
     },
+    "rex": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794939798,
+        "narHash": "sha256-Tsr0uwzT2RvMj5wamTy20im8Df8YdBY6BWZlTvqaj+c=",
+        "type": "tarball",
+        "url": "https://pkgs.superlogical.com/rex/nix/preview/0.1.0-preview.21.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://pkgs.superlogical.com/rex/nix/preview.tar.gz"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -977,6 +994,7 @@
         "noctalia": "noctalia",
         "pkgs-by-name-for-flake-parts": "pkgs-by-name-for-flake-parts",
         "proton-cachyos": "proton-cachyos",
+        "rex": "rex",
         "spicetify": "spicetify",
         "stylix": "stylix"
       }

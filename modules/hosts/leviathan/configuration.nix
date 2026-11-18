@@ -6,6 +6,7 @@
       core
       disko
       minecraft
+      rex
       shell
       ssh
       stylix

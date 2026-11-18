@@ -9,6 +9,7 @@
     gui
     helix
     mac-app-util
+    rex
     shell
     stylix
     xdg

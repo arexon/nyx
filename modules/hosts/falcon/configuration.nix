@@ -8,6 +8,7 @@
     gaming
     niri
     plymouth
+    rex
     shell
     sound
     ssh

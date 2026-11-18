@@ -11,6 +11,7 @@
       helix
       niri
       noctalia
+      rex
       shell
       stylix
       water-reminders

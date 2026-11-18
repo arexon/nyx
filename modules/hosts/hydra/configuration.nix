@@ -5,6 +5,7 @@
     arexon
     gui
     gaming
+    rex
     stylix
   ];
 }

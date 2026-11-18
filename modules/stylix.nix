@@ -28,34 +28,35 @@ in {
     };
   };
 
-  flake.modules.homeManager.stylix = {
+  flake.modules.homeManager.stylix = {config, ...}: {
+    stylix = {
+      autoEnable = false;
+      fonts = {
+        sansSerif.name = "Lexend";
+        serif.name = config.stylix.fonts.sansSerif.name;
+        monospace.name = "Iosevka NF";
+        emoji.name = "Noto Color Emoji";
+      };
+    };
+  };
+
+  flake.modules.homeManager.gui = {
     lib,
     pkgs,
-    config,
     ...
   }: {
-    stylix =
-      {
-        autoEnable = false;
-        fonts = {
-          sansSerif.name = "Lexend";
-          serif.name = config.stylix.fonts.sansSerif.name;
-          monospace.name = "Iosevka NF";
-          emoji.name = "Noto Color Emoji";
-        };
-      }
-      // lib.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
-        cursor = {
-          name = "catppuccin-mocha-dark-cursors";
-          package = pkgs.catppuccin-cursors.mochaDark;
-          size = 24;
-        };
-        icons = {
-          enable = true;
-          dark = "Papirus";
-          package = pkgs.papirus-icon-theme;
-        };
-        targets.gtk.enable = true;
+    stylix = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
+      cursor = {
+        name = "catppuccin-mocha-dark-cursors";
+        package = pkgs.catppuccin-cursors.mochaDark;
+        size = 24;
       };
+      icons = {
+        enable = true;
+        dark = "Papirus";
+        package = pkgs.papirus-icon-theme;
+      };
+      targets.gtk.enable = true;
+    };
   };
 }

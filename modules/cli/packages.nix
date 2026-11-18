@@ -16,7 +16,7 @@
         tokei
         ast-grep
         hyperfine
-        ffmpeg
+        ffmpeg-headless
         dust
         timewarrior
         gh

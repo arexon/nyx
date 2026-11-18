@@ -1,7 +1,14 @@
 {
   flake.modules.homeManager.cli = {
+    lib,
+    pkgs,
+    ...
+  }: {
     programs.fastfetch = {
       enable = true;
+      package = pkgs.fastfetch.override {
+        runtimeDependencies = lib.optionals pkgs.stdenv.hostPlatform.isLinux [pkgs.wayland];
+      };
       settings = {
         logo = {
           type = "file";

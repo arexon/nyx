@@ -14,6 +14,11 @@
       v-rising
     ];
 
-    programs.dconf.enable = true;
+    xdg = {
+      autostart.enable = false;
+      icons.enable = false;
+      mime.enable = false;
+      sounds.enable = false;
+    };
   };
 }

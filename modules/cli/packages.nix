@@ -23,7 +23,6 @@
         fd
         tree
         jq
-        calc
         yt-dlp
         uv
         tmux

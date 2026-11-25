@@ -41,9 +41,11 @@
     lib,
     pkgs,
     ...
-  }: {
+  }: let
+    inherit (pkgs.stdenv.hostPlatform) isLinux system;
+  in {
     config = lib.mkMerge [
-      (lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
+      (lib.mkIf isLinux {
         stylix.targets.mangohud.enable = true;
 
         home.file."options.txt" = {
@@ -55,19 +57,11 @@
           mangohud
           mangojuice
           pcsx2
-          inputs.hytale-launcher.packages.${pkgs.stdenv.hostPlatform.system}.default
+          inputs.hytale-launcher.packages.${system}.default
           r2modman
           protontricks
           mesa-demos
           steamcmd
-          lip
-        ];
-      })
-
-      (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
-        home.packages = with pkgs; [
-          minecraft
-          xodus
         ];
       })
     ];

@@ -42,9 +42,14 @@
     pkgs,
     ...
   }: let
-    inherit (pkgs.stdenv.hostPlatform) isLinux system;
+    inherit (pkgs.stdenv.hostPlatform) isLinux isDarwin system;
   in {
     config = lib.mkMerge [
+      (lib.mkIf isDarwin {
+        home.packages = with pkgs; [
+          levilauncher
+        ];
+      })
       (lib.mkIf isLinux {
         stylix.targets.mangohud.enable = true;
 

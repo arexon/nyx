@@ -13,6 +13,7 @@
       enable = true;
       discord = {
         krisp.enable = true;
+        openASAR.enable = false;
         equicord.enable = true;
         vencord.enable = false;
       };

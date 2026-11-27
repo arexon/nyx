@@ -34,5 +34,10 @@ in {
       enable = true;
       sshGuard = false;
     };
+
+    xdg.configFile."rex" = {
+      source = ./config;
+      recursive = true;
+    };
   };
 }

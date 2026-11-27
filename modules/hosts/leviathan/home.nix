@@ -5,6 +5,7 @@
     core
     git
     helix
+    rex
     shell
     stylix
     xdg

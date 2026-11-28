@@ -1,0 +1,4 @@
+- Before writing any prose for code comments or docs, invoke the agent-style skill.
+- Before writing doc comments for public APIs, invoke the api-docs skill.
+- Never run `git commit` or `git commit --amend`. Leave all changes uncommitted for the user to commit.
+- Bash commands already run in the project's direnv environment, and it reloads after edits to `flake.nix` or `flake.lock`. Do not prefix commands with `direnv exec` or look up tools in `/nix/store`.
